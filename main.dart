@@ -1,113 +1,8 @@
-class DrainageCornice {
-  final double cornice_length;
-  final double downpipe_height;
-  final int num_downpipe;
-  final int length_gutter = 3;
-  final int length_big_pipe = 3;
-  final int length_small_pipe = 1;
-  double gutter_holder_pitch = 0.5;
-  double pipe_holder_pitch = 1.25;
-  int num_cornice = 1;
-  int gutter_angle = 0;
-
-  DrainageCornice(
-    this.cornice_length,
-    this.downpipe_height,
-    this.num_downpipe,
-  );
-
-  get_gutters() {
-    double gutters = ((cornice_length * num_cornice) / length_gutter);
-    print('Желоб: $gutters шт');
-  }
-
-  get_gutter_connectors() {
-    final gutter_connectors =
-        (((cornice_length * num_cornice) / length_gutter).ceil()) -
-            (num_cornice);
-    print('Соединитель желоба: $gutter_connectors шт');
-  }
-
-  void get_plugs() {
-    if (gutter_angle == 0) {
-      final plugs = num_cornice * 2;
-      print('Заглушка желоба: $plugs шт');
-    } else if (gutter_angle == 1) {
-      final plugs = num_cornice;
-      print('Заглушка желоба: $plugs шт');
-    } else if (gutter_angle == 2) {
-      final plugs = 0;
-      print('Заглушка желоба: $plugs шт');
-    } else {
-      return;
-    }
-  }
-
-  void get_gutter_holders() {
-    final gutter_holders =
-        (((cornice_length * num_cornice) / gutter_holder_pitch) + num_cornice)
-            .ceil();
-    print('Держатель желоба: $gutter_holders шт');
-  }
-
-  void get_gutter_angles() {
-    if (gutter_angle == 0) {
-      return;
-    } else {
-      final gutter_angles = gutter_angle;
-      print('Угол желоба: $gutter_angles шт');
-    }
-  }
-
-  void get_funnels() {
-    final funnels = num_downpipe;
-    print('Воронка: $funnels шт');
-  }
-
-  void get_elbows() {
-    final elbows = num_downpipe * 2;
-    print('Колено: $elbows шт');
-  }
-
-  void get_big_pipes() {
-    double big_pipes = ((downpipe_height * num_downpipe) / length_big_pipe);
-    print('Труба 3м: $big_pipes шт');
-  }
-
-  void get_pipe_connectors() {
-    final pipe_connectors =
-        ((downpipe_height * num_downpipe) / length_big_pipe).ceil() -
-            ((length_big_pipe * num_downpipe) / length_big_pipe).ceil();
-    print('Соединитель трубы: $pipe_connectors шт');
-  }
-
-  void get_small_pipes() {
-    final small_pipes = num_downpipe;
-    print('Труба 1м: $small_pipes шт');
-  }
-
-  void get_tips() {
-    final tips = num_downpipe;
-    print('Отмёт: $tips шт');
-  }
-
-  void get_pipe_holders() {
-    final pipe_holders =
-        (((downpipe_height * num_downpipe) / pipe_holder_pitch) + num_downpipe)
-            .ceil();
-    print('Держатель трубы: $pipe_holders шт');
-  }
-
-  void get_pins() {
-    final pins =
-        (((downpipe_height * num_downpipe) / pipe_holder_pitch) + num_downpipe)
-            .ceil();
-    print('Штырь (держателя трубы): $pins шт');
-  }
-}
+import 'drainage_cornice.dart';
 
 void main() {
   var listGutters = [];
+
   var cornice_one = DrainageCornice(10.0, 3.0, 2);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_one (первый
@@ -118,7 +13,7 @@ void main() {
   */
   if (cornice_one.cornice_length > 0.0) {
     cornice_one.get_gutters();
-    listGutters.add(cornice_one.get_gutters);
+    listGutters.add(cornice_one);
     cornice_one.get_gutter_connectors();
     cornice_one.get_plugs();
     cornice_one.get_gutter_holders();
@@ -146,7 +41,7 @@ void main() {
   */
   if (cornice_two.cornice_length > 0.0) {
     cornice_two.get_gutters();
-    listGutters.add(cornice_two.get_gutters);
+    listGutters.add(cornice_two);
     cornice_two.get_gutter_connectors();
     cornice_two.get_plugs();
     cornice_two.get_gutter_holders();
@@ -172,7 +67,7 @@ void main() {
   */
   if (cornice_three.cornice_length > 0.0) {
     cornice_three.get_gutters();
-    listGutters.add(cornice_three.get_gutters);
+    listGutters.add(cornice_three);
     cornice_three.get_gutter_connectors();
     cornice_three.get_plugs();
     cornice_three.get_gutter_holders();
@@ -198,7 +93,7 @@ void main() {
   */
   if (cornice_four.cornice_length > 0.0) {
     cornice_four.get_gutters();
-    listGutters.add(cornice_four.get_gutters);
+    listGutters.add(cornice_four);
     cornice_four.get_gutter_connectors();
     cornice_four.get_plugs();
     cornice_four.get_gutter_holders();
@@ -224,7 +119,7 @@ void main() {
   */
   if (cornice_five.cornice_length > 0.0) {
     cornice_five.get_gutters();
-    listGutters.add(cornice_five.get_gutters);
+    listGutters.add(cornice_five);
     cornice_five.get_gutter_connectors();
     cornice_five.get_plugs();
     cornice_five.get_gutter_holders();
@@ -250,7 +145,7 @@ void main() {
   */
   if (cornice_six.cornice_length > 0.0) {
     cornice_six.get_gutters();
-    listGutters.add(cornice_six.get_gutters);
+    listGutters.add(cornice_six);
     cornice_six.get_gutter_connectors();
     cornice_six.get_plugs();
     cornice_six.get_gutter_holders();
@@ -266,9 +161,8 @@ void main() {
     print('');
   } else {}
 
-  for (dynamic element in listGutters) {
-    print(element);
-  }
-  // listGutters.reduce((value, element) => value += element);
-  print(listGutters.first.runtimeType);
+  print('Количество карнизов: ${listGutters.length} шт');
+  // print(
+  //     'Количество карнизов: ${listGutters.reduce((value, element) => element += element).toDouble()} шт');
+  // cornice_one.get_gutters();
 }
