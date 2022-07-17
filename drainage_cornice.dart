@@ -8,7 +8,7 @@ class DrainageCornice {
   double gutter_holder_pitch = 0.5;
   double pipe_holder_pitch = 1.25;
   int num_cornice = 1;
-  int gutter_angle = 0;
+  int gutter_angle = 2;
 
   DrainageCornice(
     this.cornice_length,
@@ -28,80 +28,77 @@ class DrainageCornice {
     return gutter_connectors;
   }
 
-  void get_plugs() {
+  get_plugs() {
     if (gutter_angle == 0) {
-      final plugs = num_cornice * 2;
-      print('Заглушка желоба: $plugs шт');
+      int plugs = num_cornice * 2;
+      return plugs;
     } else if (gutter_angle == 1) {
-      final plugs = num_cornice;
-      print('Заглушка желоба: $plugs шт');
+      int plugs = num_cornice;
+      return plugs;
     } else if (gutter_angle == 2) {
-      final plugs = 0;
-      print('Заглушка желоба: $plugs шт');
+      int plugs = 0;
+      return plugs;
     } else {
-      return;
+      int plugs = 0;
+      return plugs;
     }
   }
 
-  void get_gutter_holders() {
-    final gutter_holders =
+  get_gutter_holders() {
+    int gutter_holders =
         (((cornice_length * num_cornice) / gutter_holder_pitch) + num_cornice)
             .ceil();
-    print('Держатель желоба: $gutter_holders шт');
+    return gutter_holders;
   }
 
-  void get_gutter_angles() {
-    if (gutter_angle == 0) {
-      return;
-    } else {
-      final gutter_angles = gutter_angle;
-      print('Угол желоба: $gutter_angles шт');
-    }
+  get_gutter_angles() {
+    int gutter_angles = gutter_angle;
+    return gutter_angles;
   }
 
-  void get_funnels() {
-    final funnels = num_downpipe;
-    print('Воронка: $funnels шт');
+  get_funnels() {
+    int funnels = num_downpipe;
+    return funnels;
   }
 
-  void get_elbows() {
-    final elbows = num_downpipe * 2;
-    print('Колено: $elbows шт');
+  get_elbows() {
+    int elbows = num_downpipe * 2;
+    return elbows;
   }
 
-  void get_big_pipes() {
+  get_bigs_pipes() {
     double big_pipes = ((downpipe_height * num_downpipe) / length_big_pipe);
-    print('Труба (3м): $big_pipes шт');
+    return big_pipes;
   }
 
-  void get_pipe_connectors() {
-    final pipe_connectors =
-        ((downpipe_height * num_downpipe) / length_big_pipe).ceil() -
-            ((length_big_pipe * num_downpipe) / length_big_pipe).ceil();
-    print('Соединитель трубы: $pipe_connectors шт');
+  get_pipe_connectors() {
+    int pipe_connectors =
+        ((downpipe_height / length_big_pipe).ceil() * num_downpipe) -
+            num_downpipe;
+    return pipe_connectors;
   }
 
-  void get_small_pipes() {
-    final small_pipes = num_downpipe;
-    print('Труба 1м: $small_pipes шт');
+  get_small_pipes() {
+    int small_pipes = num_downpipe;
+    return small_pipes;
   }
 
-  void get_tips() {
-    final tips = num_downpipe;
-    print('Отмёт: $tips шт');
+  get_tips() {
+    int tips = num_downpipe;
+    return tips;
   }
 
-  void get_pipe_holders() {
+  get_pipe_holders() {
     final pipe_holders =
         (((downpipe_height * num_downpipe) / pipe_holder_pitch) + num_downpipe)
             .ceil();
-    print('Держатель трубы: $pipe_holders шт');
+    return pipe_holders;
   }
 
-  void get_pins() {
-    final pins =
+  get_pins() {
+    int pins =
         (((downpipe_height * num_downpipe) / pipe_holder_pitch) + num_downpipe)
             .ceil();
-    print('Штырь (держателя трубы): $pins шт');
+    return pins;
   }
 }
