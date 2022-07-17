@@ -10,29 +10,6 @@ class DrainageCornice {
   int num_cornice = 1;
   int gutter_angle = 0;
 
-  sum_gutters() {
-    double sum_gutters = gutters;
-    print('Желоб: $sum_gutters шт');
-    dynamic listGutters;
-    for (dynamic gutters in listGutters) {
-      print(gutters);
-    }
-  }
-
-  double get gutters => gutters;
-  double get gutter_connectors => gutter_connectors;
-  double get plugs => plugs;
-  double get gutter_holders => gutter_holders;
-  double get gutter_angles => gutter_angles;
-  double get funnels => funnels;
-  double get elbows => elbows;
-  double get big_pipes => big_pipes;
-  double get pipe_connectors => pipe_connectors;
-  double get small_pipes => small_pipes;
-  double get tips => tips;
-  double get pipe_holders => pipe_holders;
-  double get pins => pins;
-
   DrainageCornice(
     this.cornice_length,
     this.downpipe_height,
@@ -41,14 +18,14 @@ class DrainageCornice {
 
   get_gutters() {
     double gutters = ((cornice_length * num_cornice) / length_gutter);
-    print('Желоб (3м): $gutters шт');
+    return gutters;
   }
 
   get_gutter_connectors() {
-    final gutter_connectors =
+    int gutter_connectors =
         (((cornice_length * num_cornice) / length_gutter).ceil()) -
             (num_cornice);
-    print('Соединитель желоба: $gutter_connectors шт');
+    return gutter_connectors;
   }
 
   void get_plugs() {
