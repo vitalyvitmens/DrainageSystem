@@ -8,7 +8,7 @@ class DrainageCornice {
   double gutter_holder_pitch = 0.5;
   double pipe_holder_pitch = 1.25;
   int num_cornice = 1;
-  int gutter_angle = 2;
+  int gutter_angle = 0;
 
   DrainageCornice(
     this.cornice_length,
