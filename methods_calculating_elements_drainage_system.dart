@@ -6,12 +6,19 @@ int sum_gutters() {
   return listGutters.reduce((value, element) => value += element);
 }
 
-final listGutterConnectors = <int>[];
-int sum_gutter_connectors() {
-  if (listGutterConnectors.isEmpty) {
+int sum_gutters_cost() {
+  if (listGutters.isEmpty) {
     return 0;
   }
-  return listGutterConnectors.reduce((value, element) => value += element);
+  return listGutters.reduce((value, element) => value += element);
+}
+
+final listGutterConnect = <int>[];
+int sum_gutter_connect() {
+  if (listGutterConnect.isEmpty) {
+    return 0;
+  }
+  return listGutterConnect.reduce((value, element) => value += element);
 }
 
 final listPlugs = <int>[];
@@ -62,12 +69,12 @@ int sum_bigs_pipes() {
   return listBigsPipes.reduce((value, element) => value += element);
 }
 
-final listPipeConnectors = <int>[];
-int sum_pipe_connectors() {
-  if (listPipeConnectors.isEmpty) {
+final listPipeConnect = <int>[];
+int sum_pipe_connect() {
+  if (listPipeConnect.isEmpty) {
     return 0;
   }
-  return listPipeConnectors.reduce((value, element) => value += element);
+  return listPipeConnect.reduce((value, element) => value += element);
 }
 
 final listSmallPipes = <int>[];
