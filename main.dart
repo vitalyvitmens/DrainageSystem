@@ -23,7 +23,7 @@ double pin_cost = 5.76;
 // }
 
 void main() {
-  var cornice_one = DrainageCornice(10.0, 30.0, 2);
+  var cornice_one = DrainageCornice(10.0, 10.0, 2);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_one (первый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -46,6 +46,8 @@ void main() {
   int pins1 = cornice_one.get_pins();
 
   if (cornice_one.cornice_length > 0.0) {
+    print(
+        '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
     print(
         'Желобов (3м):             ${gutters1} шт = ${(gutters1 * gutter_cost).toStringAsFixed(2)} руб');
     listGutters.add(gutters1);
@@ -113,6 +115,8 @@ void main() {
 
   if (cornice_two.cornice_length > 0.0) {
     print(
+        '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
+    print(
         'Желобов (3м):             ${gutters2} шт = ${(gutters2 * gutter_cost).toStringAsFixed(2)} руб');
     listGutters.add(gutters2);
     print(
@@ -178,6 +182,8 @@ void main() {
   int pins3 = cornice_three.get_pins();
 
   if (cornice_three.cornice_length > 0.0) {
+    print(
+        '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
     print(
         'Желобов (3м):             ${gutters3} шт = ${(gutters3 * gutter_cost).toStringAsFixed(2)} руб');
     listGutters.add(gutters3);
@@ -245,6 +251,8 @@ void main() {
 
   if (cornice_four.cornice_length > 0.0) {
     print(
+        '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
+    print(
         'Желобов (3м):             ${gutters4} шт = ${(gutters4 * gutter_cost).toStringAsFixed(2)} руб');
     listGutters.add(gutters4);
     print(
@@ -311,6 +319,8 @@ void main() {
 
   if (cornice_five.cornice_length > 0.0) {
     print(
+        '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
+    print(
         'Желобов (3м):             ${gutters5} шт = ${(gutters5 * gutter_cost).toStringAsFixed(2)} руб');
     listGutters.add(gutters5);
     print(
@@ -353,7 +363,7 @@ void main() {
     print('');
   } else {}
 
-  var cornice_six = DrainageCornice(33.0, 3.5, 3);
+  var cornice_six = DrainageCornice(35.0, 33.5, 12);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_six (шестой
   водосточный карниз), он принимает на вход следующие параметры:
@@ -376,6 +386,8 @@ void main() {
   int pins6 = cornice_six.get_pins();
 
   if (cornice_six.cornice_length > 0.0) {
+    print(
+        '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
     print(
         'Желобов (3м):             ${gutters6} шт = ${(gutters6 * gutter_cost).toStringAsFixed(2)} руб');
     listGutters.add(gutters6);
