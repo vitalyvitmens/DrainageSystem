@@ -14,7 +14,7 @@ double small_pipe_price = 10.02;
 double tip_price = 8.88;
 double pipe_holder_price = 3.84;
 double pin_price = 5.76;
-
+//TODO: Реализовать итоговый подсчет количества элементов и итоговую цену. Округлить цену до 2цифр после запятой при расчете покарнизно!
 void main() {
   var cornice_one = DrainageCornice(10.0, 10.0, 2);
   /*
