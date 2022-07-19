@@ -25,7 +25,7 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №1)
   */
   int gutters1 = cornice_one.get_gutters().ceil();
-  var gutters_cost1 = (gutters1 * gutter_cost).toStringAsFixed(2);
+  double gutters_cost1 = (gutters1 * gutter_cost);
   int gutter_connect1 = cornice_one.get_gutter_connectors();
   var gutter_connect_cost1 =
       (gutter_connect1 * gutter_connector_cost).toStringAsFixed(2);
@@ -59,6 +59,7 @@ void main() {
         '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
     print('Желобов (3м):       ${gutters1} шт = ${gutters_cost1} руб');
     listGutters.add(gutters1);
+    listGuttersCost.add(gutters_cost1);
     print(
         'Соединитель желоба: $gutter_connect1 шт = ${gutter_connect_cost1} руб');
     listGutterConnect.add(gutter_connect1);
@@ -100,7 +101,7 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №2)
   */
   int gutters2 = cornice_two.get_gutters().round();
-  var gutters_cost2 = (gutters2 * gutter_cost).toStringAsFixed(2);
+  double gutters_cost2 = (gutters2 * gutter_cost);
   int gutter_connect2 = cornice_two.get_gutter_connectors();
   var gutter_connect_cost2 =
       (gutter_connect2 * gutter_connector_cost).toStringAsFixed(2);
@@ -134,6 +135,7 @@ void main() {
         '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
     print('Желобов (3м):       ${gutters2} шт = ${gutters_cost2} руб');
     listGutters.add(gutters2);
+    listGuttersCost.add(gutters_cost2);
     print(
         'Соединитель желоба: $gutter_connect2 шт = ${gutter_connect_cost2} руб');
     listGutterConnect.add(gutter_connect2);
@@ -175,7 +177,7 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №3)
   */
   int gutters3 = cornice_three.get_gutters().ceil();
-  var gutters_cost3 = (gutters3 * gutter_cost).toStringAsFixed(2);
+  double gutters_cost3 = (gutters3 * gutter_cost);
   int gutter_connect3 = cornice_three.get_gutter_connectors();
   var gutter_connect_cost3 =
       (gutter_connect3 * gutter_connector_cost).toStringAsFixed(2);
@@ -209,6 +211,7 @@ void main() {
         '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
     print('Желобов (3м):       ${gutters3} шт = ${gutters_cost3} руб');
     listGutters.add(gutters3);
+    listGuttersCost.add(gutters_cost3);
     print(
         'Соединитель желоба: $gutter_connect3 шт = ${gutter_connect_cost3} руб');
     listGutterConnect.add(gutter_connect3);
@@ -250,7 +253,7 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №4)
   */
   int gutters4 = cornice_four.get_gutters().round();
-  var gutters_cost4 = (gutters4 * gutter_cost).toStringAsFixed(2);
+  double gutters_cost4 = (gutters4 * gutter_cost);
   int gutter_connect4 = cornice_four.get_gutter_connectors();
   var gutter_connect_cost4 =
       (gutter_connect4 * gutter_connector_cost).toStringAsFixed(2);
@@ -284,6 +287,7 @@ void main() {
         '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
     print('Желобов (3м):       ${gutters4} шт = ${gutters_cost4} руб');
     listGutters.add(gutters4);
+    listGuttersCost.add(gutters_cost4);
     print(
         'Соединитель желоба: $gutter_connect4 шт = ${gutter_connect_cost4} руб');
     listGutterConnect.add(gutter_connect4);
@@ -325,7 +329,7 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №5)
   */
   int gutters5 = cornice_five.get_gutters().ceil();
-  var gutters_cost5 = (gutters5 * gutter_cost).toStringAsFixed(2);
+  double gutters_cost5 = (gutters5 * gutter_cost);
   int gutter_connect5 = cornice_five.get_gutter_connectors();
   var gutter_connect_cost5 =
       (gutter_connect5 * gutter_connector_cost).toStringAsFixed(2);
@@ -359,6 +363,7 @@ void main() {
         '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
     print('Желобов (3м):       ${gutters5} шт = ${gutters_cost5} руб');
     listGutters.add(gutters5);
+    listGuttersCost.add(gutters_cost5);
     print(
         'Соединитель желоба: $gutter_connect5 шт = ${gutter_connect_cost5} руб');
     listGutterConnect.add(gutter_connect5);
@@ -400,7 +405,7 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №6)
   */
   int gutters6 = cornice_six.get_gutters().round();
-  var gutters_cost6 = (gutters6 * gutter_cost).toStringAsFixed(2);
+  double gutters_cost6 = (gutters6 * gutter_cost);
   int gutter_connect6 = cornice_six.get_gutter_connectors();
   var gutter_connect_cost6 =
       (gutter_connect6 * gutter_connector_cost).toStringAsFixed(2);
@@ -434,6 +439,7 @@ void main() {
         '${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters.length + 1}:');
     print('Желобов (3м):       ${gutters6} шт = ${gutters_cost6} руб');
     listGutters.add(gutters6);
+    listGuttersCost.add(gutters_cost6);
     print(
         'Соединитель желоба: $gutter_connect6 шт = ${gutter_connect_cost6} руб');
     listGutterConnect.add(gutter_connect6);
@@ -467,7 +473,8 @@ void main() {
   } else {}
 
   print('КОЛИЧЕСТВО КАРНИЗОВ:      ${listGutters.length} шт');
-  print('Итого желоб (3м):         ${sum_gutters()} шт');
+  print(
+      'Итого желоб (3м):         ${sum_gutters()} шт = ${sum_gutters_cost()} руб');
   print('Итого соединитель желоба: ${sum_gutter_connect()} шт');
   if (sum_plugs() == 0) {
   } else {

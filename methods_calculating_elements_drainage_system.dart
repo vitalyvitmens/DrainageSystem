@@ -6,11 +6,12 @@ int sum_gutters() {
   return listGutters.reduce((value, element) => value += element);
 }
 
-int sum_gutters_cost() {
-  if (listGutters.isEmpty) {
+final listGuttersCost = <double>[];
+double sum_gutters_cost() {
+  if (listGuttersCost.isEmpty) {
     return 0;
   }
-  return listGutters.reduce((value, element) => value += element);
+  return listGuttersCost.reduce((value, element) => value += element);
 }
 
 final listGutterConnect = <int>[];
