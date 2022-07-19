@@ -7,7 +7,7 @@ class DrainageCornice {
   final int length_small_pipe = 1;
   double gutter_holder_pitch = 0.5;
   double pipe_holder_pitch = 1.25;
-  int num_cornice = 1;
+  // int num_cornice = 1;
   int gutter_angle = 0;
 
   DrainageCornice(
@@ -17,23 +17,21 @@ class DrainageCornice {
   );
 
   get_gutters() {
-    double gutters = ((cornice_length * num_cornice) / length_gutter);
+    double gutters = cornice_length / length_gutter;
     return gutters;
   }
 
   get_gutter_connectors() {
-    int gutter_connectors =
-        (((cornice_length * num_cornice) / length_gutter).ceil()) -
-            (num_cornice);
+    int gutter_connectors = (cornice_length / length_gutter).ceil() - 1;
     return gutter_connectors;
   }
 
   get_plugs() {
     if (gutter_angle == 0) {
-      int plugs = num_cornice * 2;
+      int plugs = 2;
       return plugs;
     } else if (gutter_angle == 1) {
-      int plugs = num_cornice;
+      int plugs = 1;
       return plugs;
     } else if (gutter_angle == 2) {
       int plugs = 0;
@@ -45,9 +43,7 @@ class DrainageCornice {
   }
 
   get_gutter_holders() {
-    int gutter_holders =
-        (((cornice_length * num_cornice) / gutter_holder_pitch) + num_cornice)
-            .ceil();
+    int gutter_holders = (cornice_length / gutter_holder_pitch).ceil() + 1;
     return gutter_holders;
   }
 
