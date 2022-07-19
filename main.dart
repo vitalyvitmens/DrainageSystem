@@ -1,5 +1,6 @@
 import 'drainage_cornice.dart';
-import 'methods_calculating_elements_drainage_system.dart';
+import 'methods_calculating_elements_drainage.dart';
+import 'methods_cost_calculation_elements_drainage.dart';
 
 double gutter_price = 21.12;
 double gutter_connector_price = 8.28;
@@ -14,7 +15,7 @@ double small_pipe_price = 10.02;
 double tip_price = 8.88;
 double pipe_holder_price = 3.84;
 double pin_price = 5.76;
-//TODO: Реализовать итоговый подсчет количества элементов и итоговую цену. Округлить цену до 2цифр после запятой при расчете покарнизно!
+//TODO: разберись с округлением до 2 цифр после запятой при расчете покарнизной стоимости элементов
 void main() {
   var cornice_one = DrainageCornice(10.0, 10.0, 2);
   /*
@@ -528,42 +529,65 @@ void main() {
   } else {}
 
   print('КОЛИЧЕСТВО КАРНИЗОВ:      ${listGutters.length} шт\n');
-  print('ИТОГО:');
+  print('СУММАРНОЕ КОЛИЧЕСТВО ЭЛЕМЕНТОВ СО ВСЕХ КАРНИЗОВ:');
   print(
       'Желоб (L=3000мм):   ${sum_gutters()} шт = ${sum_gutters_cost().toStringAsFixed(2)} руб');
+  listElements.add(sum_gutters());
+  listCosts.add(sum_gutters_cost());
   print(
       'Соединитель желоба: ${sum_gutter_connect()} шт = ${sum_gutters_connect_cost().toStringAsFixed(2)} руб');
+  listElements.add(sum_gutter_connect());
+  listCosts.add(sum_gutters_connect_cost());
   if (sum_plugs() == 0) {
   } else {
     print(
         'Заглушка желоба:    ${sum_plugs()} шт = ${sum_plugs_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_plugs());
+    listCosts.add(sum_plugs_cost());
   }
   print(
       'Держатель желоба:   ${sum_gutter_holders()} шт = ${sum_gutter_holders_cost().toStringAsFixed(2)} руб');
+  listElements.add(sum_gutter_holders());
+  listCosts.add(sum_gutter_holders_cost());
   if (sum_gutter_angles() == 0) {
   } else {
     print(
         'Угол желоба:        ${sum_gutter_angles()} шт = ${sum_gutter_angles_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_gutter_angles());
+    listCosts.add(sum_gutter_angles_cost());
   }
   print(
       'Воронка:            ${sum_funnels()} шт = ${sum_funnels_cost().toStringAsFixed(2)} руб');
+  listElements.add(sum_funnels());
+  listCosts.add(sum_funnels_cost());
   print(
       'Колено:             ${sum_elbows()} шт = ${sum_elbows_cost().toStringAsFixed(2)} руб');
+  listElements.add(sum_elbows());
+  listCosts.add(sum_elbows_cost());
   print(
       'Труба (L=3000мм):   ${sum_bigs_pipes()} шт = ${sum_bigs_pipes_cost().toStringAsFixed(2)} руб');
+  listElements.add(sum_bigs_pipes());
+  listCosts.add(sum_bigs_pipes_cost());
   print(
       'Соединитель трубы:  ${sum_pipe_connect()} шт = ${sum_pipe_connect_cost().toStringAsFixed(2)} руб');
+  listElements.add(sum_pipe_connect());
+  listCosts.add(sum_pipe_connect_cost());
   print(
       'Труба (L=1000мм):   ${sum_small_pipes()} шт = ${sum_small_pipes_cost().toStringAsFixed(2)} руб');
+  listElements.add(sum_small_pipes());
+  listCosts.add(sum_small_pipes_cost());
   print(
       'Отмёт:              ${sum_tips()} шт = ${sum_tips_cost().toStringAsFixed(2)} руб');
+  listElements.add(sum_tips());
+  listCosts.add(sum_tips_cost());
   print(
       'Держатель трубы:    ${sum_pipe_holders()} шт = ${sum_pipe_holders_cost().toStringAsFixed(2)} руб');
+  listElements.add(sum_pipe_holders());
+  listCosts.add(sum_pipe_holders_cost());
   print(
       'Штырь:              ${sum_pins()} шт = ${sum_pins_cost().toStringAsFixed(2)} руб');
-
-  // print(listPlugs.length);
-  // print(listPlugs.length.runtimeType);
-  // print(listPlugs.first);
-  // print(listPlugs.first.runtimeType);
+  listElements.add(sum_pins());
+  listCosts.add(sum_pins_cost());
+  print(
+      'ИТОГО:              ${sum_elements()} шт = ${sum_costs().toStringAsFixed(2)} руб');
 }
