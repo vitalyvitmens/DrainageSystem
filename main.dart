@@ -17,7 +17,7 @@ double pipe_holder_price = 3.84;
 double pin_price = 5.76;
 //TODO: разберись с округлением до 2 цифр после запятой при расчете покарнизной стоимости элементов
 void main() {
-  var cornice_one = DrainageCornice(10.0, 10.0, 2);
+  var cornice_one = DrainageCornice(12.0, 1.50, 2);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_one (первый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -26,20 +26,20 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №1)
   */
   int gutters1 = cornice_one.get_gutters().ceil();
-  double gutters_cost1 = (gutters1 * gutter_price).roundToDouble();
+  double gutters_cost1 = (gutters1 * gutter_price);
   int gutter_connect1 = cornice_one.get_gutter_connectors();
   double gutter_connect_cost1 = (gutter_connect1 * gutter_connector_price);
   int plugs1 = cornice_one.get_plugs();
   double plug_cost1 = (plugs1 * plug_price);
   int gutter_holders1 = cornice_one.get_gutter_holders();
   double gutter_holder_cost1 = (gutter_holders1 * gutter_holder_price);
-  int gutter_angles1 = cornice_one.get_gutter_angles().ceil();
+  int gutter_angles1 = cornice_one.get_gutter_angles();
   double gutter_angles_cost1 = (gutter_angles1 * gutter_angle_price);
   int funnels1 = cornice_one.get_funnels();
   double funnels_cost1 = (funnels1 * funnel_price);
   int elbows1 = cornice_one.get_elbows();
   double elbows_cost1 = (elbows1 * elbow_price);
-  int bigs_pipes1 = cornice_one.get_bigs_pipes().ceil();
+  int bigs_pipes1 = cornice_one.get_bigs_pipes();
   double bigs_pipes_cost1 = (bigs_pipes1 * big_pipe_price);
   int pipe_connect1 = cornice_one.get_pipe_connectors();
   double pipe_connect_cost1 = (pipe_connect1 * pipe_connector_price);
@@ -75,6 +75,9 @@ void main() {
     listGutterHoldersCost.add(gutter_holder_cost1);
     listGutterAngles.add(gutter_angles1);
     listGutterAnglesCost.add(gutter_angles_cost1);
+  } else {}
+
+  if (cornice_one.num_downpipe > 0) {
     print('Воронка:            $funnels1 шт = ${funnels_cost1} руб');
     listFunnels.add(funnels1);
     listFunnelsCost.add(funnels_cost1);
@@ -103,7 +106,7 @@ void main() {
     print('');
   } else {}
 
-  var cornice_two = DrainageCornice(15.0, 5.0, 3);
+  var cornice_two = DrainageCornice(12.0, 5.0, 3);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_two (второй
   водосточный карниз), он принимает на вход следующие параметры:
@@ -111,7 +114,7 @@ void main() {
   - double downpipe_height (высота от карниза №2 до земли в метрах)
   - int num_downpipe (количество водосточных стояков на карнизе №2)
   */
-  int gutters2 = cornice_two.get_gutters().round();
+  int gutters2 = cornice_two.get_gutters().ceil();
   double gutters_cost2 = (gutters2 * gutter_price);
   int gutter_connect2 = cornice_two.get_gutter_connectors();
   double gutter_connect_cost2 = (gutter_connect2 * gutter_connector_price);
@@ -119,13 +122,13 @@ void main() {
   double plug_cost2 = (plugs2 * plug_price);
   int gutter_holders2 = cornice_two.get_gutter_holders();
   double gutter_holder_cost2 = (gutter_holders2 * gutter_holder_price);
-  int gutter_angles2 = cornice_two.get_gutter_angles().ceil();
+  int gutter_angles2 = cornice_two.get_gutter_angles();
   double gutter_angles_cost2 = (gutter_angles2 * gutter_angle_price);
   int funnels2 = cornice_two.get_funnels();
   double funnels_cost2 = (funnels2 * funnel_price);
   int elbows2 = cornice_two.get_elbows();
   double elbows_cost2 = (elbows2 * elbow_price);
-  int bigs_pipes2 = cornice_two.get_bigs_pipes().ceil();
+  int bigs_pipes2 = cornice_two.get_bigs_pipes();
   double bigs_pipes_cost2 = (bigs_pipes2 * big_pipe_price);
   int pipe_connect2 = cornice_two.get_pipe_connectors();
   double pipe_connect_cost2 = (pipe_connect2 * pipe_connector_price);
@@ -160,6 +163,9 @@ void main() {
     listGutterHoldersCost.add(gutter_holder_cost2);
     listGutterAngles.add(gutter_angles2);
     listGutterAnglesCost.add(gutter_angles_cost2);
+  } else {}
+
+  if (cornice_two.num_downpipe > 0) {
     print('Воронка:            $funnels2 шт = ${funnels_cost2} руб');
     listFunnels.add(funnels2);
     listFunnelsCost.add(funnels_cost2);
@@ -188,7 +194,7 @@ void main() {
     print('');
   } else {}
 
-  var cornice_three = DrainageCornice(20.0, 7.0, 4);
+  var cornice_three = DrainageCornice(6.0, 2.3, 1);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_three (третий
   водосточный карниз), он принимает на вход следующие параметры:
@@ -204,13 +210,13 @@ void main() {
   double plug_cost3 = (plugs3 * plug_price);
   int gutter_holders3 = cornice_three.get_gutter_holders();
   double gutter_holder_cost3 = (gutter_holders3 * gutter_holder_price);
-  int gutter_angles3 = cornice_three.get_gutter_angles().ceil();
+  int gutter_angles3 = cornice_three.get_gutter_angles();
   double gutter_angles_cost3 = (gutter_angles3 * gutter_angle_price);
   int funnels3 = cornice_three.get_funnels();
   double funnels_cost3 = (funnels3 * funnel_price);
   int elbows3 = cornice_three.get_elbows();
   double elbows_cost3 = (elbows3 * elbow_price);
-  int bigs_pipes3 = cornice_three.get_bigs_pipes().ceil();
+  int bigs_pipes3 = cornice_three.get_bigs_pipes();
   double bigs_pipes_cost3 = (bigs_pipes3 * big_pipe_price);
   int pipe_connect3 = cornice_three.get_pipe_connectors();
   double pipe_connect_cost3 = (pipe_connect3 * pipe_connector_price);
@@ -245,6 +251,9 @@ void main() {
     listGutterHoldersCost.add(gutter_holder_cost3);
     listGutterAngles.add(gutter_angles3);
     listGutterAnglesCost.add(gutter_angles_cost3);
+  } else {}
+
+  if (cornice_three.num_downpipe > 0) {
     print('Воронка:            $funnels3 шт = ${funnels_cost3} руб');
     listFunnels.add(funnels3);
     listFunnelsCost.add(funnels_cost3);
@@ -273,7 +282,7 @@ void main() {
     print('');
   } else {}
 
-  var cornice_four = DrainageCornice(25.0, 9.0, 7);
+  var cornice_four = DrainageCornice(8.0, 2.5, 2);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_four (четвёртый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -289,13 +298,13 @@ void main() {
   double plug_cost4 = (plugs4 * plug_price);
   int gutter_holders4 = cornice_four.get_gutter_holders();
   double gutter_holder_cost4 = (gutter_holders4 * gutter_holder_price);
-  int gutter_angles4 = cornice_four.get_gutter_angles().ceil();
+  int gutter_angles4 = cornice_four.get_gutter_angles();
   double gutter_angles_cost4 = (gutter_angles4 * gutter_angle_price);
   int funnels4 = cornice_four.get_funnels();
   double funnels_cost4 = (funnels4 * funnel_price);
   int elbows4 = cornice_four.get_elbows();
   double elbows_cost4 = (elbows4 * elbow_price);
-  int bigs_pipes4 = cornice_four.get_bigs_pipes().ceil();
+  int bigs_pipes4 = cornice_four.get_bigs_pipes();
   double bigs_pipes_cost4 = (bigs_pipes4 * big_pipe_price);
   int pipe_connect4 = cornice_four.get_pipe_connectors();
   double pipe_connect_cost4 = (pipe_connect4 * pipe_connector_price);
@@ -330,6 +339,9 @@ void main() {
     listGutterHoldersCost.add(gutter_holder_cost4);
     listGutterAngles.add(gutter_angles4);
     listGutterAnglesCost.add(gutter_angles_cost4);
+  } else {}
+
+  if (cornice_four.num_downpipe > 0) {
     print('Воронка:            $funnels4 шт = ${funnels_cost4} руб');
     listFunnels.add(funnels4);
     listFunnelsCost.add(funnels_cost4);
@@ -358,7 +370,7 @@ void main() {
     print('');
   } else {}
 
-  var cornice_five = DrainageCornice(30.0, 11.0, 11);
+  var cornice_five = DrainageCornice(10.0, 4.0, 2);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_five (пятый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -374,13 +386,13 @@ void main() {
   double plug_cost5 = (plugs5 * plug_price);
   int gutter_holders5 = cornice_five.get_gutter_holders();
   double gutter_holder_cost5 = (gutter_holders5 * gutter_holder_price);
-  int gutter_angles5 = cornice_five.get_gutter_angles().ceil();
+  int gutter_angles5 = cornice_five.get_gutter_angles();
   double gutter_angles_cost5 = (gutter_angles5 * gutter_angle_price);
   int funnels5 = cornice_five.get_funnels();
   double funnels_cost5 = (funnels5 * funnel_price);
   int elbows5 = cornice_five.get_elbows();
   double elbows_cost5 = (elbows5 * elbow_price);
-  int bigs_pipes5 = cornice_five.get_bigs_pipes().ceil();
+  int bigs_pipes5 = cornice_five.get_bigs_pipes();
   double bigs_pipes_cost5 = (bigs_pipes5 * big_pipe_price);
   int pipe_connect5 = cornice_five.get_pipe_connectors();
   double pipe_connect_cost5 = (pipe_connect5 * pipe_connector_price);
@@ -415,6 +427,9 @@ void main() {
     listGutterHoldersCost.add(gutter_holder_cost5);
     listGutterAngles.add(gutter_angles5);
     listGutterAnglesCost.add(gutter_angles_cost5);
+  } else {}
+
+  if (cornice_five.num_downpipe > 0) {
     print('Воронка:            $funnels5 шт = ${funnels_cost5} руб');
     listFunnels.add(funnels5);
     listFunnelsCost.add(funnels_cost5);
@@ -443,7 +458,7 @@ void main() {
     print('');
   } else {}
 
-  var cornice_six = DrainageCornice(35.0, 33.5, 12);
+  var cornice_six = DrainageCornice(16.0, 3.5, 4);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_six (шестой
   водосточный карниз), он принимает на вход следующие параметры:
@@ -459,13 +474,13 @@ void main() {
   double plug_cost6 = (plugs6 * plug_price);
   int gutter_holders6 = cornice_six.get_gutter_holders();
   double gutter_holder_cost6 = (gutter_holders6 * gutter_holder_price);
-  int gutter_angles6 = cornice_six.get_gutter_angles().ceil();
+  int gutter_angles6 = cornice_six.get_gutter_angles();
   double gutter_angles_cost6 = (gutter_angles6 * gutter_angle_price);
   int funnels6 = cornice_six.get_funnels();
   double funnels_cost6 = (funnels6 * funnel_price);
   int elbows6 = cornice_six.get_elbows();
   double elbows_cost6 = (elbows6 * elbow_price);
-  int bigs_pipes6 = cornice_six.get_bigs_pipes().ceil();
+  int bigs_pipes6 = cornice_six.get_bigs_pipes();
   double bigs_pipes_cost6 = (bigs_pipes6 * big_pipe_price);
   int pipe_connect6 = cornice_six.get_pipe_connectors();
   double pipe_connect_cost6 = (pipe_connect6 * pipe_connector_price);
@@ -500,6 +515,9 @@ void main() {
     listGutterHoldersCost.add(gutter_holder_cost6);
     listGutterAngles.add(gutter_angles6);
     listGutterAnglesCost.add(gutter_angles_cost6);
+  } else {}
+
+  if (cornice_six.num_downpipe > 0) {
     print('Воронка:            $funnels6 шт = ${funnels_cost6} руб');
     listFunnels.add(funnels6);
     listFunnelsCost.add(funnels_cost6);
@@ -528,66 +546,86 @@ void main() {
     print('');
   } else {}
 
-  print('КОЛИЧЕСТВО КАРНИЗОВ:      ${listGutters.length} шт\n');
+  print('\nКОЛИЧЕСТВО КАРНИЗОВ:      ${listGutters.length} шт\n');
   print('СУММАРНОЕ КОЛИЧЕСТВО ЭЛЕМЕНТОВ СО ВСЕХ КАРНИЗОВ:');
-  print(
-      'Желоб (L=3000мм):   ${sum_gutters()} шт = ${sum_gutters_cost().toStringAsFixed(2)} руб');
-  listElements.add(sum_gutters());
-  listCosts.add(sum_gutters_cost());
-  print(
-      'Соединитель желоба: ${sum_gutter_connect()} шт = ${sum_gutters_connect_cost().toStringAsFixed(2)} руб');
-  listElements.add(sum_gutter_connect());
-  listCosts.add(sum_gutters_connect_cost());
-  if (sum_plugs() == 0) {
-  } else {
+  if (sum_gutters() > 0) {
+    print(
+        'Желоб (L=3000мм):   ${sum_gutters()} шт = ${sum_gutters_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_gutters());
+    listCosts.add(sum_gutters_cost());
+  } else {}
+  if (sum_gutter_connect() > 0) {
+    print(
+        'Соединитель желоба: ${sum_gutter_connect()} шт = ${sum_gutters_connect_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_gutter_connect());
+    listCosts.add(sum_gutters_connect_cost());
+  } else {}
+  if (sum_plugs() > 0) {
     print(
         'Заглушка желоба:    ${sum_plugs()} шт = ${sum_plugs_cost().toStringAsFixed(2)} руб');
     listElements.add(sum_plugs());
     listCosts.add(sum_plugs_cost());
-  }
-  print(
-      'Держатель желоба:   ${sum_gutter_holders()} шт = ${sum_gutter_holders_cost().toStringAsFixed(2)} руб');
-  listElements.add(sum_gutter_holders());
-  listCosts.add(sum_gutter_holders_cost());
-  if (sum_gutter_angles() == 0) {
-  } else {
+  } else {}
+  if (sum_gutter_holders() > 0) {
+    print(
+        'Держатель желоба:   ${sum_gutter_holders()} шт = ${sum_gutter_holders_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_gutter_holders());
+    listCosts.add(sum_gutter_holders_cost());
+  } else {}
+  if (sum_gutter_angles() > 0) {
     print(
         'Угол желоба:        ${sum_gutter_angles()} шт = ${sum_gutter_angles_cost().toStringAsFixed(2)} руб');
     listElements.add(sum_gutter_angles());
     listCosts.add(sum_gutter_angles_cost());
+  } else {}
+  if (sum_funnels() > 0) {
+    print(
+        'Воронка:            ${sum_funnels()} шт = ${sum_funnels_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_funnels());
+    listCosts.add(sum_funnels_cost());
+  } else {}
+  if (sum_elbows() > 0) {
+    print(
+        'Колено:             ${sum_elbows()} шт = ${sum_elbows_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_elbows());
+    listCosts.add(sum_elbows_cost());
+  } else {}
+  if (sum_bigs_pipes() > 0) {
+    print(
+        'Труба (L=3000мм):   ${sum_bigs_pipes()} шт = ${sum_bigs_pipes_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_bigs_pipes());
+    listCosts.add(sum_bigs_pipes_cost());
+  } else {}
+  if (sum_pipe_connect() > 0) {
+    print(
+        'Соединитель трубы:  ${sum_pipe_connect()} шт = ${sum_pipe_connect_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_pipe_connect());
+    listCosts.add(sum_pipe_connect_cost());
+  } else {}
+  if (sum_small_pipes() > 0) {
+    print(
+        'Труба (L=1000мм):   ${sum_small_pipes()} шт = ${sum_small_pipes_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_small_pipes());
+    listCosts.add(sum_small_pipes_cost());
+  } else {}
+  if (sum_tips() > 0) {
+    print(
+        'Отмёт:              ${sum_tips()} шт = ${sum_tips_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_tips());
+    listCosts.add(sum_tips_cost());
+  } else {}
+  if (sum_pipe_holders() > 0) {
+    print(
+        'Держатель трубы:    ${sum_pipe_holders()} шт = ${sum_pipe_holders_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_pipe_holders());
+    listCosts.add(sum_pipe_holders_cost());
   }
+  if (sum_pins() > 0) {
+    print(
+        'Штырь:              ${sum_pins()} шт = ${sum_pins_cost().toStringAsFixed(2)} руб');
+    listElements.add(sum_pins());
+    listCosts.add(sum_pins_cost());
+  } else {}
   print(
-      'Воронка:            ${sum_funnels()} шт = ${sum_funnels_cost().toStringAsFixed(2)} руб');
-  listElements.add(sum_funnels());
-  listCosts.add(sum_funnels_cost());
-  print(
-      'Колено:             ${sum_elbows()} шт = ${sum_elbows_cost().toStringAsFixed(2)} руб');
-  listElements.add(sum_elbows());
-  listCosts.add(sum_elbows_cost());
-  print(
-      'Труба (L=3000мм):   ${sum_bigs_pipes()} шт = ${sum_bigs_pipes_cost().toStringAsFixed(2)} руб');
-  listElements.add(sum_bigs_pipes());
-  listCosts.add(sum_bigs_pipes_cost());
-  print(
-      'Соединитель трубы:  ${sum_pipe_connect()} шт = ${sum_pipe_connect_cost().toStringAsFixed(2)} руб');
-  listElements.add(sum_pipe_connect());
-  listCosts.add(sum_pipe_connect_cost());
-  print(
-      'Труба (L=1000мм):   ${sum_small_pipes()} шт = ${sum_small_pipes_cost().toStringAsFixed(2)} руб');
-  listElements.add(sum_small_pipes());
-  listCosts.add(sum_small_pipes_cost());
-  print(
-      'Отмёт:              ${sum_tips()} шт = ${sum_tips_cost().toStringAsFixed(2)} руб');
-  listElements.add(sum_tips());
-  listCosts.add(sum_tips_cost());
-  print(
-      'Держатель трубы:    ${sum_pipe_holders()} шт = ${sum_pipe_holders_cost().toStringAsFixed(2)} руб');
-  listElements.add(sum_pipe_holders());
-  listCosts.add(sum_pipe_holders_cost());
-  print(
-      'Штырь:              ${sum_pins()} шт = ${sum_pins_cost().toStringAsFixed(2)} руб');
-  listElements.add(sum_pins());
-  listCosts.add(sum_pins_cost());
-  print(
-      'ИТОГО:              ${sum_elements()} шт = ${sum_costs().toStringAsFixed(2)} руб');
+      '\nИТОГО:              ${sum_elements()} шт = ${sum_costs().toStringAsFixed(2)} руб');
 }

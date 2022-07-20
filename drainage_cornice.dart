@@ -63,8 +63,40 @@ class DrainageCornice {
   }
 
   get_bigs_pipes() {
-    double big_pipes = ((downpipe_height * num_downpipe) / length_big_pipe);
-    return big_pipes;
+    double one_downpipe = downpipe_height / length_big_pipe;
+    if (num_downpipe <= 0) {
+      int big_pipes = 0;
+      return big_pipes;
+    }
+    if (num_downpipe == 1) {
+      int big_pipes = (one_downpipe).ceil();
+      return big_pipes;
+    }
+    if (num_downpipe == 2) {
+      int big_pipes = ((one_downpipe).ceil() +
+              (one_downpipe - (one_downpipe * 0.001)).round())
+          .ceil();
+      return big_pipes;
+    }
+    if (num_downpipe == 3) {
+      int big_pipes = ((one_downpipe).ceil() +
+              (one_downpipe - (one_downpipe * 0.001)).round() +
+              (one_downpipe).ceil())
+          .ceil();
+      return big_pipes;
+    }
+    if (num_downpipe == 4) {
+      int big_pipes = ((one_downpipe).ceil() +
+              (one_downpipe - (one_downpipe * 0.001)).round() +
+              (one_downpipe).ceil() +
+              (one_downpipe - (one_downpipe * 0.001)).round())
+          .ceil();
+      return big_pipes;
+    }
+    if (num_downpipe >= 5) {
+      int big_pipes = (one_downpipe).ceil();
+      return big_pipes;
+    }
   }
 
   get_pipe_connectors() {
