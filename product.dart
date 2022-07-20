@@ -14,6 +14,11 @@ List<ProductGutter> products = [
 ];
 
 void main() {
+  var mylist = [6, 7, 9, 8];
+  mylist.forEach((e) {
+    print('Желобов: $e шт = ${e.toStringAsFixed(2)} руб');
+  });
+
   var sum = products.map((product) => product.price).reduce((v, e) => v + e);
   print("$sum");
 }
