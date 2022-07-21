@@ -1,20 +1,7 @@
 import 'drainage_cornice.dart';
 import 'methods_calculating_elements_drainage.dart';
 import 'methods_cost_calculation_elements_drainage.dart';
-
-double gutter_price = 21.12;
-double gutter_connector_price = 8.28;
-double plug_price = 3.96;
-double gutter_holder_price = 2.94;
-double gutter_angle_price = 13.62;
-double funnel_price = 14.82;
-double elbow_price = 9.36;
-double big_pipe_price = 25.62;
-double pipe_connector_price = 4.92;
-double small_pipe_price = 10.02;
-double tip_price = 8.88;
-double pipe_holder_price = 3.84;
-double pin_price = 5.76;
+import 'price.dart';
 
 void main() {
   var cornice_one = DrainageCornice(12.011, 1.501, 2);
@@ -26,31 +13,32 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №1)
   */
   int gutters1 = cornice_one.get_gutters().ceil();
-  double gutters_cost1 = (gutters1 * gutter_price);
+  double gutters_cost1 = (gutters1 * Price().gutter_price);
   int gutter_connect1 = cornice_one.get_gutter_connectors();
-  double gutter_connect_cost1 = (gutter_connect1 * gutter_connector_price);
+  double gutter_connect_cost1 =
+      (gutter_connect1 * Price().gutter_connector_price);
   int plugs1 = cornice_one.get_plugs();
-  double plug_cost1 = (plugs1 * plug_price);
+  double plug_cost1 = (plugs1 * Price().plug_price);
   int gutter_holders1 = cornice_one.get_gutter_holders();
-  double gutter_holder_cost1 = (gutter_holders1 * gutter_holder_price);
+  double gutter_holder_cost1 = (gutter_holders1 * Price().gutter_holder_price);
   int gutter_angles1 = cornice_one.get_gutter_angles();
-  double gutter_angles_cost1 = (gutter_angles1 * gutter_angle_price);
+  double gutter_angles_cost1 = (gutter_angles1 * Price().gutter_angle_price);
   int funnels1 = cornice_one.get_funnels();
-  double funnels_cost1 = (funnels1 * funnel_price);
+  double funnels_cost1 = (funnels1 * Price().funnel_price);
   int elbows1 = cornice_one.get_elbows();
-  double elbows_cost1 = (elbows1 * elbow_price);
+  double elbows_cost1 = (elbows1 * Price().elbow_price);
   int bigs_pipes1 = cornice_one.get_bigs_pipes();
-  double bigs_pipes_cost1 = (bigs_pipes1 * big_pipe_price);
+  double bigs_pipes_cost1 = (bigs_pipes1 * Price().big_pipe_price);
   int pipe_connect1 = cornice_one.get_pipe_connectors();
-  double pipe_connect_cost1 = (pipe_connect1 * pipe_connector_price);
+  double pipe_connect_cost1 = (pipe_connect1 * Price().pipe_connector_price);
   int small_pipes1 = cornice_one.get_small_pipes();
-  double small_pipes_cost1 = (small_pipes1 * small_pipe_price);
+  double small_pipes_cost1 = (small_pipes1 * Price().small_pipe_price);
   int tips1 = cornice_one.get_tips();
-  double tips_cost1 = (tips1 * tip_price);
+  double tips_cost1 = (tips1 * Price().tip_price);
   int pipe_holders1 = cornice_one.get_pipe_holders();
-  double pipe_holders_cost1 = (pipe_holders1 * pipe_holder_price);
+  double pipe_holders_cost1 = (pipe_holders1 * Price().pipe_holder_price);
   int pins1 = cornice_one.get_pins();
-  double pins_cost1 = (pins1 * pin_price);
+  double pins_cost1 = (pins1 * Price().pin_price);
 
   if (cornice_one.cornice_length > 0.0) {
     print(
@@ -124,31 +112,32 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №2)
   */
   int gutters2 = cornice_two.get_gutters().ceil();
-  double gutters_cost2 = (gutters2 * gutter_price);
+  double gutters_cost2 = (gutters2 * Price().gutter_price);
   int gutter_connect2 = cornice_two.get_gutter_connectors();
-  double gutter_connect_cost2 = (gutter_connect2 * gutter_connector_price);
+  double gutter_connect_cost2 =
+      (gutter_connect2 * Price().gutter_connector_price);
   int plugs2 = cornice_two.get_plugs();
-  double plug_cost2 = (plugs2 * plug_price);
+  double plug_cost2 = (plugs2 * Price().plug_price);
   int gutter_holders2 = cornice_two.get_gutter_holders();
-  double gutter_holder_cost2 = (gutter_holders2 * gutter_holder_price);
+  double gutter_holder_cost2 = (gutter_holders2 * Price().gutter_holder_price);
   int gutter_angles2 = cornice_two.get_gutter_angles();
-  double gutter_angles_cost2 = (gutter_angles2 * gutter_angle_price);
+  double gutter_angles_cost2 = (gutter_angles2 * Price().gutter_angle_price);
   int funnels2 = cornice_two.get_funnels();
-  double funnels_cost2 = (funnels2 * funnel_price);
+  double funnels_cost2 = (funnels2 * Price().funnel_price);
   int elbows2 = cornice_two.get_elbows();
-  double elbows_cost2 = (elbows2 * elbow_price);
+  double elbows_cost2 = (elbows2 * Price().elbow_price);
   int bigs_pipes2 = cornice_two.get_bigs_pipes();
-  double bigs_pipes_cost2 = (bigs_pipes2 * big_pipe_price);
+  double bigs_pipes_cost2 = (bigs_pipes2 * Price().big_pipe_price);
   int pipe_connect2 = cornice_two.get_pipe_connectors();
-  double pipe_connect_cost2 = (pipe_connect2 * pipe_connector_price);
+  double pipe_connect_cost2 = (pipe_connect2 * Price().pipe_connector_price);
   int small_pipes2 = cornice_two.get_small_pipes();
-  double small_pipes_cost2 = (small_pipes2 * small_pipe_price);
+  double small_pipes_cost2 = (small_pipes2 * Price().small_pipe_price);
   int tips2 = cornice_two.get_tips();
-  double tips_cost2 = (tips2 * tip_price);
+  double tips_cost2 = (tips2 * Price().tip_price);
   int pipe_holders2 = cornice_two.get_pipe_holders();
-  double pipe_holders_cost2 = (pipe_holders2 * pipe_holder_price);
+  double pipe_holders_cost2 = (pipe_holders2 * Price().pipe_holder_price);
   int pins2 = cornice_two.get_pins();
-  double pins_cost2 = (pins2 * pin_price);
+  double pins_cost2 = (pins2 * Price().pin_price);
 
   if (cornice_two.cornice_length > 0.0) {
     print(
@@ -221,31 +210,32 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №3)
   */
   int gutters3 = cornice_three.get_gutters().ceil();
-  double gutters_cost3 = (gutters3 * gutter_price);
+  double gutters_cost3 = (gutters3 * Price().gutter_price);
   int gutter_connect3 = cornice_three.get_gutter_connectors();
-  double gutter_connect_cost3 = (gutter_connect3 * gutter_connector_price);
+  double gutter_connect_cost3 =
+      (gutter_connect3 * Price().gutter_connector_price);
   int plugs3 = cornice_three.get_plugs();
-  double plug_cost3 = (plugs3 * plug_price);
+  double plug_cost3 = (plugs3 * Price().plug_price);
   int gutter_holders3 = cornice_three.get_gutter_holders();
-  double gutter_holder_cost3 = (gutter_holders3 * gutter_holder_price);
+  double gutter_holder_cost3 = (gutter_holders3 * Price().gutter_holder_price);
   int gutter_angles3 = cornice_three.get_gutter_angles();
-  double gutter_angles_cost3 = (gutter_angles3 * gutter_angle_price);
+  double gutter_angles_cost3 = (gutter_angles3 * Price().gutter_angle_price);
   int funnels3 = cornice_three.get_funnels();
-  double funnels_cost3 = (funnels3 * funnel_price);
+  double funnels_cost3 = (funnels3 * Price().funnel_price);
   int elbows3 = cornice_three.get_elbows();
-  double elbows_cost3 = (elbows3 * elbow_price);
+  double elbows_cost3 = (elbows3 * Price().elbow_price);
   int bigs_pipes3 = cornice_three.get_bigs_pipes();
-  double bigs_pipes_cost3 = (bigs_pipes3 * big_pipe_price);
+  double bigs_pipes_cost3 = (bigs_pipes3 * Price().big_pipe_price);
   int pipe_connect3 = cornice_three.get_pipe_connectors();
-  double pipe_connect_cost3 = (pipe_connect3 * pipe_connector_price);
+  double pipe_connect_cost3 = (pipe_connect3 * Price().pipe_connector_price);
   int small_pipes3 = cornice_three.get_small_pipes();
-  double small_pipes_cost3 = (small_pipes3 * small_pipe_price);
+  double small_pipes_cost3 = (small_pipes3 * Price().small_pipe_price);
   int tips3 = cornice_three.get_tips();
-  double tips_cost3 = (tips3 * tip_price);
+  double tips_cost3 = (tips3 * Price().tip_price);
   int pipe_holders3 = cornice_three.get_pipe_holders();
-  double pipe_holders_cost3 = (pipe_holders3 * pipe_holder_price);
+  double pipe_holders_cost3 = (pipe_holders3 * Price().pipe_holder_price);
   int pins3 = cornice_three.get_pins();
-  double pins_cost3 = (pins3 * pin_price);
+  double pins_cost3 = (pins3 * Price().pin_price);
 
   if (cornice_three.cornice_length > 0.0) {
     print(
@@ -318,31 +308,32 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №4)
   */
   int gutters4 = cornice_four.get_gutters().round();
-  double gutters_cost4 = (gutters4 * gutter_price);
+  double gutters_cost4 = (gutters4 * Price().gutter_price);
   int gutter_connect4 = cornice_four.get_gutter_connectors();
-  double gutter_connect_cost4 = (gutter_connect4 * gutter_connector_price);
+  double gutter_connect_cost4 =
+      (gutter_connect4 * Price().gutter_connector_price);
   int plugs4 = cornice_four.get_plugs();
-  double plug_cost4 = (plugs4 * plug_price);
+  double plug_cost4 = (plugs4 * Price().plug_price);
   int gutter_holders4 = cornice_four.get_gutter_holders();
-  double gutter_holder_cost4 = (gutter_holders4 * gutter_holder_price);
+  double gutter_holder_cost4 = (gutter_holders4 * Price().gutter_holder_price);
   int gutter_angles4 = cornice_four.get_gutter_angles();
-  double gutter_angles_cost4 = (gutter_angles4 * gutter_angle_price);
+  double gutter_angles_cost4 = (gutter_angles4 * Price().gutter_angle_price);
   int funnels4 = cornice_four.get_funnels();
-  double funnels_cost4 = (funnels4 * funnel_price);
+  double funnels_cost4 = (funnels4 * Price().funnel_price);
   int elbows4 = cornice_four.get_elbows();
-  double elbows_cost4 = (elbows4 * elbow_price);
+  double elbows_cost4 = (elbows4 * Price().elbow_price);
   int bigs_pipes4 = cornice_four.get_bigs_pipes();
-  double bigs_pipes_cost4 = (bigs_pipes4 * big_pipe_price);
+  double bigs_pipes_cost4 = (bigs_pipes4 * Price().big_pipe_price);
   int pipe_connect4 = cornice_four.get_pipe_connectors();
-  double pipe_connect_cost4 = (pipe_connect4 * pipe_connector_price);
+  double pipe_connect_cost4 = (pipe_connect4 * Price().pipe_connector_price);
   int small_pipes4 = cornice_four.get_small_pipes();
-  double small_pipes_cost4 = (small_pipes4 * small_pipe_price);
+  double small_pipes_cost4 = (small_pipes4 * Price().small_pipe_price);
   int tips4 = cornice_four.get_tips();
-  double tips_cost4 = (tips4 * tip_price);
+  double tips_cost4 = (tips4 * Price().tip_price);
   int pipe_holders4 = cornice_four.get_pipe_holders();
-  double pipe_holders_cost4 = (pipe_holders4 * pipe_holder_price);
+  double pipe_holders_cost4 = (pipe_holders4 * Price().pipe_holder_price);
   int pins4 = cornice_four.get_pins();
-  double pins_cost4 = (pins4 * pin_price);
+  double pins_cost4 = (pins4 * Price().pin_price);
 
   if (cornice_four.cornice_length > 0.0) {
     print(
@@ -415,31 +406,32 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №5)
   */
   int gutters5 = cornice_five.get_gutters().ceil();
-  double gutters_cost5 = (gutters5 * gutter_price);
+  double gutters_cost5 = (gutters5 * Price().gutter_price);
   int gutter_connect5 = cornice_five.get_gutter_connectors();
-  double gutter_connect_cost5 = (gutter_connect5 * gutter_connector_price);
+  double gutter_connect_cost5 =
+      (gutter_connect5 * Price().gutter_connector_price);
   int plugs5 = cornice_five.get_plugs();
-  double plug_cost5 = (plugs5 * plug_price);
+  double plug_cost5 = (plugs5 * Price().plug_price);
   int gutter_holders5 = cornice_five.get_gutter_holders();
-  double gutter_holder_cost5 = (gutter_holders5 * gutter_holder_price);
+  double gutter_holder_cost5 = (gutter_holders5 * Price().gutter_holder_price);
   int gutter_angles5 = cornice_five.get_gutter_angles();
-  double gutter_angles_cost5 = (gutter_angles5 * gutter_angle_price);
+  double gutter_angles_cost5 = (gutter_angles5 * Price().gutter_angle_price);
   int funnels5 = cornice_five.get_funnels();
-  double funnels_cost5 = (funnels5 * funnel_price);
+  double funnels_cost5 = (funnels5 * Price().funnel_price);
   int elbows5 = cornice_five.get_elbows();
-  double elbows_cost5 = (elbows5 * elbow_price);
+  double elbows_cost5 = (elbows5 * Price().elbow_price);
   int bigs_pipes5 = cornice_five.get_bigs_pipes();
-  double bigs_pipes_cost5 = (bigs_pipes5 * big_pipe_price);
+  double bigs_pipes_cost5 = (bigs_pipes5 * Price().big_pipe_price);
   int pipe_connect5 = cornice_five.get_pipe_connectors();
-  double pipe_connect_cost5 = (pipe_connect5 * pipe_connector_price);
+  double pipe_connect_cost5 = (pipe_connect5 * Price().pipe_connector_price);
   int small_pipes5 = cornice_five.get_small_pipes();
-  double small_pipes_cost5 = (small_pipes5 * small_pipe_price);
+  double small_pipes_cost5 = (small_pipes5 * Price().small_pipe_price);
   int tips5 = cornice_five.get_tips();
-  double tips_cost5 = (tips5 * tip_price);
+  double tips_cost5 = (tips5 * Price().tip_price);
   int pipe_holders5 = cornice_five.get_pipe_holders();
-  double pipe_holders_cost5 = (pipe_holders5 * pipe_holder_price);
+  double pipe_holders_cost5 = (pipe_holders5 * Price().pipe_holder_price);
   int pins5 = cornice_five.get_pins();
-  double pins_cost5 = (pins5 * pin_price);
+  double pins_cost5 = (pins5 * Price().pin_price);
 
   if (cornice_five.cornice_length > 0.0) {
     print(
@@ -512,31 +504,32 @@ void main() {
   - int num_downpipe (количество водосточных стояков на карнизе №6)
   */
   int gutters6 = cornice_six.get_gutters().round();
-  double gutters_cost6 = (gutters6 * gutter_price);
+  double gutters_cost6 = (gutters6 * Price().gutter_price);
   int gutter_connect6 = cornice_six.get_gutter_connectors();
-  double gutter_connect_cost6 = (gutter_connect6 * gutter_connector_price);
+  double gutter_connect_cost6 =
+      (gutter_connect6 * Price().gutter_connector_price);
   int plugs6 = cornice_six.get_plugs();
-  double plug_cost6 = (plugs6 * plug_price);
+  double plug_cost6 = (plugs6 * Price().plug_price);
   int gutter_holders6 = cornice_six.get_gutter_holders();
-  double gutter_holder_cost6 = (gutter_holders6 * gutter_holder_price);
+  double gutter_holder_cost6 = (gutter_holders6 * Price().gutter_holder_price);
   int gutter_angles6 = cornice_six.get_gutter_angles();
-  double gutter_angles_cost6 = (gutter_angles6 * gutter_angle_price);
+  double gutter_angles_cost6 = (gutter_angles6 * Price().gutter_angle_price);
   int funnels6 = cornice_six.get_funnels();
-  double funnels_cost6 = (funnels6 * funnel_price);
+  double funnels_cost6 = (funnels6 * Price().funnel_price);
   int elbows6 = cornice_six.get_elbows();
-  double elbows_cost6 = (elbows6 * elbow_price);
+  double elbows_cost6 = (elbows6 * Price().elbow_price);
   int bigs_pipes6 = cornice_six.get_bigs_pipes();
-  double bigs_pipes_cost6 = (bigs_pipes6 * big_pipe_price);
+  double bigs_pipes_cost6 = (bigs_pipes6 * Price().big_pipe_price);
   int pipe_connect6 = cornice_six.get_pipe_connectors();
-  double pipe_connect_cost6 = (pipe_connect6 * pipe_connector_price);
+  double pipe_connect_cost6 = (pipe_connect6 * Price().pipe_connector_price);
   int small_pipes6 = cornice_six.get_small_pipes();
-  double small_pipes_cost6 = (small_pipes6 * small_pipe_price);
+  double small_pipes_cost6 = (small_pipes6 * Price().small_pipe_price);
   int tips6 = cornice_six.get_tips();
-  double tips_cost6 = (tips6 * tip_price);
+  double tips_cost6 = (tips6 * Price().tip_price);
   int pipe_holders6 = cornice_six.get_pipe_holders();
-  double pipe_holders_cost6 = (pipe_holders6 * pipe_holder_price);
+  double pipe_holders_cost6 = (pipe_holders6 * Price().pipe_holder_price);
   int pins6 = cornice_six.get_pins();
-  double pins_cost6 = (pins6 * pin_price);
+  double pins_cost6 = (pins6 * Price().pin_price);
 
   if (cornice_six.cornice_length > 0.0) {
     print(
