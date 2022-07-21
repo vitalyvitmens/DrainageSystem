@@ -80,8 +80,11 @@ void main() {
         'Труб (3м):          ${bigs_pipes1} шт = ${bigs_pipes_cost1.toStringAsFixed(2)} руб');
     listBigsPipes.add(bigs_pipes1);
     listBigsPipesCost.add(bigs_pipes_cost1);
-    print(
-        'Соединитель трубы:  $pipe_connect1 шт = ${pipe_connect_cost1.toStringAsFixed(2)} руб');
+    if (pipe_connect1 == 0) {
+    } else {
+      print(
+          'Соединитель трубы:  $pipe_connect1 шт = ${pipe_connect_cost1.toStringAsFixed(2)} руб');
+    }
     listPipeConnect.add(pipe_connect1);
     listPipeConnectCost.add(pipe_connect_cost1);
     print(
@@ -178,8 +181,11 @@ void main() {
         'Труб (3м):          ${bigs_pipes2} шт = ${bigs_pipes_cost2.toStringAsFixed(2)} руб');
     listBigsPipes.add(bigs_pipes2);
     listBigsPipesCost.add(bigs_pipes_cost2);
-    print(
-        'Соединитель трубы:  $pipe_connect2 шт = ${pipe_connect_cost2.toStringAsFixed(2)} руб');
+    if (pipe_connect2 == 0) {
+    } else {
+      print(
+          'Соединитель трубы:  $pipe_connect2 шт = ${pipe_connect_cost2.toStringAsFixed(2)} руб');
+    }
     listPipeConnect.add(pipe_connect2);
     listPipeConnectCost.add(pipe_connect_cost2);
     print(
@@ -276,8 +282,11 @@ void main() {
         'Труб (3м):          ${bigs_pipes3} шт = ${bigs_pipes_cost3.toStringAsFixed(2)} руб');
     listBigsPipes.add(bigs_pipes3);
     listBigsPipesCost.add(bigs_pipes_cost3);
-    print(
-        'Соединитель трубы:  $pipe_connect3 шт = ${pipe_connect_cost3.toStringAsFixed(2)} руб');
+    if (pipe_connect3 == 0) {
+    } else {
+      print(
+          'Соединитель трубы:  $pipe_connect3 шт = ${pipe_connect_cost3.toStringAsFixed(2)} руб');
+    }
     listPipeConnect.add(pipe_connect3);
     listPipeConnectCost.add(pipe_connect_cost3);
     print(
@@ -374,8 +383,11 @@ void main() {
         'Труб (3м):          ${bigs_pipes4} шт = ${bigs_pipes_cost4.toStringAsFixed(2)} руб');
     listBigsPipes.add(bigs_pipes4);
     listBigsPipesCost.add(bigs_pipes_cost4);
-    print(
-        'Соединитель трубы:  $pipe_connect4 шт = ${pipe_connect_cost4.toStringAsFixed(2)} руб');
+    if (pipe_connect1 == 4) {
+    } else {
+      print(
+          'Соединитель трубы:  $pipe_connect4 шт = ${pipe_connect_cost4.toStringAsFixed(2)} руб');
+    }
     listPipeConnect.add(pipe_connect4);
     listPipeConnectCost.add(pipe_connect_cost4);
     print(
@@ -472,8 +484,11 @@ void main() {
         'Труб (3м):          ${bigs_pipes5} шт = ${bigs_pipes_cost5.toStringAsFixed(2)} руб');
     listBigsPipes.add(bigs_pipes5);
     listBigsPipesCost.add(bigs_pipes_cost5);
-    print(
-        'Соединитель трубы:  $pipe_connect5 шт = ${pipe_connect_cost5.toStringAsFixed(2)} руб');
+    if (pipe_connect1 == 5) {
+    } else {
+      print(
+          'Соединитель трубы:  $pipe_connect5 шт = ${pipe_connect_cost5.toStringAsFixed(2)} руб');
+    }
     listPipeConnect.add(pipe_connect5);
     listPipeConnectCost.add(pipe_connect_cost5);
     print(
@@ -570,8 +585,11 @@ void main() {
         'Труб (3м):          ${bigs_pipes6} шт = ${bigs_pipes_cost6.toStringAsFixed(2)} руб');
     listBigsPipes.add(bigs_pipes6);
     listBigsPipesCost.add(bigs_pipes_cost6);
-    print(
-        'Соединитель трубы:  $pipe_connect6 шт = ${pipe_connect_cost6.toStringAsFixed(2)} руб');
+    if (pipe_connect6 == 0) {
+    } else {
+      print(
+          'Соединитель трубы:  $pipe_connect6 шт = ${pipe_connect_cost6.toStringAsFixed(2)} руб');
+    }
     listPipeConnect.add(pipe_connect6);
     listPipeConnectCost.add(pipe_connect_cost6);
     print(
