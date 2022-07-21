@@ -1,4 +1,19 @@
 class DrainageCornice {
+  /*
+  Класс DrainageCornice (водосточная система), он принимает 
+  на вход следующие параметры:
+  - double cornice_length (длина карниза в метрах)
+  - double downpipe_height (высота от карниза до земли в метрах)
+  - int num_downpipe (количество водосточных стояков карниза),
+  а так же имеет изначально заданные параметры:
+  - int length_gutter (длина 1шт желоба (L=3000) в метрах)
+  - int length_big_pipe (длина 1шт большой трубы (L=3000) в метрах)
+  - int length_small_pipe (длина 1шт малой трубы (L=1000) в метрах)
+  - double gutter_holder_pitch (шаг установки держателей желоба в метрах)
+  - double pipe_holder_pitch (шаг установки держателей трубы в метрах)
+  - int gutter_angles (количество углов желоба в штуках)
+  и имеет ряд методов для покарнизного расчета элементов водосточной системы
+  */
   final double cornice_length;
   final double downpipe_height;
   final int num_downpipe;
@@ -68,7 +83,7 @@ class DrainageCornice {
   Метод  get_gutter_holders позволяет получить / расчитать количество 
   держателей желоба, на основании следующих параметров:
   - double cornice_length (длины карниза в метрах)
-  - double gutter_holder_pitch (переменной шага установки желоба в метрах)
+  - double gutter_holder_pitch (переменной шага установки держателей желоба в метрах)
   возвращает int gutter_holders (количество держателей желоба в штуках)
   */
     int gutter_holders = (cornice_length / gutter_holder_pitch).ceil() + 1;
@@ -119,8 +134,8 @@ class DrainageCornice {
   - int (num_downpipe == 4) (когда имеется четыре водосточных стояка)
   - int (num_downpipe >= 5) (когда имеется пять либо больше водосточных стояков),
   расчёт проводится с использованием переменной double one_downpipe 
-  (один водосточный стояк карниза) и следующих параметров:
-  - int num_downpipe (количество водосточных стояков в метрах)
+  (один водосточный стояк карниза) и на основании следующих параметров:
+  - int num_downpipe (количества водосточных стояков в штуках)
   - double downpipe_height (высоты от карниза до земли в метрах)
   - int length_big_pipe (константы длины 1шт большой трубы (L=3000) в метрах)
   возвращает int big_pipes (количество больших труб (L=3000) в штуках) 
@@ -167,7 +182,7 @@ class DrainageCornice {
   соединителей труб, на основании следующих параметров:
   - double downpipe_height (высоты от карниза до земли в метрах)
   - int length_big_pipe (константы длины 1шт большой трубы (L=3000) в метрах)
-  - int num_downpipe (количество водосточных стояков в метрах)
+  - int num_downpipe (количества водосточных стояков в штуках)
   возвращает int pipe_connectors (количество соединителей труб в штуках)
   */
     int pipe_connectors =
@@ -180,7 +195,7 @@ class DrainageCornice {
     /*
   Метод  get_small_pipes позволяет получить / расчитать количество 
   малых труб (L=1000), на основании следующих параметров:
-  - int num_downpipe (количество водосточных стояков в метрах)
+  - int num_downpipe (количества водосточных стояков в штуках)
   возвращает int small_pipes (количество малых труб (L=1000) в штуках) 
   */
     int small_pipes = num_downpipe;
@@ -188,11 +203,25 @@ class DrainageCornice {
   }
 
   get_tips() {
+    /*
+  Метод  get_tips позволяет получить / расчитать количество 
+  отмётов трубы, на основании параметра:
+  - int num_downpipe (количества водосточных стояков в штуках)
+  возвращает int tips (количество отмётов трубы в штуках)
+  */
     int tips = num_downpipe;
     return tips;
   }
 
   get_pipe_holders() {
+    /*
+  Метод  get_pipe_holders позволяет получить / расчитать количество 
+  держателей трубы, на основании следующих параметров:
+  - double downpipe_height (высоты от карниза до земли в метрах)
+  - int num_downpipe (количества водосточных стояков в штуках)
+  - double pipe_holder_pitch (переменной шага установки держателей трубы в метрах)
+  возвращает int pipe_holders (количество держателей трубы в штуках)
+  */
     final pipe_holders =
         (((downpipe_height * num_downpipe) / pipe_holder_pitch) + num_downpipe)
             .ceil();
@@ -200,6 +229,14 @@ class DrainageCornice {
   }
 
   get_pins() {
+    /*
+  Метод  get_pins позволяет получить / расчитать количество 
+  штырей для держателя трубы, на основании следующих параметров:
+  - double downpipe_height (высоты от карниза до земли в метрах)
+  - int num_downpipe (количества водосточных стояков в штуках)
+  - double pipe_holder_pitch (переменной шага установки держателей трубы в метрах)
+  возвращает int pins (количество штыре для держателя трубы в штуках)
+  */
     int pins =
         (((downpipe_height * num_downpipe) / pipe_holder_pitch) + num_downpipe)
             .ceil();
