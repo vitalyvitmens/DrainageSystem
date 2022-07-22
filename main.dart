@@ -3,7 +3,7 @@ import 'methods_calculating_elements_drainage.dart';
 import 'methods_cost_calculation_elements_drainage.dart';
 
 void main() {
-  var cornice_one = DrainageCornice(12.011, 1.501, 2);
+  var cornice_one = DrainageCornice(15.0, 3.0, 1);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_one (первый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -53,17 +53,17 @@ void main() {
     } else {
       print(
           'Заглушка желоба:    $plugs1 шт = ${plugs_cost1.toStringAsFixed(2)} руб');
+      listPlugs.add(plugs1);
+      listPlugsCost.add(plugs_cost1);
     }
-    listPlugs.add(plugs1);
-    listPlugsCost.add(plugs_cost1);
 
     print(
         'Держатель желоба:   $gutter_holders1 шт = ${gutter_holder_cost1.toStringAsFixed(2)} руб');
     listGutterHolders.add(gutter_holders1);
     listGutterHoldersCost.add(gutter_holder_cost1);
-    listGutterAngles.add(gutter_angles1);
-    listGutterAnglesCost.add(gutter_angles_cost1);
   } else {}
+  listGutterAngles.add(gutter_angles1);
+  listGutterAnglesCost.add(gutter_angles_cost1);
 
   if (cornice_one.num_downpipe > 0) {
     print(
@@ -82,13 +82,13 @@ void main() {
     } else {
       print(
           'Соединитель трубы:  $pipe_connect1 шт = ${pipe_connect_cost1.toStringAsFixed(2)} руб');
+      listPipeConnect.add(pipe_connect1);
+      listPipeConnectCost.add(pipe_connect_cost1);
     }
-    listPipeConnect.add(pipe_connect1);
-    listPipeConnectCost.add(pipe_connect_cost1);
     print(
         'Труб (1м):          ${small_pipes1} шт = ${small_pipes_cost1.toStringAsFixed(2)} руб');
     listSmallPipes.add(small_pipes1);
-    listSmallPipesCost.add(pipe_connect_cost1);
+    listSmallPipesCost.add(small_pipes_cost1);
     print(
         'Отмёт:              ${tips1} шт = ${tips_cost1.toStringAsFixed(2)} руб');
     listTips.add(tips1);
@@ -106,7 +106,7 @@ void main() {
     print('');
   }
 
-  var cornice_two = DrainageCornice(12.0333, 5.0333, 1);
+  var cornice_two = DrainageCornice(15.0, 3.0, 2);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_two (второй
   водосточный карниз), он принимает на вход следующие параметры:
@@ -156,16 +156,16 @@ void main() {
     } else {
       print(
           'Заглушка желоба:    $plugs2 шт = ${plugs_cost2.toStringAsFixed(2)} руб');
+      listPlugs.add(plugs2);
+      listPlugsCost.add(plugs_cost2);
     }
-    listPlugs.add(plugs2);
-    listPlugsCost.add(plugs_cost2);
     print(
         'Держатель желоба:   $gutter_holders2 шт = ${gutter_holder_cost2.toStringAsFixed(2)} руб');
     listGutterHolders.add(gutter_holders2);
     listGutterHoldersCost.add(gutter_holder_cost2);
-    listGutterAngles.add(gutter_angles2);
-    listGutterAnglesCost.add(gutter_angles_cost2);
   } else {}
+  listGutterAngles.add(gutter_angles2);
+  listGutterAnglesCost.add(gutter_angles_cost2);
 
   if (cornice_two.num_downpipe > 0) {
     print(
@@ -184,13 +184,13 @@ void main() {
     } else {
       print(
           'Соединитель трубы:  $pipe_connect2 шт = ${pipe_connect_cost2.toStringAsFixed(2)} руб');
+      listPipeConnect.add(pipe_connect2);
+      listPipeConnectCost.add(pipe_connect_cost2);
     }
-    listPipeConnect.add(pipe_connect2);
-    listPipeConnectCost.add(pipe_connect_cost2);
     print(
         'Труб (1м):          ${small_pipes2} шт = ${small_pipes_cost2.toStringAsFixed(2)} руб');
     listSmallPipes.add(small_pipes2);
-    listSmallPipesCost.add(pipe_connect_cost2);
+    listSmallPipesCost.add(small_pipes_cost2);
     print(
         'Отмёт:              ${tips2} шт = ${tips_cost2.toStringAsFixed(2)} руб');
     listTips.add(tips2);
@@ -208,7 +208,7 @@ void main() {
     print('');
   }
 
-  var cornice_three = DrainageCornice(6.0333, 2.333333, 3);
+  var cornice_three = DrainageCornice(30.0, 5.0, 1);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_three (третий
   водосточный карниз), он принимает на вход следующие параметры:
@@ -258,16 +258,16 @@ void main() {
     } else {
       print(
           'Заглушка желоба:    $plugs3 шт = ${plugs_cost3.toStringAsFixed(2)} руб');
+      listPlugs.add(plugs3);
+      listPlugsCost.add(plugs_cost3);
     }
-    listPlugs.add(plugs3);
-    listPlugsCost.add(plugs_cost3);
     print(
         'Держатель желоба:   $gutter_holders3 шт = ${gutter_holder_cost3.toStringAsFixed(2)} руб');
     listGutterHolders.add(gutter_holders3);
     listGutterHoldersCost.add(gutter_holder_cost3);
-    listGutterAngles.add(gutter_angles3);
-    listGutterAnglesCost.add(gutter_angles_cost3);
   } else {}
+  listGutterAngles.add(gutter_angles3);
+  listGutterAnglesCost.add(gutter_angles_cost3);
 
   if (cornice_three.num_downpipe > 0) {
     print(
@@ -286,13 +286,13 @@ void main() {
     } else {
       print(
           'Соединитель трубы:  $pipe_connect3 шт = ${pipe_connect_cost3.toStringAsFixed(2)} руб');
+      listPipeConnect.add(pipe_connect3);
+      listPipeConnectCost.add(pipe_connect_cost3);
     }
-    listPipeConnect.add(pipe_connect3);
-    listPipeConnectCost.add(pipe_connect_cost3);
     print(
         'Труб (1м):          ${small_pipes3} шт = ${small_pipes_cost3.toStringAsFixed(2)} руб');
     listSmallPipes.add(small_pipes3);
-    listSmallPipesCost.add(pipe_connect_cost3);
+    listSmallPipesCost.add(small_pipes_cost3);
     print(
         'Отмёт:              ${tips3} шт = ${tips_cost3.toStringAsFixed(2)} руб');
     listTips.add(tips3);
@@ -310,7 +310,7 @@ void main() {
     print('');
   }
 
-  var cornice_four = DrainageCornice(8.033333, 2.533333333, 4);
+  var cornice_four = DrainageCornice(30.0, 5.0, 2);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_four (четвёртый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -360,16 +360,16 @@ void main() {
     } else {
       print(
           'Заглушка желоба:    $plugs4 шт = ${plugs_cost4.toStringAsFixed(2)} руб');
+      listPlugs.add(plugs4);
+      listPlugsCost.add(plugs_cost4);
     }
-    listPlugs.add(plugs4);
-    listPlugsCost.add(plugs_cost4);
     print(
         'Держатель желоба:   $gutter_holders4 шт = ${gutter_holder_cost4.toStringAsFixed(2)} руб');
     listGutterHolders.add(gutter_holders4);
     listGutterHoldersCost.add(gutter_holder_cost4);
-    listGutterAngles.add(gutter_angles4);
-    listGutterAnglesCost.add(gutter_angles_cost4);
   } else {}
+  listGutterAngles.add(gutter_angles4);
+  listGutterAnglesCost.add(gutter_angles_cost4);
 
   if (cornice_four.num_downpipe > 0) {
     print(
@@ -388,13 +388,13 @@ void main() {
     } else {
       print(
           'Соединитель трубы:  $pipe_connect4 шт = ${pipe_connect_cost4.toStringAsFixed(2)} руб');
+      listPipeConnect.add(pipe_connect4);
+      listPipeConnectCost.add(pipe_connect_cost4);
     }
-    listPipeConnect.add(pipe_connect4);
-    listPipeConnectCost.add(pipe_connect_cost4);
     print(
         'Труб (1м):          ${small_pipes4} шт = ${small_pipes_cost4.toStringAsFixed(2)} руб');
     listSmallPipes.add(small_pipes4);
-    listSmallPipesCost.add(pipe_connect_cost4);
+    listSmallPipesCost.add(small_pipes_cost4);
     print(
         'Отмёт:              ${tips4} шт = ${tips_cost4.toStringAsFixed(2)} руб');
     listTips.add(tips4);
@@ -412,7 +412,7 @@ void main() {
     print('');
   }
 
-  var cornice_five = DrainageCornice(10.033333, 4.0333333333, 5);
+  var cornice_five = DrainageCornice(60.0, 10.0, 2);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_five (пятый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -462,16 +462,16 @@ void main() {
     } else {
       print(
           'Заглушка желоба:    $plugs5 шт = ${plugs_cost5.toStringAsFixed(2)} руб');
+      listPlugs.add(plugs5);
+      listPlugsCost.add(plugs_cost5);
     }
-    listPlugs.add(plugs5);
-    listPlugsCost.add(plugs_cost5);
     print(
         'Держатель желоба:   $gutter_holders5 шт = ${gutter_holder_cost5.toStringAsFixed(2)} руб');
     listGutterHolders.add(gutter_holders5);
     listGutterHoldersCost.add(gutter_holder_cost5);
-    listGutterAngles.add(gutter_angles5);
-    listGutterAnglesCost.add(gutter_angles_cost5);
   } else {}
+  listGutterAngles.add(gutter_angles5);
+  listGutterAnglesCost.add(gutter_angles_cost5);
 
   if (cornice_five.num_downpipe > 0) {
     print(
@@ -490,13 +490,13 @@ void main() {
     } else {
       print(
           'Соединитель трубы:  $pipe_connect5 шт = ${pipe_connect_cost5.toStringAsFixed(2)} руб');
+      listPipeConnect.add(pipe_connect5);
+      listPipeConnectCost.add(pipe_connect_cost5);
     }
-    listPipeConnect.add(pipe_connect5);
-    listPipeConnectCost.add(pipe_connect_cost5);
     print(
         'Труб (1м):          ${small_pipes5} шт = ${small_pipes_cost5.toStringAsFixed(2)} руб');
     listSmallPipes.add(small_pipes5);
-    listSmallPipesCost.add(pipe_connect_cost5);
+    listSmallPipesCost.add(small_pipes_cost5);
     print(
         'Отмёт:              ${tips5} шт = ${tips_cost5.toStringAsFixed(2)} руб');
     listTips.add(tips5);
@@ -514,7 +514,7 @@ void main() {
     print('');
   }
 
-  var cornice_six = DrainageCornice(16.033333, 3.533333333, 6);
+  var cornice_six = DrainageCornice(60.0, 10.0, 4);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_six (шестой
   водосточный карниз), он принимает на вход следующие параметры:
@@ -564,16 +564,16 @@ void main() {
     } else {
       print(
           'Заглушка желоба:    $plugs6 шт = ${plugs_cost6.toStringAsFixed(2)} руб');
+      listPlugs.add(plugs6);
+      listPlugsCost.add(plugs_cost6);
     }
-    listPlugs.add(plugs6);
-    listPlugsCost.add(plugs_cost6);
     print(
         'Держатель желоба:   $gutter_holders6 шт = ${gutter_holder_cost6.toStringAsFixed(2)} руб');
     listGutterHolders.add(gutter_holders6);
     listGutterHoldersCost.add(gutter_holder_cost6);
-    listGutterAngles.add(gutter_angles6);
-    listGutterAnglesCost.add(gutter_angles_cost6);
   } else {}
+  listGutterAngles.add(gutter_angles6);
+  listGutterAnglesCost.add(gutter_angles_cost6);
 
   if (cornice_six.num_downpipe > 0) {
     print(
@@ -592,13 +592,13 @@ void main() {
     } else {
       print(
           'Соединитель трубы:  $pipe_connect6 шт = ${pipe_connect_cost6.toStringAsFixed(2)} руб');
+      listPipeConnect.add(pipe_connect6);
+      listPipeConnectCost.add(pipe_connect_cost6);
     }
-    listPipeConnect.add(pipe_connect6);
-    listPipeConnectCost.add(pipe_connect_cost6);
     print(
         'Труб (1м):          ${small_pipes6} шт = ${small_pipes_cost6.toStringAsFixed(2)} руб');
     listSmallPipes.add(small_pipes6);
-    listSmallPipesCost.add(pipe_connect_cost6);
+    listSmallPipesCost.add(small_pipes_cost6);
     print(
         'Отмёт:              ${tips6} шт = ${tips_cost6.toStringAsFixed(2)} руб');
     listTips.add(tips6);

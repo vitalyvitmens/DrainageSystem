@@ -23,7 +23,7 @@ class DrainageCornice {
   final int length_big_pipe = 3;
   final int length_small_pipe = 1;
   double gutter_holder_pitch = 0.5;
-  double pipe_holder_pitch = 1.25;
+  double pipe_holder_pitch = 1.0;
   int gutter_angle = 0;
 
   DrainageCornice(
