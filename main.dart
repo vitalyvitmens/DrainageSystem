@@ -4,6 +4,7 @@ import 'methods_cost_calculation_elements_drainage.dart';
 
 void main() {
   var cornice_one = DrainageCornice(15.0, 3.0, 1);
+  // print('${cornice_one.toString()}');
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_one (первый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -56,7 +57,6 @@ void main() {
       listPlugs.add(plugs1);
       listPlugsCost.add(plugs_cost1);
     }
-
     print(
         'Держатель желоба:   $gutter_holders1 шт = ${gutter_holder_cost1.toStringAsFixed(2)} руб');
     listGutterHolders.add(gutter_holders1);
@@ -107,6 +107,7 @@ void main() {
   }
 
   var cornice_two = DrainageCornice(15.0, 3.0, 2);
+  // print('${cornice_two.toString()}');
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_two (второй
   водосточный карниз), он принимает на вход следующие параметры:
@@ -209,6 +210,7 @@ void main() {
   }
 
   var cornice_three = DrainageCornice(30.0, 5.0, 1);
+  // print('${cornice_three.toString()}');
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_three (третий
   водосточный карниз), он принимает на вход следующие параметры:
@@ -311,6 +313,7 @@ void main() {
   }
 
   var cornice_four = DrainageCornice(30.0, 5.0, 2);
+  // print('${cornice_four.toString()}');
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_four (четвёртый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -413,6 +416,7 @@ void main() {
   }
 
   var cornice_five = DrainageCornice(60.0, 10.0, 2);
+  // print('${cornice_five.toString()}');
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_five (пятый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -515,6 +519,7 @@ void main() {
   }
 
   var cornice_six = DrainageCornice(60.0, 10.0, 4);
+  // print('${cornice_six.toString()}');
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_six (шестой
   водосточный карниз), он принимает на вход следующие параметры:

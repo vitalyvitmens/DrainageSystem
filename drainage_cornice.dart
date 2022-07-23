@@ -31,6 +31,20 @@ class DrainageCornice {
     this.downpipe_height,
     this.num_downpipe,
   );
+  @override
+  String toString() {
+    return '''
+Длина карниза:                   $cornice_length м 
+Высота от карниза до земли:      $downpipe_height м
+Количество водосточных стояков:  $num_downpipe шт
+Длина желоба:                    $length_gutter м 
+Длина большой трубы:             $length_big_pipe м 
+Длина малой трубы:               $length_small_pipe м 
+Шаг крепления держателей желоба: $gutter_holder_pitch м
+Шаг крепления держателей трубы:  $pipe_holder_pitch 
+Количество углов желоба:         $gutter_angle шт
+''';
+  }
 
   get_gutters() {
     /*
