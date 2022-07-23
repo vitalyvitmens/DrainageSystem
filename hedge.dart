@@ -6,7 +6,6 @@ class Hedge {
   на вход следующие свойства (параметры):
   - double length (длина изгороди в метрах)
   - double heigth (высота изгороди в метрах)
-  и имеет ряд методов для попролётного расчета элементов изгороди
   */
   final double length;
   final double heigth;
@@ -67,17 +66,130 @@ class ProfileC8 extends Hedge {
     return areaC8;
   }
 
-  get_C8_cost() {
+  get_C8_cost_050mat() {
     /*
-  Метод get_C8_cost позволяет получить / рассчитать стоимость 
-  листов профнастила С8 для изгороди, на основании:
+  Метод get_C8_cost_050mat позволяет получить / рассчитать стоимость матовых 
+  листов профнастила С8 для изгороди в 0.50мм толщине, на основании:
   - double get_sheets_areaC8() (метод расчета площади профнастила С8 в м2)
-  - double PriceHedge().C8_price (параметр класса PriceHedge: 
-  стоимость профнастила С8 за 1м2 в руб)
-  возвращает double C8_cost (общая стоимость всех листов профнастила С8 в руб)
+  - double PriceHedge().C8_price_050mat (параметр класса PriceHedge: 
+  стоимость матового профнастила С8 в 0.50мм толщине за 1м2 в руб)
+  возвращает double C8_cost_050mat (общая стоимость всех матовых листов 
+  профнастила С8 в 0.50мм толщине в руб)
   */
-    double C8_cost = get_areaC8() * PriceHedge().C8_price;
-    return C8_cost;
+    double C8_cost_050mat = get_areaC8() * PriceHedge().C8_price_050mat;
+    return C8_cost_050mat;
+  }
+
+  get_C8_cost_045mat() {
+    /*
+  Метод get_C8_cost_045mat позволяет получить / рассчитать стоимость матовых 
+  листов профнастила С8 для изгороди в 0.45мм толщине, на основании:
+  - double get_sheets_areaC8() (метод расчета площади профнастила С8 в м2)
+  - double PriceHedge().C8_price_045mat (параметр класса PriceHedge: 
+  стоимость матового профнастила С8 в 0.45мм толщине за 1м2 в руб)
+  возвращает double C8_cost_045mat (общая стоимость всех матовых листов 
+  профнастила С8 в 0.45мм толщине в руб)
+  */
+    double C8_cost_045mat = get_areaC8() * PriceHedge().C8_price_045mat;
+    return C8_cost_045mat;
+  }
+
+  get_C8_cost_050() {
+    /*
+  Метод get_C8_cost_050 позволяет получить / рассчитать стоимость глянцевых 
+  листов профнастила С8 для изгороди в 0.50мм толщине, на основании:
+  - double get_sheets_areaC8() (метод расчета площади профнастила С8 в м2)
+  - double PriceHedge().C8_price_050 (параметр класса PriceHedge: 
+  стоимость глянцевого профнастила С8 в 0.50мм толщине за 1м2 в руб)
+  возвращает double C8_cost_050 (общая стоимость всех глянцевых листов 
+  профнастила С8 в 0.50мм толщине в руб)
+  */
+    double C8_cost_050 = get_areaC8() * PriceHedge().C8_price_050;
+    return C8_cost_050;
+  }
+
+  get_C8_cost_045() {
+    /*
+  Метод get_C8_cost_045 позволяет получить / рассчитать стоимость глянцевых 
+  листов профнастила С8 для изгороди в 0.45мм толщине, на основании:
+  - double get_sheets_areaC8() (метод расчета площади профнастила С8 в м2)
+  - double PriceHedge().C8_price_045 (параметр класса PriceHedge: 
+  стоимость глянцевого профнастила С8 в 0.45мм толщине за 1м2 в руб)
+  возвращает double C8_cost_045 (общая стоимость всех глянцевых листов 
+  профнастила С8 в 0.45мм толщине в руб)
+  */
+    double C8_cost_045 = get_areaC8() * PriceHedge().C8_price_045;
+    return C8_cost_045;
+  }
+
+  get_C8_cost_040() {
+    /*
+  Метод get_C8_cost_040 позволяет получить / рассчитать стоимость глянцевых 
+  листов профнастила С8 для изгороди в 0.40мм толщине, на основании:
+  - double get_sheets_areaC8() (метод расчета площади профнастила С8 в м2)
+  - double PriceHedge().C8_price_040 (параметр класса PriceHedge: 
+  стоимость глянцевого профнастила С8 в 0.40мм толщине за 1м2 в руб)
+  возвращает double C8_cost_040 (общая стоимость всех глянцевых листов 
+  профнастила С8 в 0.40мм толщине в руб)
+  */
+    double C8_cost_040 = get_areaC8() * PriceHedge().C8_price_040;
+    return C8_cost_040;
+  }
+
+  get_C8_cost_035() {
+    /*
+  Метод get_C8_cost_035 позволяет получить / рассчитать стоимость глянцевых 
+  листов профнастила С8 для изгороди в 0.35мм толщине, на основании:
+  - double get_sheets_areaC8() (метод расчета площади профнастила С8 в м2)
+  - double PriceHedge().C8_price_035 (параметр класса PriceHedge: 
+  стоимость глянцевого профнастила С8 в 0.35мм толщине за 1м2 в руб)
+  возвращает double C8_cost_035 (общая стоимость всех глянцевых листов 
+  профнастила С8 в 0.35мм толщине в руб)
+  */
+    double C8_cost_035 = get_areaC8() * PriceHedge().C8_price_035;
+    return C8_cost_035;
+  }
+
+  get_C8_cost_050zinc() {
+    /*
+  Метод get_C8_cost_050zinc позволяет получить / рассчитать стоимость 
+  оцинкованных листов профнастила С8 для изгороди в 0.50мм толщине, на основании:
+  - double get_sheets_areaC8() (метод расчета площади профнастила С8 в м2)
+  - double PriceHedge().C8_price_050zinc (параметр класса PriceHedge: 
+  стоимость оцинкованного профнастила С8 в 0.50мм толщине за 1м2 в руб)
+  возвращает double C8_cost_050zinc (общая стоимость всех оцинкованных листов 
+  профнастила С8 в 0.50мм толщине в руб)
+  */
+    double C8_cost_050zinc = get_areaC8() * PriceHedge().C8_price_050zinc;
+    return C8_cost_050zinc;
+  }
+
+  get_C8_cost_045zinc() {
+    /*
+  Метод get_C8_cost_045zinc позволяет получить / рассчитать стоимость 
+  оцинкованных листов профнастила С8 для изгороди в 0.45мм толщине, на основании:
+  - double get_sheets_areaC8() (метод расчета площади профнастила С8 в м2)
+  - double PriceHedge().C8_price_045zinc (параметр класса PriceHedge: 
+  стоимость оцинкованного профнастила С8 в 0.45мм толщине за 1м2 в руб)
+  возвращает double C8_cost_045zinc (общая стоимость всех оцинкованных листов 
+  профнастила С8 в 0.45мм толщине в руб)
+  */
+    double C8_cost_045zinc = get_areaC8() * PriceHedge().C8_price_045zinc;
+    return C8_cost_045zinc;
+  }
+
+  get_C8_cost_040zinc() {
+    /*
+  Метод get_C8_cost_040zinc позволяет получить / рассчитать стоимость 
+  оцинкованных листов профнастила С8 для изгороди в 0.40мм толщине, на основании:
+  - double get_sheets_areaC8() (метод расчета площади профнастила С8 в м2)
+  - double PriceHedge().C8_price_040zinc (параметр класса PriceHedge: 
+  стоимость оцинкованного профнастила С8 в 0.40мм толщине за 1м2 в руб)
+  возвращает double C8_cost_040zinc (общая стоимость всех оцинкованных листов 
+  профнастила С8 в 0.40мм толщине в руб)
+  */
+    double C8_cost_040zinc = get_areaC8() * PriceHedge().C8_price_040zinc;
+    return C8_cost_040zinc;
   }
 }
 
@@ -200,9 +312,17 @@ void main() {
 
   print('''
 РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hedge
-Количество листов С8:   ${profileC8.get_num_sheetsC8()} шт
-Площадь листов С8:      ${profileC8.get_areaC8().toStringAsFixed(3)} м2
-Стоимость С8:           ${profileC8.get_C8_cost().toStringAsFixed(2)} руб
+Количество листов С8:    ${profileC8.get_num_sheetsC8()} шт
+Площадь листов С8:       ${profileC8.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 МАТ 0.50мм: ${profileC8.get_C8_cost_050mat().toStringAsFixed(2)} руб
+Стоимость С8 МАТ 0.45мм: ${profileC8.get_C8_cost_045mat().toStringAsFixed(2)} руб
+Стоимость С8 0.50мм:     ${profileC8.get_C8_cost_050().toStringAsFixed(2)} руб
+Стоимость С8 0.45мм:     ${profileC8.get_C8_cost_045().toStringAsFixed(2)} руб
+Стоимость С8 0.40мм:     ${profileC8.get_C8_cost_040().toStringAsFixed(2)} руб
+Стоимость С8 0.35мм:     ${profileC8.get_C8_cost_035().toStringAsFixed(2)} руб
+Стоимость С8 Оц 0.50мм:  ${profileC8.get_C8_cost_050zinc().toStringAsFixed(2)} руб
+Стоимость С8 Оц 0.45мм:  ${profileC8.get_C8_cost_045zinc().toStringAsFixed(2)} руб
+Стоимость С8 Оц 0.40мм:  ${profileC8.get_C8_cost_040zinc().toStringAsFixed(2)} руб
 \n
 Количество листов МП20: ${profileMP20.get_num_sheetsMP20()} шт
 Площадь листов МП20:    ${profileMP20.get_areaMP20().toStringAsFixed(3)} м2

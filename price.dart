@@ -15,7 +15,15 @@ class PriceDrainage {
 }
 
 class PriceHedge {
-  double C8_price = 16.14;
+  double C8_price_050mat = 21.24;
+  double C8_price_045mat = 18.60;
+  double C8_price_050 = 18.00;
+  double C8_price_045 = 16.14;
+  double C8_price_040 = 15.48;
+  double C8_price_035 = 12.20;
+  double C8_price_050zinc = 15.18;
+  double C8_price_045zinc = 14.04;
+  double C8_price_040zinc = 11.18;
   double MP20_price = 17.10;
   double fence_price = 2.30;
 }
