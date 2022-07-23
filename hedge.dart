@@ -12,6 +12,14 @@ class Hedge {
   final double heigth;
 
   Hedge(this.length, this.heigth);
+
+  @override
+  String toString() {
+    return '''
+Длина забора:  $length м 
+Высота забора: $heigth м
+''';
+  }
 }
 
 class ProfileC8 extends Hedge {
@@ -190,6 +198,7 @@ void main() {
   final profileMP20 = ProfileMP20(100, 1.5);
   final fence = Fence(100, 1.5, 0.040);
 
+  print('РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hedge');
   print('Количество листов С8:       ${profileC8.get_num_sheetsC8()} шт');
   print(
       'Площадь листов С8:          ${profileC8.get_sheets_areaC8().toStringAsFixed(3)} м2');
@@ -204,5 +213,5 @@ void main() {
   print(
       'Погонаж штакетника:         ${fence.get_length_fence().toStringAsFixed(3)} мп');
   print(
-      'Стоимость штакетника:       ${fence.get_fence_cost().toStringAsFixed(2)} руб');
+      'Стоимость штакетника:       ${fence.get_fence_cost().toStringAsFixed(2)} руб\n');
 }
