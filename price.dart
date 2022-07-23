@@ -1,4 +1,4 @@
-class Price {
+class PriceDrainage {
   double gutter_price = 21.12;
   double gutter_connector_price = 8.28;
   double plug_price = 3.96;
@@ -12,4 +12,10 @@ class Price {
   double tip_price = 8.88;
   double pipe_holder_price = 3.84;
   double pin_price = 5.76;
+}
+
+class PriceHedge {
+  double C8_price = 16.14;
+  double MP20_price = 17.10;
+  double fence_price = 2.30;
 }

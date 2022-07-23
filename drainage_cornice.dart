@@ -31,6 +31,7 @@ class DrainageCornice {
     this.downpipe_height,
     this.num_downpipe,
   );
+
   @override
   String toString() {
     return '''
@@ -63,11 +64,11 @@ class DrainageCornice {
   Метод  get_gutters_cost позволяет получить / рассчитать стоимость желобов 
   на водосточном карнизе, на основании:
   - double get_gutters() (метод расчета количества желобов в штуках)
-  - double Price().gutter_price (параметр класса Price: 
+  - double PriceDrainage().gutter_price (параметр класса PriceDrainage: 
   стоимость желоба за 1шт в руб)
   возвращает double gutters_cost (общая стоимость всех желобов на карнизе в руб)
   */
-    double gutters_cost = get_gutters() * Price().gutter_price;
+    double gutters_cost = get_gutters() * PriceDrainage().gutter_price;
     return gutters_cost;
   }
 
@@ -89,13 +90,13 @@ class DrainageCornice {
   соединителей желоба на водосточном карнизе, на основании:
   - double get_gutter_connectors() (метод расчета количества соединителей 
   желоба в штуках)
-  - double Price().gutter_connector_price (параметр класса Price: 
+  - double PriceDrainage().gutter_connector_price (параметр класса PriceDrainage: 
   стоимость соединителя желоба за 1шт в руб)
   возвращает double gutter_connectors_cost (общая стоимость всех соединителей 
   желоба на карнизе в руб)
   */
     double gutter_connectors_cost =
-        get_gutter_connectors() * Price().gutter_connector_price;
+        get_gutter_connectors() * PriceDrainage().gutter_connector_price;
     return gutter_connectors_cost;
   }
 
@@ -128,11 +129,11 @@ class DrainageCornice {
   Метод  get_plugs_cost позволяет получить / рассчитать стоимость 
   заглушек желоба на водосточном карнизе, на основании:
   - double get_plugs() (метод расчета количества заглушек в штуках)
-  - double Price().plug_price (параметр класса Price: 
+  - double PriceDrainage().plug_price (параметр класса PriceDrainage: 
   стоимость заглушки за 1шт в руб)
   возвращает double plugs_cost (общая стоимость всех заглушек на карнизе в руб)
   */
-    double plugs_cost = get_plugs() * Price().plug_price;
+    double plugs_cost = get_plugs() * PriceDrainage().plug_price;
     return plugs_cost;
   }
 
@@ -155,13 +156,13 @@ class DrainageCornice {
   держателей желоба на водосточном карнизе, на основании:
   - double get_gutter_holders() (метод расчета количества держателей 
   желоба в штуках)
-  - double Price().gutter_holder_price (параметр класса Price: 
+  - double PriceDrainage().gutter_holder_price (параметр класса PriceDrainage: 
   стоимость держателя желоба за 1шт в руб)
   возвращает double gutter_holders_cost (общая стоимость всех держателей 
   желоба на карнизе в руб)
   */
     double gutter_holders_cost =
-        get_gutter_holders() * Price().gutter_holder_price;
+        get_gutter_holders() * PriceDrainage().gutter_holder_price;
     return gutter_holders_cost;
   }
 
@@ -181,12 +182,12 @@ class DrainageCornice {
   Метод  get_gutter_angles_cost позволяет получить / рассчитать стоимость 
   углов желоба на водосточном карнизе, на основании:
   - double get_gutter_angles() (метод расчета количества углов желоба в штуках)
-  - double Price().gutter_angle_price (параметр класса Price: 
+  - double PriceDrainage().gutter_angle_price (параметр класса PriceDrainage: 
   стоимость угла желоба за 1шт в руб)
   возвращает double gutter_angles_cost (общая стоимость всех углов желоба в руб)
   */
     double gutter_angles_cost =
-        get_gutter_angles() * Price().gutter_angle_price;
+        get_gutter_angles() * PriceDrainage().gutter_angle_price;
     return gutter_angles_cost;
   }
 
@@ -206,11 +207,11 @@ class DrainageCornice {
   Метод  get_funnels_cost позволяет получить / рассчитать стоимость 
   воронок на водосточном карнизе, на основании:
   - double get_funnels() (метод расчета количества воронок в штуках)
-  - double Price().funnel_price (параметр класса Price: 
+  - double PriceDrainage().funnel_price (параметр класса PriceDrainage: 
   стоимость воронок за 1шт в руб)
   возвращает double funnels_cost (общая стоимость всех воронок на карнизе в руб)
   */
-    double funnels_cost = get_funnels() * Price().funnel_price;
+    double funnels_cost = get_funnels() * PriceDrainage().funnel_price;
     return funnels_cost;
   }
 
@@ -230,11 +231,11 @@ class DrainageCornice {
   Метод  get_elbows_cost позволяет получить / рассчитать стоимость 
   колен на водосточном карнизе, на основании:
   - double get_elbows() (метод расчета количества колен в штуках)
-  - double Price().elbow_price (параметр класса Price: 
+  - double PriceDrainage().elbow_price (параметр класса PriceDrainage: 
   стоимость колен за 1шт в руб)
   возвращает double elbows_cost (общая стоимость всех колен на карнизе в руб)
   */
-    double elbows_cost = get_elbows() * Price().elbow_price;
+    double elbows_cost = get_elbows() * PriceDrainage().elbow_price;
     return elbows_cost;
   }
 
@@ -296,12 +297,12 @@ class DrainageCornice {
   Метод  get_bigs_pipes_cost позволяет получить / рассчитать стоимость 
   больших труб на водосточном карнизе, на основании:
   - double get_bigs_pipes() (метод расчета количества больших труб в штуках)
-  - double Price().big_pipe_price (параметр класса Price: 
+  - double PriceDrainage().big_pipe_price (параметр класса PriceDrainage: 
   стоимость больших труб за 1шт в руб)
   возвращает double bigs_pipes_cost (общая стоимость всех больших труб 
   на карнизе в руб)
   */
-    double bigs_pipes_cost = get_bigs_pipes() * Price().big_pipe_price;
+    double bigs_pipes_cost = get_bigs_pipes() * PriceDrainage().big_pipe_price;
     return bigs_pipes_cost;
   }
 
@@ -326,13 +327,13 @@ class DrainageCornice {
   соединителей труб на водосточном карнизе, на основании:
   - double get_pipe_connectors() (метод расчета количества 
   соединителей труб в штуках)
-  - double Price().pipe_connector_price (параметр класса Price: 
+  - double PriceDrainage().pipe_connector_price (параметр класса PriceDrainage: 
   стоимость соединителей труб за 1шт в руб)
   возвращает double pipe_connectors_cost (общая стоимость всех 
   соединителей труб на карнизе в руб)
   */
     double pipe_connectors_cost =
-        get_pipe_connectors() * Price().pipe_connector_price;
+        get_pipe_connectors() * PriceDrainage().pipe_connector_price;
     return pipe_connectors_cost;
   }
 
@@ -352,12 +353,13 @@ class DrainageCornice {
   Метод  get_small_pipes_cost позволяет получить / рассчитать стоимость 
   малых труб на водосточном карнизе, на основании:
   - double get_small_pipes() (метод расчета количества малых труб в штуках)
-  - double Price().small_pipe_price (параметр класса Price: 
+  - double PriceDrainage().small_pipe_price (параметр класса PriceDrainage: 
   стоимость малых труб за 1шт в руб)
   возвращает double small_pipes_cost (общая стоимость всех малых труб 
   на карнизе в руб)
   */
-    double small_pipes_cost = get_small_pipes() * Price().small_pipe_price;
+    double small_pipes_cost =
+        get_small_pipes() * PriceDrainage().small_pipe_price;
     return small_pipes_cost;
   }
 
@@ -377,11 +379,11 @@ class DrainageCornice {
   Метод  get_tips_cost позволяет получить / рассчитать стоимость 
   отмётов на водосточном карнизе, на основании:
   - double get_tips() (метод расчета количества отмётов в штуках)
-  - double Price().tip_price (параметр класса Price: 
+  - double PriceDrainage().tip_price (параметр класса PriceDrainage: 
   стоимость отмётов за 1шт в руб)
   возвращает double tips_cost (общая стоимость всех отмётов на карнизе в руб)
   */
-    double tips_cost = get_tips() * Price().tip_price;
+    double tips_cost = get_tips() * PriceDrainage().tip_price;
     return tips_cost;
   }
 
@@ -405,12 +407,13 @@ class DrainageCornice {
   Метод  get_pipe_holders_cost позволяет получить / рассчитать стоимость 
   держателей трубы на водосточном карнизе, на основании:
   - double get_pipe_holders() (метод расчета количества держателей трубы в штуках)
-  - double Price().pipe_holder_price (параметр класса Price: 
+  - double PriceDrainage().pipe_holder_price (параметр класса PriceDrainage: 
   стоимость держателей трубы за 1шт в руб)
   возвращает double pipe_holders_cost (общая стоимость всех держателей трубы 
   на карнизе в руб)
   */
-    double pipe_holders_cost = get_pipe_holders() * Price().pipe_holder_price;
+    double pipe_holders_cost =
+        get_pipe_holders() * PriceDrainage().pipe_holder_price;
     return pipe_holders_cost;
   }
 
@@ -435,12 +438,12 @@ class DrainageCornice {
   штырей для держателей трубы на водосточном карнизе, на основании:
   - double get_pins() (метод расчета количества штырей для 
   держателей трубы в штуках)
-  - double Price().pin_price (параметр класса Price: 
+  - double PriceDrainage().pin_price (параметр класса PriceDrainage: 
   стоимость штырей для держателей трубы за 1шт в руб)
   возвращает double pins_cost (общая стоимость всех штырей для держателей трубы 
   на карнизе в руб)
   */
-    double pins_cost = get_pins() * Price().pin_price;
+    double pins_cost = get_pins() * PriceDrainage().pin_price;
     return pins_cost;
   }
 }
