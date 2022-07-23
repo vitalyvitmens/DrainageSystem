@@ -53,18 +53,18 @@ class ProfileC8 extends Hedge {
     return num_sheetsC8;
   }
 
-  get_sheets_areaC8() {
+  get_areaC8() {
     /*
-  Метод get_sheets_areaC8 позволяет получить / рассчитать площадь листов 
+  Метод get_areaC8 позволяет получить / рассчитать площадь листов 
   профнастила С8 для пролёта изгороди, на основании количества листов и 
   следующих параметров:
   - double heigth (высота изгороди в метрах)
   - double full_width (полная ширина листа в метрах)
   - количество листов из метода get_num_sheetsC8(),
-  возвращает double sheets_areaC8 (площадь листов профнастила С8 в м2)
+  возвращает double areaC8 (площадь листов профнастила С8 в м2)
   */
-    double sheets_areaC8 = (heigth * full_width) * get_num_sheetsC8();
-    return sheets_areaC8;
+    double areaC8 = (heigth * full_width) * get_num_sheetsC8();
+    return areaC8;
   }
 
   get_C8_cost() {
@@ -76,7 +76,7 @@ class ProfileC8 extends Hedge {
   стоимость профнастила С8 за 1м2 в руб)
   возвращает double C8_cost (общая стоимость всех листов профнастила С8 в руб)
   */
-    double C8_cost = get_sheets_areaC8() * PriceHedge().C8_price;
+    double C8_cost = get_areaC8() * PriceHedge().C8_price;
     return C8_cost;
   }
 }
@@ -109,18 +109,18 @@ class ProfileMP20 extends Hedge {
     return num_sheetsMP20;
   }
 
-  get_sheets_areaMP20() {
+  get_areaMP20() {
     /*
-  Метод get_sheets_areaC8 позволяет получить / рассчитать площадь листов 
+  Метод get_areaMP20 позволяет получить / рассчитать площадь листов 
   профнастила MП20 для пролёта изгороди, на основании количества листов и 
   следующих параметров:
   - double heigth (высота изгороди в метрах)
   - double full_width (полная ширина листа в метрах)
   - количество листов из метода get_num_sheetsMP20(),
-  возвращает double sheets_areaMP20 (площадь листов профнастила MП20 в м2)
+  возвращает double areaMP20 (площадь листов профнастила MП20 в м2)
   */
-    double sheets_areaMP20 = (heigth * full_width) * get_num_sheetsMP20();
-    return sheets_areaMP20;
+    double areaMP20 = (heigth * full_width) * get_num_sheetsMP20();
+    return areaMP20;
   }
 
   get_MP20_cost() {
@@ -132,7 +132,7 @@ class ProfileMP20 extends Hedge {
   стоимость профнастила MП20 за 1м2 в руб)
   возвращает double MP20_cost (общая стоимость всех листов профнастила MП20 в руб)
   */
-    double MP20_cost = get_sheets_areaMP20() * PriceHedge().MP20_price;
+    double MP20_cost = get_areaMP20() * PriceHedge().MP20_price;
     return MP20_cost;
   }
 }
@@ -198,20 +198,18 @@ void main() {
   final profileMP20 = ProfileMP20(100, 1.5);
   final fence = Fence(100, 1.5, 0.040);
 
-  print('РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hedge');
-  print('Количество листов С8:       ${profileC8.get_num_sheetsC8()} шт');
-  print(
-      'Площадь листов С8:          ${profileC8.get_sheets_areaC8().toStringAsFixed(3)} м2');
-  print(
-      'Стоимость профнастила С8:   ${profileC8.get_C8_cost().toStringAsFixed(2)} руб\n');
-  print('Количество листов МП20:     ${profileMP20.get_num_sheetsMP20()} шт');
-  print(
-      'Площадь листов МП20:        ${profileMP20.get_sheets_areaMP20().toStringAsFixed(3)} м2');
-  print(
-      'Стоимость профнастила МП20: ${profileMP20.get_MP20_cost().toStringAsFixed(2)} руб\n');
-  print('Количество штакетин:        ${fence.get_num_fence()} шт');
-  print(
-      'Погонаж штакетника:         ${fence.get_length_fence().toStringAsFixed(3)} мп');
-  print(
-      'Стоимость штакетника:       ${fence.get_fence_cost().toStringAsFixed(2)} руб\n');
+  print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hedge
+Количество листов С8:   ${profileC8.get_num_sheetsC8()} шт
+Площадь листов С8:      ${profileC8.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8:           ${profileC8.get_C8_cost().toStringAsFixed(2)} руб
+\n
+Количество листов МП20: ${profileMP20.get_num_sheetsMP20()} шт
+Площадь листов МП20:    ${profileMP20.get_areaMP20().toStringAsFixed(3)} м2
+Стоимость МП20:         ${profileMP20.get_MP20_cost().toStringAsFixed(2)} руб
+\n
+Количество штакетин:    ${fence.get_num_fence()} шт
+Погонаж штакетник:      ${fence.get_length_fence().toStringAsFixed(3)} мп
+Стоимость штакетник:    ${fence.get_fence_cost().toStringAsFixed(2)} руб\n
+''');
 }
