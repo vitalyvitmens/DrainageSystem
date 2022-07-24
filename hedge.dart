@@ -36,10 +36,15 @@ class ProfileC8 extends Hedge {
   final double full_width = 1.20;
   final double useful_width = 1.15;
 
-  ProfileC8(
-    super.length,
-    super.heigth,
-  );
+  ProfileC8(super.length, super.heigth);
+
+  @override
+  String toString() {
+    return '''
+Длина забора:  $length м 
+Высота забора: $heigth м
+''';
+  }
 
   get_num_sheetsC8() {
     /*
@@ -286,6 +291,14 @@ class ProfileMP20 extends Hedge {
   final double useful_width = 1.10;
 
   ProfileMP20(super.length, super.heigth);
+
+  @override
+  String toString() {
+    return '''
+Длина забора:  $length м 
+Высота забора: $heigth м
+''';
+  }
 
   get_num_sheetsMP20() {
     /*
@@ -534,6 +547,15 @@ class Fence extends Hedge {
 
   Fence(super.length, super.heigth, this.gap);
 
+  @override
+  String toString() {
+    return '''
+Длина забора:            $length м 
+Высота забора:           $heigth м
+Зазор между штакетником: ${gap * 100} cм
+''';
+  }
+
   get_num_fence() {
     /*
   Метод get_num_fence позволяет получить / рассчитать количество штакетин
@@ -591,13 +613,13 @@ class Fence extends Hedge {
 }
 
 void main() {
-  final hedge = Hedge(100, 1.5);
   final profileC8 = ProfileC8(100, 1.5);
   final profileMP20 = ProfileMP20(100, 1.5);
   final fence = Fence(100, 1.5, 0.040);
 
-  print('''
-РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hedge
+  if (profileC8.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$profileC8
 Количество листов С8:                   ${profileC8.heigth} м = ${profileC8.get_num_sheetsC8()} шт
 Площадь листов С8:                      ${profileC8.get_areaC8().toStringAsFixed(3)} м2
 Стоимость С8 Матовый 0.50мм:            ${profileC8.get_C8_cost_050mat().toStringAsFixed(2)} руб
@@ -613,8 +635,12 @@ void main() {
 Количество Пэшек С8:                    ${profileC8.get_num_pawnsC8()} шт = ${profileC8.get_length_pawnsC8()} мп
 Стоимость Матовых Пэшек С8:             ${profileC8.get_pawnsC8_cost_mat().toStringAsFixed(2)} руб
 Стоимость Глянцевых Пэшек С8:           ${profileC8.get_pawnsC8_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек С8:        ${profileC8.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек С8:        ${profileC8.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб''');
+  } else {}
 
+  if (profileMP20.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$profileMP20
 Количество листов МП20:                 ${profileMP20.heigth} м = ${profileMP20.get_num_sheetsMP20()} шт
 Площадь листов МП20:                    ${profileMP20.get_areaMP20().toStringAsFixed(3)} м2
 Стоимость МП20 Матовый 0.50мм:          ${profileMP20.get_MP20_cost_050mat().toStringAsFixed(2)} руб
@@ -630,12 +656,17 @@ void main() {
 Количество Пэшек МП20:                  ${profileMP20.get_num_pawnsMP20()} шт = ${profileMP20.get_length_pawnsMP20()} мп
 Стоимость Матовых Пэшек МП20:           ${profileMP20.get_pawnsMP20_cost_mat().toStringAsFixed(2)} руб
 Стоимость Глянцевых Пэшек МП20:         ${profileMP20.get_pawnsMP20_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек МП20:      ${profileMP20.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек МП20:      ${profileMP20.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб''');
+  } else {}
 
+  if (fence.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$fence
 Количество штакетин:                    ${fence.heigth} м = ${fence.get_num_fence()} шт
 Погонаж штакетник:                      ${fence.get_length_fence().toStringAsFixed(3)} мп
 Стоимость 2х матового 0.40мм штакета:   ${fence.get_fence_double_sided_cost_040mat().toStringAsFixed(2)} руб
 Стоимость 2х глянцевого 0.40мм штакета: ${fence.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб''');
+  } else {}
 
   // print('\n${PriceDrainage().toString()}');
   // print('${PriceHedge().toString()}');
