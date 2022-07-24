@@ -9,6 +9,7 @@ class Hedge {
   */
   final double length;
   final double heigth;
+  final double length_pawn = 2.0;
 
   Hedge(this.length, this.heigth);
 
@@ -191,6 +192,83 @@ class ProfileC8 extends Hedge {
     double C8_cost_040zinc = get_areaC8() * PriceHedge().C8_price_040zinc;
     return C8_cost_040zinc;
   }
+
+  get_num_pawnsC8() {
+    /*
+  Метод get_num_pawnC8 позволяет получить / рассчитать количество пэшек 
+  (П-образных планок) для С8 профнастила на весь пролёт изгороди, 
+  на основании следующих параметров:
+  - double length (длина изгороди в метрах)
+  - double length_pawn (длина пэшки в метрах)
+  возвращает int num_pawnC8 (количество пэшек в штуках)
+  */
+    int num_pawnsC8 = (length / length_pawn).ceil();
+    return num_pawnsC8;
+  }
+
+  get_length_pawnsC8() {
+    /*
+  Метод get_length_pawnsC8 позволяет получить / рассчитать погонаж пэшек 
+  (П-образных планок) для С8 профнастила на весь пролёт изгороди, 
+  на основании количества пэшек и следующих параметров:
+  - количество пэшек из метода get_num_pawnsC8()
+  - double length_pawn (длина одной пэшки в метрах),
+  возвращает double length_pawnsC8 (погонаж пэшек (П-образных планок) для 
+  С8 профнастила в мп)
+  */
+    double length_pawnsC8 = get_num_pawnsC8() * length_pawn;
+    return length_pawnsC8;
+  }
+
+  get_pawnsC8_cost_mat() {
+    /*
+  Метод get_pawnsC8_cost_mat позволяет получить / рассчитать 
+  стоимость матовых пэшек (П-образных планок) для С8 профнастила 
+  на весь пролёт изгороди, на основании:
+  - double get_length_pawnsC8() (метод расчета погонажа пэшек в мп)
+  - double PriceHedge().pawnC8_price_mat (параметр класса 
+  PriceHedge: стоимость матовых пэшек (П-образных планок) для С8 
+  профнастила за 1м в руб),
+  возвращает double pawnsC8_cost_mat (общую стоимость матовых пэшек 
+  (П-образных планок) для С8 профнастила на весь пролёт изгороди
+  */
+    double pawnsC8_cost_mat =
+        get_length_pawnsC8() * PriceHedge().pawnC8_price_mat;
+    return pawnsC8_cost_mat;
+  }
+
+  get_pawnsC8_cost() {
+    /*
+  Метод get_pawnsC8_cost позволяет получить / рассчитать 
+  стоимость глянцевых пэшек (П-образных планок) для С8 профнастила 
+  на весь пролёт изгороди, на основании:
+  - double get_length_pawnsC8() (метод расчета погонажа пэшек в мп)
+  - double PriceHedge().pawnC8_price (параметр класса 
+  PriceHedge: стоимость глянцевых пэшек (П-образных планок) для С8 
+  профнастила за 1м в руб),
+  возвращает double pawnsC8_cost (общую стоимость глянцевых пэшек 
+  (П-образных планок) для С8 профнастила на весь пролёт изгороди
+  */
+    double pawnsC8_cost = get_length_pawnsC8() * PriceHedge().pawnC8_price;
+    return pawnsC8_cost;
+  }
+
+  get_pawnsC8_cost_zinc() {
+    /*
+  Метод get_pawnsC8_cost_zinc позволяет получить / рассчитать 
+  стоимость оцинкованных пэшек (П-образных планок) для С8 профнастила 
+  на весь пролёт изгороди, на основании:
+  - double get_length_pawnsC8() (метод расчета погонажа пэшек в мп)
+  - double PriceHedge().pawnC8_price_zinc (параметр класса 
+  PriceHedge: стоимость оцинкованных пэшек (П-образных планок) для С8 
+  профнастила за 1м в руб),
+  возвращает double pawnsC8_cost_zinc (общую стоимость оцинкованных пэшек 
+  (П-образных планок) для С8 профнастила на весь пролёт изгороди
+  */
+    double pawnsC8_cost_zinc =
+        get_length_pawnsC8() * PriceHedge().pawnC8_price_zinc;
+    return pawnsC8_cost_zinc;
+  }
 }
 
 class ProfileMP20 extends Hedge {
@@ -360,6 +438,84 @@ class ProfileMP20 extends Hedge {
     double MP20_cost_040zinc = get_areaMP20() * PriceHedge().MP20_price_040zinc;
     return MP20_cost_040zinc;
   }
+
+  get_num_pawnsMP20() {
+    /*
+  Метод get_num_pawnsMP20 позволяет получить / рассчитать количество пэшек 
+  (П-образных планок) для МП20 профнастила на весь пролёт изгороди, 
+  на основании следующих параметров:
+  - double length (длина изгороди в метрах)
+  - double length_pawn (длина пэшки в метрах)
+  возвращает int num_pawnMP20 (количество пэшек в штуках)
+  */
+    int num_pawnsMP20 = (length / length_pawn).ceil();
+    return num_pawnsMP20;
+  }
+
+  get_length_pawnsMP20() {
+    /*
+  Метод get_length_pawnsMP20 позволяет получить / рассчитать погонаж пэшек 
+  (П-образных планок) для МП20 профнастила на весь пролёт изгороди, 
+  на основании количества пэшек и следующих параметров:
+  - количество пэшек из метода get_num_pawnsMP20()
+  - double length_pawn (длина одной пэшки в метрах),
+  возвращает double length_pawnsMP20 (погонаж пэшек (П-образных планок) для 
+  МП20 профнастила в мп)
+  */
+    double length_pawnsMP20 = get_num_pawnsMP20() * length_pawn;
+    return length_pawnsMP20;
+  }
+
+  get_pawnsMP20_cost_mat() {
+    /*
+  Метод get_pawnsMP20_cost_mat позволяет получить / рассчитать 
+  стоимость матовых пэшек (П-образных планок) для МП20 профнастила 
+  на весь пролёт изгороди, на основании:
+  - double get_length_pawnsMP20() (метод расчета погонажа пэшек в мп)
+  - double PriceHedge().pawnMP20_price_mat (параметр класса 
+  PriceHedge: стоимость матовых пэшек (П-образных планок) для МП20 
+  профнастила за 1м в руб),
+  возвращает double pawnsMP20_cost_mat (общую стоимость матовых пэшек 
+  (П-образных планок) для МП20 профнастила на весь пролёт изгороди
+  */
+    double pawnsMP20_cost_mat =
+        get_length_pawnsMP20() * PriceHedge().pawnMP20_price_mat;
+    return pawnsMP20_cost_mat;
+  }
+
+  get_pawnsMP20_cost() {
+    /*
+  Метод get_pawnsMP20_cost позволяет получить / рассчитать 
+  стоимость глянцевых пэшек (П-образных планок) для МП20 профнастила 
+  на весь пролёт изгороди, на основании:
+  - double get_length_pawnsMP20() (метод расчета погонажа пэшек в мп)
+  - double PriceHedge().pawnMP20_price (параметр класса 
+  PriceHedge: стоимость глянцевых пэшек (П-образных планок) для МП20 
+  профнастила за 1м в руб),
+  возвращает double pawnsMP20_cost (общую стоимость глянцевых пэшек 
+  (П-образных планок) для МП20 профнастила на весь пролёт изгороди
+  */
+    double pawnsMP20_cost =
+        get_length_pawnsMP20() * PriceHedge().pawnMP20_price;
+    return pawnsMP20_cost;
+  }
+
+  get_pawnsMP20_cost_zinc() {
+    /*
+  Метод get_pawnsMP20_cost_zinc позволяет получить / рассчитать 
+  стоимость оцинкованных пэшек (П-образных планок) для МП20 профнастила 
+  на весь пролёт изгороди, на основании:
+  - double get_length_pawnsMP20() (метод расчета погонажа пэшек в мп)
+  - double PriceHedge().pawnMP20_price_zinc (параметр класса 
+  PriceHedge: стоимость оцинкованных пэшек (П-образных планок) для МП20 
+  профнастила за 1м в руб),
+  возвращает double pawnsMP20_cost_zinc (общую стоимость оцинкованных пэшек 
+  (П-образных планок) для МП20 профнастила на весь пролёт изгороди
+  */
+    double pawnsMP20_cost_zinc =
+        get_length_pawnsMP20() * PriceHedge().pawnMP20_price_zinc;
+    return pawnsMP20_cost_zinc;
+  }
 }
 
 class Fence extends Hedge {
@@ -454,6 +610,11 @@ void main() {
 Стоимость С8 Оцинк 0.45мм:              ${profileC8.get_C8_cost_045zinc().toStringAsFixed(2)} руб
 Стоимость С8 Оцинк 0.40мм:              ${profileC8.get_C8_cost_040zinc().toStringAsFixed(2)} руб
 
+Количество Пэшек С8:                    ${profileC8.get_num_pawnsC8()} шт = ${profileC8.get_length_pawnsC8()} мп
+Стоимость Матовых Пэшек С8:             ${profileC8.get_pawnsC8_cost_mat().toStringAsFixed(2)} руб
+Стоимость Глянцевых Пэшек С8:           ${profileC8.get_pawnsC8_cost().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек С8:        ${profileC8.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб
+
 Количество листов МП20:                 ${profileMP20.heigth} м = ${profileMP20.get_num_sheetsMP20()} шт
 Площадь листов МП20:                    ${profileMP20.get_areaMP20().toStringAsFixed(3)} м2
 Стоимость МП20 Матовый 0.50мм:          ${profileMP20.get_MP20_cost_050mat().toStringAsFixed(2)} руб
@@ -465,6 +626,11 @@ void main() {
 Стоимость МП20 Оцинк 0.50мм:            ${profileMP20.get_MP20_cost_050zinc().toStringAsFixed(2)} руб
 Стоимость МП20 Оцинк 0.45мм:            ${profileMP20.get_MP20_cost_045zinc().toStringAsFixed(2)} руб
 Стоимость МП20 Оцинк 0.40мм:            ${profileMP20.get_MP20_cost_040zinc().toStringAsFixed(2)} руб
+
+Количество Пэшек МП20:                  ${profileMP20.get_num_pawnsMP20()} шт = ${profileMP20.get_length_pawnsMP20()} мп
+Стоимость Матовых Пэшек МП20:           ${profileMP20.get_pawnsMP20_cost_mat().toStringAsFixed(2)} руб
+Стоимость Глянцевых Пэшек МП20:         ${profileMP20.get_pawnsMP20_cost().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек МП20:      ${profileMP20.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб
 
 Количество штакетин:                    ${fence.heigth} м = ${fence.get_num_fence()} шт
 Погонаж штакетник:                      ${fence.get_length_fence().toStringAsFixed(3)} мп
