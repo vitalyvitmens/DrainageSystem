@@ -16,8 +16,8 @@ class Hedge {
   @override
   String toString() {
     return '''
-Длина забора:  $length м 
-Высота забора: $heigth м
+Длина забора:                           $length м 
+Высота забора:                          $heigth м
 ''';
   }
 }
@@ -41,8 +41,8 @@ class ProfileC8 extends Hedge {
   @override
   String toString() {
     return '''
-Длина забора:  $length м 
-Высота забора: $heigth м
+Длина забора:                           $length м 
+Высота забора:                          $heigth м
 ''';
   }
 
@@ -295,8 +295,8 @@ class ProfileMP20 extends Hedge {
   @override
   String toString() {
     return '''
-Длина забора:  $length м 
-Высота забора: $heigth м
+Длина забора:                           $length м 
+Высота забора:                          $heigth м
 ''';
   }
 
@@ -550,9 +550,9 @@ class Fence extends Hedge {
   @override
   String toString() {
     return '''
-Длина забора:            $length м 
-Высота забора:           $heigth м
-Зазор между штакетником: ${gap * 100} cм
+Длина забора:                           $length м  
+Высота забора:                          $heigth м
+Зазор между штакетником:                ${gap * 100} cм
 ''';
   }
 
@@ -613,50 +613,187 @@ class Fence extends Hedge {
 }
 
 void main() {
-  final profileC8 = ProfileC8(100, 1.5);
-  final profileMP20 = ProfileMP20(100, 1.5);
+  final C8 = ProfileC8(100, 1.5);
+  final C8_two = ProfileC8(0, 0.0);
+  final C8_three = ProfileC8(0, 0.0);
+  final C8_four = ProfileC8(0, 0.0);
+
+  final MP20 = ProfileMP20(100, 1.5);
+  final MP20_two = ProfileMP20(0, 0.0);
+  final MP20_three = ProfileMP20(0, 0.0);
+  final MP20_four = ProfileMP20(0, 0.0);
+
   final fence = Fence(100, 1.5, 0.040);
+  final fence_two = Fence(0, 0.4, 0.010);
+  final fence_three = Fence(0, 0.9, 0.020);
+  final fence_four = Fence(0, 0.5, 0.030);
 
-  if (profileC8.length > 0) {
+  if (C8.length > 0) {
     print('''
-РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$profileC8
-Количество листов С8:                   ${profileC8.heigth} м = ${profileC8.get_num_sheetsC8()} шт
-Площадь листов С8:                      ${profileC8.get_areaC8().toStringAsFixed(3)} м2
-Стоимость С8 Матовый 0.50мм:            ${profileC8.get_C8_cost_050mat().toStringAsFixed(2)} руб
-Стоимость С8 Матовый 0.45мм:            ${profileC8.get_C8_cost_045mat().toStringAsFixed(2)} руб
-Стоимость С8 Глянец 0.50мм:             ${profileC8.get_C8_cost_050().toStringAsFixed(2)} руб
-Стоимость С8 Глянец 0.45мм:             ${profileC8.get_C8_cost_045().toStringAsFixed(2)} руб
-Стоимость С8 Глянец 0.40мм:             ${profileC8.get_C8_cost_040().toStringAsFixed(2)} руб
-Стоимость С8 Глянец 0.35мм:             ${profileC8.get_C8_cost_035().toStringAsFixed(2)} руб
-Стоимость С8 Оцинк 0.50мм:              ${profileC8.get_C8_cost_050zinc().toStringAsFixed(2)} руб
-Стоимость С8 Оцинк 0.45мм:              ${profileC8.get_C8_cost_045zinc().toStringAsFixed(2)} руб
-Стоимость С8 Оцинк 0.40мм:              ${profileC8.get_C8_cost_040zinc().toStringAsFixed(2)} руб
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$C8
+Количество листов С8:                   ${C8.heigth} м = ${C8.get_num_sheetsC8()} шт
+Площадь листов С8:                      ${C8.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Матовый 0.50мм:            ${C8.get_C8_cost_050mat().toStringAsFixed(2)} руб
+Стоимость С8 Матовый 0.45мм:            ${C8.get_C8_cost_045mat().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.50мм:             ${C8.get_C8_cost_050().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.45мм:             ${C8.get_C8_cost_045().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.40мм:             ${C8.get_C8_cost_040().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.35мм:             ${C8.get_C8_cost_035().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.50мм:              ${C8.get_C8_cost_050zinc().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.45мм:              ${C8.get_C8_cost_045zinc().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.40мм:              ${C8.get_C8_cost_040zinc().toStringAsFixed(2)} руб
 
-Количество Пэшек С8:                    ${profileC8.get_num_pawnsC8()} шт = ${profileC8.get_length_pawnsC8()} мп
-Стоимость Матовых Пэшек С8:             ${profileC8.get_pawnsC8_cost_mat().toStringAsFixed(2)} руб
-Стоимость Глянцевых Пэшек С8:           ${profileC8.get_pawnsC8_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек С8:        ${profileC8.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб''');
+Количество Пэшек С8:                    ${C8.get_num_pawnsC8()} шт = ${C8.get_length_pawnsC8()} мп
+Стоимость Матовых Пэшек С8:             ${C8.get_pawnsC8_cost_mat().toStringAsFixed(2)} руб
+Стоимость Глянцевых Пэшек С8:           ${C8.get_pawnsC8_cost().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек С8:        ${C8.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб\n''');
   } else {}
 
-  if (profileMP20.length > 0) {
+  if (C8_two.length > 0) {
     print('''
-РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$profileMP20
-Количество листов МП20:                 ${profileMP20.heigth} м = ${profileMP20.get_num_sheetsMP20()} шт
-Площадь листов МП20:                    ${profileMP20.get_areaMP20().toStringAsFixed(3)} м2
-Стоимость МП20 Матовый 0.50мм:          ${profileMP20.get_MP20_cost_050mat().toStringAsFixed(2)} руб
-Стоимость МП20 Матовый 0.45мм:          ${profileMP20.get_MP20_cost_045mat().toStringAsFixed(2)} руб
-Стоимость МП20 Глянец 0.50мм:           ${profileMP20.get_MP20_cost_050().toStringAsFixed(2)} руб
-Стоимость МП20 Глянец 0.45мм:           ${profileMP20.get_MP20_cost_045().toStringAsFixed(2)} руб
-Стоимость МП20 Глянец 0.40мм:           ${profileMP20.get_MP20_cost_040().toStringAsFixed(2)} руб
-Стоимость МП20 Глянец 0.35мм:           ${profileMP20.get_MP20_cost_035().toStringAsFixed(2)} руб
-Стоимость МП20 Оцинк 0.50мм:            ${profileMP20.get_MP20_cost_050zinc().toStringAsFixed(2)} руб
-Стоимость МП20 Оцинк 0.45мм:            ${profileMP20.get_MP20_cost_045zinc().toStringAsFixed(2)} руб
-Стоимость МП20 Оцинк 0.40мм:            ${profileMP20.get_MP20_cost_040zinc().toStringAsFixed(2)} руб
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$C8_two
+Количество листов С8:                   ${C8_two.heigth} м = ${C8_two.get_num_sheetsC8()} шт
+Площадь листов С8:                      ${C8_two.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Матовый 0.50мм:            ${C8_two.get_C8_cost_050mat().toStringAsFixed(2)} руб
+Стоимость С8 Матовый 0.45мм:            ${C8_two.get_C8_cost_045mat().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.50мм:             ${C8_two.get_C8_cost_050().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.45мм:             ${C8_two.get_C8_cost_045().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.40мм:             ${C8_two.get_C8_cost_040().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.35мм:             ${C8_two.get_C8_cost_035().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.50мм:              ${C8_two.get_C8_cost_050zinc().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.45мм:              ${C8_two.get_C8_cost_045zinc().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.40мм:              ${C8_two.get_C8_cost_040zinc().toStringAsFixed(2)} руб
 
-Количество Пэшек МП20:                  ${profileMP20.get_num_pawnsMP20()} шт = ${profileMP20.get_length_pawnsMP20()} мп
-Стоимость Матовых Пэшек МП20:           ${profileMP20.get_pawnsMP20_cost_mat().toStringAsFixed(2)} руб
-Стоимость Глянцевых Пэшек МП20:         ${profileMP20.get_pawnsMP20_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек МП20:      ${profileMP20.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб''');
+Количество Пэшек С8:                    ${C8_two.get_num_pawnsC8()} шт = ${C8_two.get_length_pawnsC8()} мп
+Стоимость Матовых Пэшек С8:             ${C8_two.get_pawnsC8_cost_mat().toStringAsFixed(2)} руб
+Стоимость Глянцевых Пэшек С8:           ${C8_two.get_pawnsC8_cost().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек С8:        ${C8_two.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб\n''');
+  } else {}
+
+  if (C8_three.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$C8_three
+Количество листов С8:                   ${C8_three.heigth} м = ${C8_three.get_num_sheetsC8()} шт
+Площадь листов С8:                      ${C8_three.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Матовый 0.50мм:            ${C8_three.get_C8_cost_050mat().toStringAsFixed(2)} руб
+Стоимость С8 Матовый 0.45мм:            ${C8_three.get_C8_cost_045mat().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.50мм:             ${C8_three.get_C8_cost_050().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.45мм:             ${C8_three.get_C8_cost_045().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.40мм:             ${C8_three.get_C8_cost_040().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.35мм:             ${C8_three.get_C8_cost_035().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.50мм:              ${C8_three.get_C8_cost_050zinc().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.45мм:              ${C8_three.get_C8_cost_045zinc().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.40мм:              ${C8_three.get_C8_cost_040zinc().toStringAsFixed(2)} руб
+
+Количество Пэшек С8:                    ${C8_three.get_num_pawnsC8()} шт = ${C8_three.get_length_pawnsC8()} мп
+Стоимость Матовых Пэшек С8:             ${C8_three.get_pawnsC8_cost_mat().toStringAsFixed(2)} руб
+Стоимость Глянцевых Пэшек С8:           ${C8_three.get_pawnsC8_cost().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек С8:        ${C8_three.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб\n''');
+  } else {}
+
+  if (C8_four.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$C8_four
+Количество листов С8:                   ${C8_four.heigth} м = ${C8_four.get_num_sheetsC8()} шт
+Площадь листов С8:                      ${C8_four.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Матовый 0.50мм:            ${C8_four.get_C8_cost_050mat().toStringAsFixed(2)} руб
+Стоимость С8 Матовый 0.45мм:            ${C8_four.get_C8_cost_045mat().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.50мм:             ${C8_four.get_C8_cost_050().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.45мм:             ${C8_four.get_C8_cost_045().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.40мм:             ${C8_four.get_C8_cost_040().toStringAsFixed(2)} руб
+Стоимость С8 Глянец 0.35мм:             ${C8_four.get_C8_cost_035().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.50мм:              ${C8_four.get_C8_cost_050zinc().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.45мм:              ${C8_four.get_C8_cost_045zinc().toStringAsFixed(2)} руб
+Стоимость С8 Оцинк 0.40мм:              ${C8_four.get_C8_cost_040zinc().toStringAsFixed(2)} руб
+
+Количество Пэшек С8:                    ${C8_four.get_num_pawnsC8()} шт = ${C8_four.get_length_pawnsC8()} мп
+Стоимость Матовых Пэшек С8:             ${C8_four.get_pawnsC8_cost_mat().toStringAsFixed(2)} руб
+Стоимость Глянцевых Пэшек С8:           ${C8_four.get_pawnsC8_cost().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек С8:        ${C8_four.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб\n''');
+  } else {}
+
+  if (MP20.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$MP20
+Количество листов МП20:                 ${MP20.heigth} м = ${MP20.get_num_sheetsMP20()} шт
+Площадь листов МП20:                    ${MP20.get_areaMP20().toStringAsFixed(3)} м2
+Стоимость МП20 Матовый 0.50мм:          ${MP20.get_MP20_cost_050mat().toStringAsFixed(2)} руб
+Стоимость МП20 Матовый 0.45мм:          ${MP20.get_MP20_cost_045mat().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.50мм:           ${MP20.get_MP20_cost_050().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.45мм:           ${MP20.get_MP20_cost_045().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.40мм:           ${MP20.get_MP20_cost_040().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.35мм:           ${MP20.get_MP20_cost_035().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.50мм:            ${MP20.get_MP20_cost_050zinc().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.45мм:            ${MP20.get_MP20_cost_045zinc().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.40мм:            ${MP20.get_MP20_cost_040zinc().toStringAsFixed(2)} руб
+
+Количество Пэшек МП20:                  ${MP20.get_num_pawnsMP20()} шт = ${MP20.get_length_pawnsMP20()} мп
+Стоимость Матовых Пэшек МП20:           ${MP20.get_pawnsMP20_cost_mat().toStringAsFixed(2)} руб
+Стоимость Глянцевых Пэшек МП20:         ${MP20.get_pawnsMP20_cost().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек МП20:      ${MP20.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб\n''');
+  } else {}
+
+  if (MP20_two.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$MP20_two
+Количество листов МП20:                 ${MP20_two.heigth} м = ${MP20_two.get_num_sheetsMP20()} шт
+Площадь листов МП20:                    ${MP20_two.get_areaMP20().toStringAsFixed(3)} м2
+Стоимость МП20 Матовый 0.50мм:          ${MP20_two.get_MP20_cost_050mat().toStringAsFixed(2)} руб
+Стоимость МП20 Матовый 0.45мм:          ${MP20_two.get_MP20_cost_045mat().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.50мм:           ${MP20_two.get_MP20_cost_050().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.45мм:           ${MP20_two.get_MP20_cost_045().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.40мм:           ${MP20_two.get_MP20_cost_040().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.35мм:           ${MP20_two.get_MP20_cost_035().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.50мм:            ${MP20_two.get_MP20_cost_050zinc().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.45мм:            ${MP20_two.get_MP20_cost_045zinc().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.40мм:            ${MP20_two.get_MP20_cost_040zinc().toStringAsFixed(2)} руб
+
+Количество Пэшек МП20:                  ${MP20_two.get_num_pawnsMP20()} шт = ${MP20_two.get_length_pawnsMP20()} мп
+Стоимость Матовых Пэшек МП20:           ${MP20_two.get_pawnsMP20_cost_mat().toStringAsFixed(2)} руб
+Стоимость Глянцевых Пэшек МП20:         ${MP20_two.get_pawnsMP20_cost().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек МП20:      ${MP20_two.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб\n''');
+  } else {}
+
+  if (MP20_three.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$MP20_three
+Количество листов МП20:                 ${MP20_three.heigth} м = ${MP20_three.get_num_sheetsMP20()} шт
+Площадь листов МП20:                    ${MP20_three.get_areaMP20().toStringAsFixed(3)} м2
+Стоимость МП20 Матовый 0.50мм:          ${MP20_three.get_MP20_cost_050mat().toStringAsFixed(2)} руб
+Стоимость МП20 Матовый 0.45мм:          ${MP20_three.get_MP20_cost_045mat().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.50мм:           ${MP20_three.get_MP20_cost_050().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.45мм:           ${MP20_three.get_MP20_cost_045().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.40мм:           ${MP20_three.get_MP20_cost_040().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.35мм:           ${MP20_three.get_MP20_cost_035().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.50мм:            ${MP20_three.get_MP20_cost_050zinc().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.45мм:            ${MP20_three.get_MP20_cost_045zinc().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.40мм:            ${MP20_three.get_MP20_cost_040zinc().toStringAsFixed(2)} руб
+
+Количество Пэшек МП20:                  ${MP20_three.get_num_pawnsMP20()} шт = ${MP20_three.get_length_pawnsMP20()} мп
+Стоимость Матовых Пэшек МП20:           ${MP20_three.get_pawnsMP20_cost_mat().toStringAsFixed(2)} руб
+Стоимость Глянцевых Пэшек МП20:         ${MP20_three.get_pawnsMP20_cost().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек МП20:      ${MP20_three.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб\n''');
+  } else {}
+
+  if (MP20_four.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$MP20_four
+Количество листов МП20:                 ${MP20_four.heigth} м = ${MP20_four.get_num_sheetsMP20()} шт
+Площадь листов МП20:                    ${MP20_four.get_areaMP20().toStringAsFixed(3)} м2
+Стоимость МП20 Матовый 0.50мм:          ${MP20_four.get_MP20_cost_050mat().toStringAsFixed(2)} руб
+Стоимость МП20 Матовый 0.45мм:          ${MP20_four.get_MP20_cost_045mat().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.50мм:           ${MP20_four.get_MP20_cost_050().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.45мм:           ${MP20_four.get_MP20_cost_045().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.40мм:           ${MP20_four.get_MP20_cost_040().toStringAsFixed(2)} руб
+Стоимость МП20 Глянец 0.35мм:           ${MP20_four.get_MP20_cost_035().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.50мм:            ${MP20_four.get_MP20_cost_050zinc().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.45мм:            ${MP20_four.get_MP20_cost_045zinc().toStringAsFixed(2)} руб
+Стоимость МП20 Оцинк 0.40мм:            ${MP20_four.get_MP20_cost_040zinc().toStringAsFixed(2)} руб
+
+Количество Пэшек МП20:                  ${MP20_four.get_num_pawnsMP20()} шт = ${MP20_four.get_length_pawnsMP20()} мп
+Стоимость Матовых Пэшек МП20:           ${MP20_four.get_pawnsMP20_cost_mat().toStringAsFixed(2)} руб
+Стоимость Глянцевых Пэшек МП20:         ${MP20_four.get_pawnsMP20_cost().toStringAsFixed(2)} руб
+Стоимость Оцинкованных Пэшек МП20:      ${MP20_four.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (fence.length > 0) {
@@ -665,7 +802,34 @@ void main() {
 Количество штакетин:                    ${fence.heigth} м = ${fence.get_num_fence()} шт
 Погонаж штакетник:                      ${fence.get_length_fence().toStringAsFixed(3)} мп
 Стоимость 2х матового 0.40мм штакета:   ${fence.get_fence_double_sided_cost_040mat().toStringAsFixed(2)} руб
-Стоимость 2х глянцевого 0.40мм штакета: ${fence.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб''');
+Стоимость 2х глянцевого 0.40мм штакета: ${fence.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб\n''');
+  } else {}
+
+  if (fence_two.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$fence_two
+Количество штакетин:                    ${fence_two.heigth} м = ${fence_two.get_num_fence()} шт
+Погонаж штакетник:                      ${fence_two.get_length_fence().toStringAsFixed(3)} мп
+Стоимость 2х матового 0.40мм штакета:   ${fence_two.get_fence_double_sided_cost_040mat().toStringAsFixed(2)} руб
+Стоимость 2х глянцевого 0.40мм штакета: ${fence_two.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб\n''');
+  } else {}
+
+  if (fence_three.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$fence_three
+Количество штакетин:                    ${fence_three.heigth} м = ${fence_three.get_num_fence()} шт
+Погонаж штакетник:                      ${fence_three.get_length_fence().toStringAsFixed(3)} мп
+Стоимость 2х матового 0.40мм штакета:   ${fence_three.get_fence_double_sided_cost_040mat().toStringAsFixed(2)} руб
+Стоимость 2х глянцевого 0.40мм штакета: ${fence_three.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб\n''');
+  } else {}
+
+  if (fence_four.length > 0) {
+    print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$fence_four
+Количество штакетин:                    ${fence_four.heigth} м = ${fence_four.get_num_fence()} шт
+Погонаж штакетник:                      ${fence_four.get_length_fence().toStringAsFixed(3)} мп
+Стоимость 2х матового 0.40мм штакета:   ${fence_four.get_fence_double_sided_cost_040mat().toStringAsFixed(2)} руб
+Стоимость 2х глянцевого 0.40мм штакета: ${fence_four.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб\n''');
   } else {}
 
   // print('\n${PriceDrainage().toString()}');
