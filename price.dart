@@ -133,12 +133,34 @@ class PriceHedge {
 Стоимость оцинкованного 0.45мм профнастила MП20 за 1м2:   ${MP20_price_045zinc.toStringAsFixed(2)} руб
 Стоимость оцинкованного 0.40мм профнастила MП20 за 1м2:   ${MP20_price_040zinc.toStringAsFixed(2)} руб
 
-Стоимость матовой Пэшки для МП20 профнастила за 1мп:        ${pawnMP20_price_mat.toStringAsFixed(2)} руб 
-Стоимость глянцевой Пэшки для МП20 профнастила за 1мп:      ${pawnMP20_price.toStringAsFixed(2)} руб 
-Стоимость оцинкованной Пэшки для МП20 профнастила за 1мп:   ${pawnMP20_price_zinc.toStringAsFixed(2)} руб 
+Стоимость матовой Пэшки для МП20 профнастила за 1мп:      ${pawnMP20_price_mat.toStringAsFixed(2)} руб 
+Стоимость глянцевой Пэшки для МП20 профнастила за 1мп:    ${pawnMP20_price.toStringAsFixed(2)} руб 
+Стоимость оцинкованной Пэшки для МП20 профнастила за 1мп: ${pawnMP20_price_zinc.toStringAsFixed(2)} руб 
 
 Стоимость двухстороннего матового 0.40мм штакета за 1м:   ${fence_double_sided_price_040mat.toStringAsFixed(2)} руб
 Стоимость двухстороннего глянцевого 0.40мм штакета за 1м: ${fence_double_sided_price_040.toStringAsFixed(2)} руб
+''';
+  }
+}
+
+class Screws {
+  /*
+  Класс Screws (Саморезы), он принимает 
+  на вход следующие свойства (параметры):
+  - double screw_48x29 (стоимость самореза металл по дереву 4.8х29 за 1шт в руб)
+  - double screw_48x70 (стоимость самореза металл по дереву 4.8х70 за 1шт в руб)
+  - double screw_55x19 (стоимость самореза металл по металу 5.5х19 за 1шт в руб)
+  */
+  double screw_48x29 = 0.17;
+  double screw_48x70 = 0.24;
+  double screw_55x19 = 0.17;
+
+  @override
+  String toString() {
+    return '''
+Стоимость самореза металл по дереву 4.8х29 за 1шт:        ${screw_48x29.toStringAsFixed(2)} руб 
+Стоимость самореза металл по дереву 4.8х70 за 1шт:        ${screw_48x70.toStringAsFixed(2)} руб 
+Стоимость самореза металл по металу 5.5х19 за 1шт:        ${screw_55x19.toStringAsFixed(2)} руб 
 ''';
   }
 }

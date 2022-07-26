@@ -6,9 +6,13 @@ class Hedge {
   на вход следующие свойства (параметры):
   - double length (длина изгороди в метрах)
   - double heigth (высота изгороди в метрах)
+  - int num_rows_across (количество рядов прожилин = 2шт)
+  - double length_pawn (длина Пэшки = 2.0м)
+  одного элемента изгороди в шт)
   */
   final double length;
   final double heigth;
+  int num_rows_across = 2;
   final double length_pawn = 2.0;
 
   Hedge(this.length, this.heigth);
@@ -31,10 +35,12 @@ class ProfileC8 extends Hedge {
   а так же свои собственные свойства (параметры):
   - double full_width (полную ширину листа в метрах)
   - double useful_width (полезную ширину листа в метрах)
+  - int screw_across (количество саморезов на 1 прожилину,
   и имеет методы для попролётного расчета количества листов С8 и их площади
   */
   final double full_width = 1.20;
   final double useful_width = 1.15;
+  final int screws_across = 5;
 
   ProfileC8(super.length, super.heigth);
 
@@ -274,6 +280,39 @@ class ProfileC8 extends Hedge {
         get_length_pawnsC8() * PriceHedge().pawnC8_price_zinc;
     return pawnsC8_cost_zinc;
   }
+
+  get_num_screwsC8() {
+    /*
+  Метод get_num_screwsC8 позволяет получить / рассчитать 
+  количество саморезов для крепежа профнастила С8 для изгороди, на основании:
+  - int num_rows_across (количество рядов прожилин в шт)
+  - int screws_across (количество саморезов на 1 прожилину,
+  одного листа профнастила С8 в шт),
+  возвращает int num_screwsC8 (количество саморезов для крепежа 
+  профнастила С8 для изгороди в шт кратно 1 упаковке саморезов = 250шт)
+  */
+    int num_screwsC8 =
+        ((get_num_sheetsC8() * (num_rows_across * screws_across)) / 250)
+                .ceil() *
+            250;
+    return num_screwsC8;
+  }
+
+  get_screwsC8_cost() {
+    /*
+  Метод get_screwsC8_cost позволяет получить / рассчитать 
+  стоимость саморезов металл по металу 5.5х19 для крепления С8 профнастила 
+  на весь пролёт изгороди, на основании:
+  - get_num_screwsC8() (метод расчета количества листов профнастила С8 в шт)
+  - Screws().screw_55x19 (параметр класса Screws: 
+  стоимость самореза металл по металу 5.5х19 за 1шт в руб),
+  возвращает double screwsC8_cost (общую стоимость саморезов для крепежа 
+  профнастила С8 для изгороди в шт кратно 1 упаковке саморезов = 250шт,
+  на весь пролёт изгороди в руб)
+  */
+    double screwsC8_cost = get_num_screwsC8() * Screws().screw_55x19;
+    return screwsC8_cost;
+  }
 }
 
 class ProfileMP20 extends Hedge {
@@ -289,6 +328,7 @@ class ProfileMP20 extends Hedge {
   */
   final double full_width = 1.15;
   final double useful_width = 1.10;
+  final int screws_across = 5;
 
   ProfileMP20(super.length, super.heigth);
 
@@ -529,6 +569,39 @@ class ProfileMP20 extends Hedge {
         get_length_pawnsMP20() * PriceHedge().pawnMP20_price_zinc;
     return pawnsMP20_cost_zinc;
   }
+
+  get_num_screwsMP20() {
+    /*
+  Метод get_num_screwsMP20 позволяет получить / рассчитать 
+  количество саморезов для крепежа профнастила МП20 для изгороди, на основании:
+  - int num_rows_across (количество рядов прожилин в шт)
+  - int screws_across (количество саморезов на 1 прожилину,
+  одного листа профнастила МП20 в шт),
+  возвращает int num_screwsMP20 (количество саморезов для крепежа 
+  профнастила МП20 для изгороди в шт кратно 1 упаковке саморезов = 250шт)
+  */
+    int num_screwsMP20 =
+        ((get_num_sheetsMP20() * (num_rows_across * screws_across)) / 250)
+                .ceil() *
+            250;
+    return num_screwsMP20;
+  }
+
+  get_screwsMP20_cost() {
+    /*
+  Метод get_screwsMP20_cost позволяет получить / рассчитать 
+  стоимость саморезов металл по металу 5.5х19 для крепления МП20 профнастила 
+  на весь пролёт изгороди, на основании:
+  - get_num_screwsMP20() (метод расчета количества листов профнастила МП20 в шт)
+  - Screws().screw_55x19 (параметр класса Screws: 
+  стоимость самореза металл по металу 5.5х19 за 1шт в руб),
+  возвращает double screwsMP20_cost (общую стоимость саморезов для крепежа 
+  профнастила МП20 для изгороди в шт кратно 1 упаковке саморезов = 250шт,
+  на весь пролёт изгороди в руб)
+  */
+    double screwsMP20_cost = get_num_screwsMP20() * Screws().screw_55x19;
+    return screwsMP20_cost;
+  }
 }
 
 class Fence extends Hedge {
@@ -540,10 +613,12 @@ class Fence extends Hedge {
   а так же свои собственные свойства (параметры):
   - double gap (зазор между двумя соседними штакетинами в метрах)
   - double width (ширина штакетника в метрах)
+  - int screw_across (количество саморезов на 1 прожилину,
   и имеет методы для попролётного расчета количества штакетника и его погонаж
   */
   final double gap;
   final double width = 0.110;
+  final int screws_across = 2;
 
   Fence(super.length, super.heigth, this.gap);
 
@@ -610,20 +685,52 @@ class Fence extends Hedge {
         get_length_fence() * PriceHedge().fence_double_sided_price_040;
     return fence_double_sided_cost_040;
   }
+
+  get_num_screws_fence() {
+    /*
+  Метод get_num_screws_fence позволяет получить / рассчитать 
+  количество саморезов для крепежа штакета изгороди, на основании:
+  - int num_rows_across (количество рядов прожилин в шт)
+  - int screws_across (количество саморезов на 1 прожилину,
+  одного штакета в шт),
+  возвращает int num_screws_fence (количество саморезов для крепежа 
+  штакета изгороди в шт кратно 1 упаковке саморезов = 250шт)
+  */
+    int num_screws_fence =
+        ((get_num_fence() * (num_rows_across * screws_across)) / 250).ceil() *
+            250;
+    return num_screws_fence;
+  }
+
+  get_screws_fence_cost() {
+    /*
+  Метод get_screws_fence_cost позволяет получить / рассчитать 
+  стоимость саморезов металл по металу 5.5х19 для крепления штакета 
+  на весь пролёт изгороди, на основании:
+  - get_num_screws_fence() (метод расчета количества штакета в шт)
+  - Screws().screw_55x19 (параметр класса Screws: 
+  стоимость самореза металл по металу 5.5х19 за 1шт в руб),
+  возвращает double screws_fence_cost (общую стоимость саморезов для крепежа 
+  штакета изгороди в шт кратно 1 упаковке саморезов = 250шт,
+  на весь пролёт изгороди в руб)
+  */
+    double screws_fence_cost = get_num_screws_fence() * Screws().screw_55x19;
+    return screws_fence_cost;
+  }
 }
 
 void main() {
-  final C8 = ProfileC8(100, 1.5);
-  final C8_two = ProfileC8(0, 0.0);
-  final C8_three = ProfileC8(0, 0.0);
-  final C8_four = ProfileC8(0, 0.0);
+  final C8 = ProfileC8(35, 1.5);
+  final C8_two = ProfileC8(0, 1.5);
+  final C8_three = ProfileC8(0, 1.7);
+  final C8_four = ProfileC8(0, 2.0);
 
-  final MP20 = ProfileMP20(100, 1.5);
+  final MP20 = ProfileMP20(35, 1.5);
   final MP20_two = ProfileMP20(0, 0.0);
   final MP20_three = ProfileMP20(0, 0.0);
   final MP20_four = ProfileMP20(0, 0.0);
 
-  final fence = Fence(100, 1.5, 0.040);
+  final fence = Fence(35, 1.5, 0.040);
   final fence_two = Fence(0, 0.4, 0.010);
   final fence_three = Fence(0, 0.9, 0.020);
   final fence_four = Fence(0, 0.5, 0.030);
@@ -646,7 +753,9 @@ void main() {
 Количество Пэшек С8:                    ${C8.get_num_pawnsC8()} шт = ${C8.get_length_pawnsC8()} мп
 Стоимость Матовых Пэшек С8:             ${C8.get_pawnsC8_cost_mat().toStringAsFixed(2)} руб
 Стоимость Глянцевых Пэшек С8:           ${C8.get_pawnsC8_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек С8:        ${C8.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб\n''');
+Стоимость Оцинкованных Пэшек С8:        ${C8.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:     ${C8.get_num_screwsC8()} шт = ${C8.get_screwsC8_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (C8_two.length > 0) {
@@ -667,7 +776,9 @@ void main() {
 Количество Пэшек С8:                    ${C8_two.get_num_pawnsC8()} шт = ${C8_two.get_length_pawnsC8()} мп
 Стоимость Матовых Пэшек С8:             ${C8_two.get_pawnsC8_cost_mat().toStringAsFixed(2)} руб
 Стоимость Глянцевых Пэшек С8:           ${C8_two.get_pawnsC8_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек С8:        ${C8_two.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб\n''');
+Стоимость Оцинкованных Пэшек С8:        ${C8_two.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:     ${C8_two.get_num_screwsC8()} шт = ${C8_two.get_screwsC8_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (C8_three.length > 0) {
@@ -688,7 +799,9 @@ void main() {
 Количество Пэшек С8:                    ${C8_three.get_num_pawnsC8()} шт = ${C8_three.get_length_pawnsC8()} мп
 Стоимость Матовых Пэшек С8:             ${C8_three.get_pawnsC8_cost_mat().toStringAsFixed(2)} руб
 Стоимость Глянцевых Пэшек С8:           ${C8_three.get_pawnsC8_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек С8:        ${C8_three.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб\n''');
+Стоимость Оцинкованных Пэшек С8:        ${C8_three.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб\
+
+Количество саморезов 5.5х19 и цена:     ${C8_three.get_num_screwsC8()} шт = ${C8_three.get_screwsC8_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (C8_four.length > 0) {
@@ -709,7 +822,9 @@ void main() {
 Количество Пэшек С8:                    ${C8_four.get_num_pawnsC8()} шт = ${C8_four.get_length_pawnsC8()} мп
 Стоимость Матовых Пэшек С8:             ${C8_four.get_pawnsC8_cost_mat().toStringAsFixed(2)} руб
 Стоимость Глянцевых Пэшек С8:           ${C8_four.get_pawnsC8_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек С8:        ${C8_four.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб\n''');
+Стоимость Оцинкованных Пэшек С8:        ${C8_four.get_pawnsC8_cost_zinc().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:     ${C8_four.get_num_screwsC8()} шт = ${C8_four.get_screwsC8_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (MP20.length > 0) {
@@ -730,7 +845,9 @@ void main() {
 Количество Пэшек МП20:                  ${MP20.get_num_pawnsMP20()} шт = ${MP20.get_length_pawnsMP20()} мп
 Стоимость Матовых Пэшек МП20:           ${MP20.get_pawnsMP20_cost_mat().toStringAsFixed(2)} руб
 Стоимость Глянцевых Пэшек МП20:         ${MP20.get_pawnsMP20_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек МП20:      ${MP20.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб\n''');
+Стоимость Оцинкованных Пэшек МП20:      ${MP20.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:     ${MP20.get_num_screwsMP20()} шт = ${MP20.get_screwsMP20_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (MP20_two.length > 0) {
@@ -751,7 +868,9 @@ void main() {
 Количество Пэшек МП20:                  ${MP20_two.get_num_pawnsMP20()} шт = ${MP20_two.get_length_pawnsMP20()} мп
 Стоимость Матовых Пэшек МП20:           ${MP20_two.get_pawnsMP20_cost_mat().toStringAsFixed(2)} руб
 Стоимость Глянцевых Пэшек МП20:         ${MP20_two.get_pawnsMP20_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек МП20:      ${MP20_two.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб\n''');
+Стоимость Оцинкованных Пэшек МП20:      ${MP20_two.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:     ${MP20_two.get_num_screwsMP20()} шт = ${MP20_two.get_screwsMP20_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (MP20_three.length > 0) {
@@ -772,7 +891,9 @@ void main() {
 Количество Пэшек МП20:                  ${MP20_three.get_num_pawnsMP20()} шт = ${MP20_three.get_length_pawnsMP20()} мп
 Стоимость Матовых Пэшек МП20:           ${MP20_three.get_pawnsMP20_cost_mat().toStringAsFixed(2)} руб
 Стоимость Глянцевых Пэшек МП20:         ${MP20_three.get_pawnsMP20_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек МП20:      ${MP20_three.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб\n''');
+Стоимость Оцинкованных Пэшек МП20:      ${MP20_three.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:     ${MP20_three.get_num_screwsMP20()} шт = ${MP20_three.get_screwsMP20_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (MP20_four.length > 0) {
@@ -793,7 +914,9 @@ void main() {
 Количество Пэшек МП20:                  ${MP20_four.get_num_pawnsMP20()} шт = ${MP20_four.get_length_pawnsMP20()} мп
 Стоимость Матовых Пэшек МП20:           ${MP20_four.get_pawnsMP20_cost_mat().toStringAsFixed(2)} руб
 Стоимость Глянцевых Пэшек МП20:         ${MP20_four.get_pawnsMP20_cost().toStringAsFixed(2)} руб
-Стоимость Оцинкованных Пэшек МП20:      ${MP20_four.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб\n''');
+Стоимость Оцинкованных Пэшек МП20:      ${MP20_four.get_pawnsMP20_cost_zinc().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:     ${MP20_four.get_num_screwsMP20()} шт = ${MP20_four.get_screwsMP20_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (fence.length > 0) {
@@ -802,7 +925,9 @@ void main() {
 Количество штакетин:                    ${fence.heigth} м = ${fence.get_num_fence()} шт
 Погонаж штакетник:                      ${fence.get_length_fence().toStringAsFixed(3)} мп
 Стоимость 2х матового 0.40мм штакета:   ${fence.get_fence_double_sided_cost_040mat().toStringAsFixed(2)} руб
-Стоимость 2х глянцевого 0.40мм штакета: ${fence.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб\n''');
+Стоимость 2х глянцевого 0.40мм штакета: ${fence.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:     ${fence.get_num_screws_fence()} шт = ${fence.get_screws_fence_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (fence_two.length > 0) {
@@ -811,7 +936,9 @@ void main() {
 Количество штакетин:                    ${fence_two.heigth} м = ${fence_two.get_num_fence()} шт
 Погонаж штакетник:                      ${fence_two.get_length_fence().toStringAsFixed(3)} мп
 Стоимость 2х матового 0.40мм штакета:   ${fence_two.get_fence_double_sided_cost_040mat().toStringAsFixed(2)} руб
-Стоимость 2х глянцевого 0.40мм штакета: ${fence_two.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб\n''');
+Стоимость 2х глянцевого 0.40мм штакета: ${fence_two.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:     ${fence_two.get_num_screws_fence()} шт = ${fence_two.get_screws_fence_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (fence_three.length > 0) {
@@ -820,7 +947,9 @@ void main() {
 Количество штакетин:                    ${fence_three.heigth} м = ${fence_three.get_num_fence()} шт
 Погонаж штакетник:                      ${fence_three.get_length_fence().toStringAsFixed(3)} мп
 Стоимость 2х матового 0.40мм штакета:   ${fence_three.get_fence_double_sided_cost_040mat().toStringAsFixed(2)} руб
-Стоимость 2х глянцевого 0.40мм штакета: ${fence_three.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб\n''');
+Стоимость 2х глянцевого 0.40мм штакета: ${fence_three.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:     ${fence_three.get_num_screws_fence()} шт = ${fence_three.get_screws_fence_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   if (fence_four.length > 0) {
@@ -829,7 +958,9 @@ void main() {
 Количество штакетин:                    ${fence_four.heigth} м = ${fence_four.get_num_fence()} шт
 Погонаж штакетник:                      ${fence_four.get_length_fence().toStringAsFixed(3)} мп
 Стоимость 2х матового 0.40мм штакета:   ${fence_four.get_fence_double_sided_cost_040mat().toStringAsFixed(2)} руб
-Стоимость 2х глянцевого 0.40мм штакета: ${fence_four.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб\n''');
+Стоимость 2х глянцевого 0.40мм штакета: ${fence_four.get_fence_double_sided_cost_040().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:     ${fence_four.get_num_screws_fence()} шт = ${fence_four.get_screws_fence_cost().toStringAsFixed(2)} руб\n''');
   } else {}
 
   // print('\n${PriceDrainage().toString()}');
