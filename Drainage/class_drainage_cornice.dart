@@ -1,8 +1,8 @@
-import 'price.dart';
+import '../Price/class_price_drainage.dart';
 
 class DrainageCornice {
   /*
-  Класс DrainageCornice (водосточная система), он принимает 
+  Класс DrainageCornice (водосточный карниз), он принимает 
   на вход следующие параметры:
   - double cornice_length (длина карниза в метрах)
   - double downpipe_height (высота от карниза до земли в метрах)
