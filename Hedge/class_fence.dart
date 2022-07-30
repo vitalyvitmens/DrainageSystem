@@ -95,7 +95,8 @@ class Fence extends Hedge {
   штакета изгороди в шт кратно 1 упаковке саморезов = 250шт)
   */
     int num_screws_fence =
-        ((get_num_fence() * (num_rows_across * screws_across)) / 250).ceil() *
+        ((get_num_fence() * (Hedge.num_rows_across * screws_across)) / 250)
+                .ceil() *
             250;
     return num_screws_fence;
   }

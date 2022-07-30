@@ -27,7 +27,7 @@ enum Color {
 
 abstract class Hedge {
   /*
-  Класс Hedge (изгородь), он принимает 
+  Абстрактный класс Hedge (изгородь), он принимает 
   на вход следующие свойства (параметры):
   - double length (длина изгороди в метрах)
   - double heigth (высота изгороди в метрах)
@@ -39,7 +39,7 @@ abstract class Hedge {
   final double heigth;
   final Color color;
   final double thickness;
-  int num_rows_across = 2;
+  static int num_rows_across = 2;
   final double length_pawn = 2.0;
 
   Hedge(this.length, this.heigth, this.color, this.thickness);

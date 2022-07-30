@@ -5,6 +5,8 @@ import 'Hedge/class_fence.dart';
 import 'Hedge/class_hedge.dart';
 import 'Hedge/class_profileC8.dart';
 import 'Hedge/class_profileMP20.dart';
+import 'Hemming/class_cornice_overhang.dart';
+import 'Hemming/class_end_overhang.dart';
 
 void main() {
   final C8 = ProfileC8(36, 1.5, Color.RAL8017, 0.45);
@@ -70,6 +72,14 @@ void main() {
   - double downpipe_height (высота от карниза №6 до земли в метрах)
   - int num_downpipe (количество водосточных стояков на карнизе №6)
   */
+
+  final hemming_cornice_one =
+      CorniceOverhang(12.0, 0.85, Color.RAL8017, 0.5, 0.27);
+  final hemming_cornice_two =
+      CorniceOverhang(12.0, 0.85, Color.RAL8017, 0.5, 0.27);
+
+  final hemming_end_one = EndOverhang(6.5, 0.5, Color.RAL8017, 0.5, 0.070);
+  final hemming_end_two = EndOverhang(6.5, 0.5, Color.RAL8017, 0.5, 0.070);
 
   if (C8.length > 0) {
     if (C8.color == Color.RAL7024MAT ||
@@ -1757,5 +1767,130 @@ ${listGutters.length + 1}). ВОДОСТОЧНЫЙ КАРНИЗ №${listGutters
     listCosts.add(sum_pins_cost());
   } else {}
   print(
-      '\nИТОГО:              ${sum_elements()} шт = ${sum_costs().toStringAsFixed(2)} руб');
+      '\nИТОГО:              ${sum_elements()} шт = ${sum_costs().toStringAsFixed(2)} руб\n');
+
+  if (hemming_cornice_one.length > 0) {
+    if (hemming_cornice_one.color == Color.RAL7024MAT ||
+        hemming_cornice_one.color == Color.RAL8017MAT ||
+        hemming_cornice_one.color == Color.RAL8019MAT ||
+        hemming_cornice_one.color == Color.RAL9005MAT) {
+      if (hemming_cornice_one.thickness == 0.50) {
+        print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ПОДШИВЫ КАРНИЗНОГО СВЕСА:\n$hemming_cornice_one
+Количество листов С8:                     ${hemming_cornice_one.depth} м = ${hemming_cornice_one.get_num_sheetsC8()} шт
+Площадь листов С8:                        ${hemming_cornice_one.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Матовый 0.50мм:              ${hemming_cornice_one.get_C8_cost_050mat().toStringAsFixed(2)} руб
+
+Количество Матовых L-планок ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_num_Lplank()} шт = ${hemming_cornice_one.get_length_Lplanks()} мп
+Стоимость Матовых L-планок ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50:  ${hemming_cornice_one.get_Lplank_cost_mat().toStringAsFixed(2)} руб
+
+Количество саморезов 4.8х29 и цена:       ${hemming_cornice_one.get_num_screws_hemming()} шт = ${hemming_cornice_one.get_screws_hemming_cost().toStringAsFixed(2)} руб\n''');
+      } else if (hemming_cornice_one.thickness == 0.45) {
+        print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hemming_cornice_one
+Количество листов С8:                     ${hemming_cornice_one.depth} м = ${hemming_cornice_one.get_num_sheetsC8()} шт
+Площадь листов С8:                        ${hemming_cornice_one.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Матовый 0.45мм:              ${hemming_cornice_one.get_C8_cost_045mat().toStringAsFixed(2)} руб
+
+Количество Матовых L-планок ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_num_Lplank()} шт = ${hemming_cornice_one.get_length_Lplanks()} мп
+Стоимость Матовых L-планок ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50:  ${hemming_cornice_one.get_Lplank_cost_mat().toStringAsFixed(2)} руб
+
+Количество саморезов 4.8х29 и цена:       ${hemming_cornice_one.get_num_screws_hemming()} шт = ${hemming_cornice_one.get_screws_hemming_cost().toStringAsFixed(2)} руб\n''');
+      } else {}
+    } else if (hemming_cornice_one.color == Color.RAL1014 ||
+        hemming_cornice_one.color == Color.RAL1015 ||
+        hemming_cornice_one.color == Color.RAL1018 ||
+        hemming_cornice_one.color == Color.RAL3005 ||
+        hemming_cornice_one.color == Color.RAL3009 ||
+        hemming_cornice_one.color == Color.RAL3011 ||
+        hemming_cornice_one.color == Color.RAL5005 ||
+        hemming_cornice_one.color == Color.RAL6005 ||
+        hemming_cornice_one.color == Color.RAL7004 ||
+        hemming_cornice_one.color == Color.RAL7024 ||
+        hemming_cornice_one.color == Color.RAL8017 ||
+        hemming_cornice_one.color == Color.RAL8019 ||
+        hemming_cornice_one.color == Color.RAL9003 ||
+        hemming_cornice_one.color == Color.RAL9006) {
+      if (hemming_cornice_one.thickness == 0.50) {
+        print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hemming_cornice_one
+Количество листов С8:                     ${hemming_cornice_one.depth} м = ${hemming_cornice_one.get_num_sheetsC8()} шт
+Площадь листов С8:                        ${hemming_cornice_one.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Глянец 0.50мм:               ${hemming_cornice_one.get_C8_cost_050().toStringAsFixed(2)} руб
+
+Количество Глянцевых L-планок             ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_num_Lplank()} шт = ${hemming_cornice_one.get_length_Lplanks()} мп
+Стоимость Глянцевых L-планок              ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_Lplank_cost().toStringAsFixed(2)} руб
+
+Количество саморезов 4.8х29 и цена:       ${hemming_cornice_one.get_num_screws_hemming()} шт = ${hemming_cornice_one.get_screws_hemming_cost().toStringAsFixed(2)} руб\n''');
+      } else if (hemming_cornice_one.thickness == 0.45) {
+        print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hemming_cornice_one
+Количество листов С8:                     ${hemming_cornice_one.depth} м = ${hemming_cornice_one.get_num_sheetsC8()} шт
+Площадь листов С8:                        ${hemming_cornice_one.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Глянец 0.45мм:               ${hemming_cornice_one.get_C8_cost_045().toStringAsFixed(2)} руб
+
+Количество Глянцевых L-планок             ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_num_Lplank()} шт = ${hemming_cornice_one.get_length_Lplanks()} мп
+Стоимость Глянцевых L-планок              ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_Lplank_cost().toStringAsFixed(2)} руб
+
+Количество саморезов 4.8х29 и цена:       ${hemming_cornice_one.get_num_screws_hemming()} шт = ${hemming_cornice_one.get_screws_hemming_cost().toStringAsFixed(2)} руб\n''');
+      } else if (hemming_cornice_one.thickness == 0.40) {
+        print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hemming_cornice_one
+Количество листов С8:                     ${hemming_cornice_one.depth} м = ${hemming_cornice_one.get_num_sheetsC8()} шт
+Площадь листов С8:                        ${hemming_cornice_one.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Глянец 0.40мм:               ${hemming_cornice_one.get_C8_cost_040().toStringAsFixed(2)} руб
+
+Количество Глянцевых L-планок             ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_num_Lplank()} шт = ${hemming_cornice_one.get_length_Lplanks()} мп
+Стоимость Глянцевых L-планок              ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_Lplank_cost().toStringAsFixed(2)} руб
+
+Количество саморезов 4.8х29 и цена:       ${hemming_cornice_one.get_num_screws_hemming()} шт = ${hemming_cornice_one.get_screws_hemming_cost().toStringAsFixed(2)} руб\n''');
+      } else if (hemming_cornice_one.thickness == 0.35) {
+        print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hemming_cornice_one
+Количество листов С8:                     ${hemming_cornice_one.depth} м = ${hemming_cornice_one.get_num_sheetsC8()} шт
+Площадь листов С8:                        ${hemming_cornice_one.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Глянец 0.35мм:               ${hemming_cornice_one.get_C8_cost_035().toStringAsFixed(2)} руб
+
+Количество Глянцевых L-планок             ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_num_Lplank()} шт = ${hemming_cornice_one.get_length_Lplanks()} мп
+Стоимость Глянцевых L-планок              ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_Lplank_cost().toStringAsFixed(2)} руб
+
+Количество саморезов 4.8х29 и цена:       ${hemming_cornice_one.get_num_screws_hemming()} шт = ${hemming_cornice_one.get_screws_hemming_cost().toStringAsFixed(2)} руб\n''');
+      }
+    } else if (hemming_cornice_one.color == Color.Zinc) {
+      if (hemming_cornice_one.thickness == 0.50) {
+        print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hemming_cornice_one
+Количество листов С8:                     ${hemming_cornice_one.depth} м = ${hemming_cornice_one.get_num_sheetsC8()} шт
+Площадь листов С8:                        ${hemming_cornice_one.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Оцинк 0.50мм:                ${hemming_cornice_one.get_C8_cost_050zinc().toStringAsFixed(2)} руб
+
+Количество  Оцинкованных L-планок         ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_num_Lplank()} шт = ${hemming_cornice_one.get_length_Lplanks()} мп
+Стоимость Оцинкованных L-планок           ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_Lplank_cost_zinc().toStringAsFixed(2)} руб
+
+Количество саморезов 4.8х29 и цена:       ${hemming_cornice_one.get_num_screws_hemming()} шт = ${hemming_cornice_one.get_screws_hemming_cost().toStringAsFixed(2)} руб\n''');
+      } else if (hemming_cornice_one.thickness == 0.45) {
+        print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hemming_cornice_one
+Количество листов С8:                     ${hemming_cornice_one.depth} м = ${hemming_cornice_one.get_num_sheetsC8()} шт
+Площадь листов С8:                        ${hemming_cornice_one.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Оцинк 0.45мм:                ${hemming_cornice_one.get_C8_cost_045zinc().toStringAsFixed(2)} руб
+
+Количество  Оцинкованных L-планок         ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_num_Lplank()} шт = ${hemming_cornice_one.get_length_Lplanks()} мп
+Стоимость Оцинкованных L-планок           ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_Lplank_cost_zinc().toStringAsFixed(2)} руб
+
+Количество саморезов 4.8х29 и цена:       ${hemming_cornice_one.get_num_screws_hemming()} шт = ${hemming_cornice_one.get_screws_hemming_cost().toStringAsFixed(2)} руб\n''');
+      } else if (hemming_cornice_one.thickness == 0.40) {
+        print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n$hemming_cornice_one
+Количество листов С8:                     ${hemming_cornice_one.depth} м = ${hemming_cornice_one.get_num_sheetsC8()} шт
+Площадь листов С8:                        ${hemming_cornice_one.get_areaC8().toStringAsFixed(3)} м2
+Стоимость С8 Оцинк 0.40мм:                ${hemming_cornice_one.get_C8_cost_040zinc().toStringAsFixed(2)} руб
+
+Количество Оцинкованных L-планок          ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_num_Lplank()} шт = ${hemming_cornice_one.get_length_Lplanks()} мп
+Стоимость Оцинкованных L-планок           ${(hemming_cornice_one.overhang_thickness * 1000).toInt()}x50: ${hemming_cornice_one.get_Lplank_cost_zinc().toStringAsFixed(2)} руб
+
+Количество саморезов 4.8х29 и цена:       ${hemming_cornice_one.get_num_screws_hemming()} шт = ${hemming_cornice_one.get_screws_hemming_cost().toStringAsFixed(2)} руб\n''');
+      } else {}
+    }
+  } else {}
 }

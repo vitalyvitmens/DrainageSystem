@@ -268,7 +268,7 @@ class ProfileMP20 extends Hedge {
   профнастила МП20 для изгороди в шт кратно 1 упаковке саморезов = 250шт)
   */
     int num_screwsMP20 =
-        ((get_num_sheetsMP20() * (num_rows_across * screws_across)) / 250)
+        ((get_num_sheetsMP20() * (Hedge.num_rows_across * screws_across)) / 250)
                 .ceil() *
             250;
     return num_screwsMP20;

@@ -14,9 +14,9 @@ class ProfileC8 extends Hedge {
   - int screw_across (количество саморезов на 1 прожилину,
   и имеет методы для попролётного расчета количества листов С8 и их площади
   */
-  final double full_width = 1.20;
-  final double useful_width = 1.15;
-  final int screws_across = 5;
+  static double full_width = 1.20;
+  static double useful_width = 1.15;
+  static int screws_across = 5;
 
   ProfileC8(super.length, super.heigth, super.color, super.thickness);
 
@@ -268,7 +268,7 @@ class ProfileC8 extends Hedge {
   профнастила С8 для изгороди в шт кратно 1 упаковке саморезов = 250шт)
   */
     int num_screwsC8 =
-        ((get_num_sheetsC8() * (num_rows_across * screws_across)) / 250)
+        ((get_num_sheetsC8() * (Hedge.num_rows_across * screws_across)) / 250)
                 .ceil() *
             250;
     return num_screwsC8;
