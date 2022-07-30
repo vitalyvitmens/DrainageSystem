@@ -291,6 +291,8 @@ abstract class Hemming {
   Метод get_num_screwsC8 позволяет получить / рассчитать 
   количество саморезов для крепежа профнастила С8 для кровельного свеса, 
   на основании:
+  - int get_num_sheetsC8() (метод получения количества листов профнастила С8
+  для кровельного свеса в шт)
   - int num_rows_across (количество рядов прожилин в шт)
   - int screws_across (количество саморезов на 1 прожилину,
   одного листа профнастила С8 в шт)
@@ -300,12 +302,10 @@ abstract class Hemming {
   профнастила С8 и L-планок для кровельного свеса в шт кратно 
   1 упаковке саморезов = 250шт)
   */
-    int num_screws_hemming = ((get_num_sheetsC8() *
-                        (Hedge.num_rows_across * ProfileC8.screws_across) +
-                    (get_length_Lplanks() * 6)) /
-                250)
-            .ceil() *
-        250;
+    int num_screws_hemming = (get_num_sheetsC8() *
+                (Hedge.num_rows_across * ProfileC8.screws_across) +
+            (get_length_Lplanks() * 6))
+        .ceil();
     return num_screws_hemming;
   }
 

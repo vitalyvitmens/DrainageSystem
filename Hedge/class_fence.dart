@@ -116,4 +116,29 @@ class Fence extends Hedge {
     double screws_fence_cost = get_num_screws_fence() * Screws().screw_55x19;
     return screws_fence_cost;
   }
+
+  get_result_hedge() {
+    if (length > 0) {
+      if (color == Color.RAL3005_RAL3005 ||
+          color == Color.RAL6005_RAL6005 ||
+          color == Color.RAL8017_RAL8017 ||
+          color == Color.RAL9003_RAL9003) {
+        print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n${toString()}
+Количество штакетин:                      ${heigth} м = ${get_num_fence()} шт
+Погонаж штакетник:                        ${get_length_fence().toStringAsFixed(3)} мп
+Стоимость 2х глянцевого 0.40мм штакета:   ${get_fence_double_sided_cost_040().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:       ${get_num_screws_fence()} шт = ${get_screws_fence_cost().toStringAsFixed(2)} руб\n''');
+      } else if (color == Color.RAL7024MAT_RAL7024MAT) {
+        print('''
+РАСЧЁТНЫЕ ПАРАМЕТРЫ ЗАБОРА:\n${toString()}
+Количество штакетин:                      ${heigth} м = ${get_num_fence()} шт
+Погонаж штакетник:                        ${get_length_fence().toStringAsFixed(3)} мп
+Стоимость 2х матового 0.40мм штакета:     ${get_fence_double_sided_cost_040mat().toStringAsFixed(2)} руб
+
+Количество саморезов 5.5х19 и цена:       ${get_num_screws_fence()} шт = ${get_screws_fence_cost().toStringAsFixed(2)} руб\n''');
+      } else {}
+    } else {}
+  }
 }
