@@ -1,5 +1,7 @@
 import '../Hedge/class_hedge.dart';
 import 'class_hemming.dart';
+import 'methods_calculating_elements_cornice_overhang.dart';
+import 'methods_cost_calculation_elements_cornice_overhang.dart';
 
 class CorniceOverhang extends Hemming {
   /*
@@ -30,6 +32,10 @@ class CorniceOverhang extends Hemming {
   }
 
   get_result_hemming() {
+    int num_sheetsC8 = get_num_sheetsC8();
+    double areaC8 = get_areaC8();
+    double length_Lplanks = get_length_Lplanks();
+    int num_screws_cornice_overhang = get_num_screws_hemming();
     if (length > 0) {
       if (color == Color.RAL7024MAT ||
           color == Color.RAL8017MAT ||
@@ -152,7 +158,47 @@ class CorniceOverhang extends Hemming {
 
 Количество саморезов 4.8х29 и цена:       ${get_num_screws_hemming()} шт = ${get_screws_hemming_cost().toStringAsFixed(2)} руб\n''');
         } else {}
+        listNumSheetsC8CorniceOverhang.add(num_sheetsC8);
+        listAreaC8CorniceOverhang.add(areaC8);
+        listlengthLplanksCorniceOverhang.add(length_Lplanks);
+        listScrewsCorniceOverhang.add(num_screws_cornice_overhang);
       }
+    } else {}
+  }
+
+  static get_total_result_cornice_overhang() {
+    if (listElementsCorniceOverhang.length > 0) {
+      print(
+          'КОЛИЧЕСТВО КАРНИЗНЫХ СВЕСОВ:              ${listElementsCorniceOverhang.length} шт');
+      print(
+          '\nСУММАРНОЕ КОЛИЧЕСТВО ЭЛЕМЕНТОВ ПОДШИВЫ КАРНИЗНОГО СВЕСА СО ВСЕХ СВЕСОВ:');
+      if (sum_num_sheetsC8_cornice_overhang() > 0) {
+        print(
+            'Профиль С8 высота и количество:           м ${sum_num_sheetsC8_cornice_overhang()} шт');
+        listElementsCorniceOverhang.add(sum_num_sheetsC8_cornice_overhang());
+      } else {}
+      if (sum_areaC8_cornice_overhang() > 0) {
+        print(
+            'Профиль С8 для подшивы карнизного свеса:  ${sum_areaC8_cornice_overhang()} м2 = ${sum_cost_areaC8_cornice_overhang().toStringAsFixed(2)} руб');
+        listElementsCorniceOverhang.add(sum_areaC8_cornice_overhang());
+        CostElementsCorniceOverhang.add(sum_cost_areaC8_cornice_overhang());
+      } else {}
+      if (sum_length_Lplanks_cornice_overhang() > 0) {
+        print(
+            'L-планки для подшивы карнизного свеса:    ${sum_length_Lplanks_cornice_overhang()} шт = ${sum_cost_length_Lplanks_cornice_overhang().toStringAsFixed(2)} руб');
+        listElementsCorniceOverhang.add(sum_length_Lplanks_cornice_overhang());
+        CostElementsCorniceOverhang.add(
+            sum_cost_length_Lplanks_cornice_overhang());
+      } else {}
+      if (sum_screws_hemming_cornice_overhang() > 0) {
+        print(
+            'Cаморезы металл по дереву 4.8х29:         ${sum_screws_hemming_cornice_overhang()} шт = ${sum_cost_screws_hemming_cornice_overhang().toStringAsFixed(2)} руб');
+        listElementsCorniceOverhang.add(sum_screws_hemming_cornice_overhang());
+        CostElementsCorniceOverhang.add(
+            sum_cost_screws_hemming_cornice_overhang());
+      } else {}
+      print(
+          '\nИТОГО:                                    ${sum_elements_cornice_overhang()} шт = ${sum_costs_elements_cornice_overhang().toStringAsFixed(2)} руб\n');
     } else {}
   }
 }

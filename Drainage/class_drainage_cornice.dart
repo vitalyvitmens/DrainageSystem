@@ -539,88 +539,91 @@ class DrainageCornice {
   }
 
   static get_total_result_drainages_cornices() {
-    print('КОЛИЧЕСТВО КАРНИЗОВ:                      ${listGutters.length} шт');
-    print(
-        '\nСУММАРНОЕ КОЛИЧЕСТВО ЭЛЕМЕНТОВ ВОДОСТОЧНОЙ СИСТЕМЫ СО ВСЕХ КАРНИЗОВ:');
-    if (sum_gutters() > 0) {
+    if (listGutters.length > 0) {
       print(
-          'Желоб водосточный (L=3000мм):             ${sum_gutters()} шт = ${sum_gutters_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_gutters());
-      listCosts.add(sum_gutters_cost());
+          'КОЛИЧЕСТВО КАРНИЗОВ:                      ${listGutters.length} шт');
+      print(
+          '\nСУММАРНОЕ КОЛИЧЕСТВО ЭЛЕМЕНТОВ ВОДОСТОЧНОЙ СИСТЕМЫ СО ВСЕХ КАРНИЗОВ:');
+      if (sum_gutters() > 0) {
+        print(
+            'Желоб водосточный (L=3000мм):             ${sum_gutters()} шт = ${sum_gutters_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_gutters());
+        listCosts.add(sum_gutters_cost());
+      } else {}
+      if (sum_gutter_connect() > 0) {
+        print(
+            'Соединитель желоба водосточного:          ${sum_gutter_connect()} шт = ${sum_gutters_connect_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_gutter_connect());
+        listCosts.add(sum_gutters_connect_cost());
+      } else {}
+      if (sum_plugs() > 0) {
+        print(
+            'Заглушка желоба водосточного:             ${sum_plugs()} шт = ${sum_plugs_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_plugs());
+        listCosts.add(sum_plugs_cost());
+      } else {}
+      if (sum_gutter_holders() > 0) {
+        print(
+            'Держатель желоба водосточного:            ${sum_gutter_holders()} шт = ${sum_gutter_holders_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_gutter_holders());
+        listCosts.add(sum_gutter_holders_cost());
+      } else {}
+      if (sum_gutter_angles() > 0) {
+        print(
+            'Угол желоба водосточного:                 ${sum_gutter_angles()} шт = ${sum_gutter_angles_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_gutter_angles());
+        listCosts.add(sum_gutter_angles_cost());
+      } else {}
+      if (sum_funnels() > 0) {
+        print(
+            'Воронка трубы водосточной:                ${sum_funnels()} шт = ${sum_funnels_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_funnels());
+        listCosts.add(sum_funnels_cost());
+      } else {}
+      if (sum_elbows() > 0) {
+        print(
+            'Колено трубы водосточной:                 ${sum_elbows()} шт = ${sum_elbows_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_elbows());
+        listCosts.add(sum_elbows_cost());
+      } else {}
+      if (sum_bigs_pipes() > 0) {
+        print(
+            'Труба водосточная (L=3000мм):             ${sum_bigs_pipes()} шт = ${sum_bigs_pipes_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_bigs_pipes());
+        listCosts.add(sum_bigs_pipes_cost());
+      } else {}
+      if (sum_pipe_connect() > 0) {
+        print(
+            'Соединитель трубы водосточной:            ${sum_pipe_connect()} шт = ${sum_pipe_connect_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_pipe_connect());
+        listCosts.add(sum_pipe_connect_cost());
+      } else {}
+      if (sum_small_pipes() > 0) {
+        print(
+            'Труба водосточная (L=1000мм):             ${sum_small_pipes()} шт = ${sum_small_pipes_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_small_pipes());
+        listCosts.add(sum_small_pipes_cost());
+      } else {}
+      if (sum_tips() > 0) {
+        print(
+            'Отмёт трубы водосточной:                  ${sum_tips()} шт = ${sum_tips_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_tips());
+        listCosts.add(sum_tips_cost());
+      } else {}
+      if (sum_pipe_holders() > 0) {
+        print(
+            'Держатель трубы водосточной:              ${sum_pipe_holders()} шт = ${sum_pipe_holders_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_pipe_holders());
+        listCosts.add(sum_pipe_holders_cost());
+      }
+      if (sum_pins() > 0) {
+        print(
+            'Штырь держателя трубы:                    ${sum_pins()} шт = ${sum_pins_cost().toStringAsFixed(2)} руб');
+        listElements.add(sum_pins());
+        listCosts.add(sum_pins_cost());
+      } else {}
+      print(
+          '\nИТОГО:                                    ${sum_elements()} шт = ${sum_costs().toStringAsFixed(2)} руб\n');
     } else {}
-    if (sum_gutter_connect() > 0) {
-      print(
-          'Соединитель желоба водосточного:          ${sum_gutter_connect()} шт = ${sum_gutters_connect_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_gutter_connect());
-      listCosts.add(sum_gutters_connect_cost());
-    } else {}
-    if (sum_plugs() > 0) {
-      print(
-          'Заглушка желоба водосточного:             ${sum_plugs()} шт = ${sum_plugs_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_plugs());
-      listCosts.add(sum_plugs_cost());
-    } else {}
-    if (sum_gutter_holders() > 0) {
-      print(
-          'Держатель желоба водосточного:            ${sum_gutter_holders()} шт = ${sum_gutter_holders_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_gutter_holders());
-      listCosts.add(sum_gutter_holders_cost());
-    } else {}
-    if (sum_gutter_angles() > 0) {
-      print(
-          'Угол желоба водосточного:                 ${sum_gutter_angles()} шт = ${sum_gutter_angles_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_gutter_angles());
-      listCosts.add(sum_gutter_angles_cost());
-    } else {}
-    if (sum_funnels() > 0) {
-      print(
-          'Воронка трубы водосточной:                ${sum_funnels()} шт = ${sum_funnels_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_funnels());
-      listCosts.add(sum_funnels_cost());
-    } else {}
-    if (sum_elbows() > 0) {
-      print(
-          'Колено трубы водосточной:                 ${sum_elbows()} шт = ${sum_elbows_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_elbows());
-      listCosts.add(sum_elbows_cost());
-    } else {}
-    if (sum_bigs_pipes() > 0) {
-      print(
-          'Труба водосточная (L=3000мм):             ${sum_bigs_pipes()} шт = ${sum_bigs_pipes_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_bigs_pipes());
-      listCosts.add(sum_bigs_pipes_cost());
-    } else {}
-    if (sum_pipe_connect() > 0) {
-      print(
-          'Соединитель трубы водосточной:            ${sum_pipe_connect()} шт = ${sum_pipe_connect_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_pipe_connect());
-      listCosts.add(sum_pipe_connect_cost());
-    } else {}
-    if (sum_small_pipes() > 0) {
-      print(
-          'Труба водосточная (L=1000мм):             ${sum_small_pipes()} шт = ${sum_small_pipes_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_small_pipes());
-      listCosts.add(sum_small_pipes_cost());
-    } else {}
-    if (sum_tips() > 0) {
-      print(
-          'Отмёт трубы водосточной:                  ${sum_tips()} шт = ${sum_tips_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_tips());
-      listCosts.add(sum_tips_cost());
-    } else {}
-    if (sum_pipe_holders() > 0) {
-      print(
-          'Держатель трубы водосточной:              ${sum_pipe_holders()} шт = ${sum_pipe_holders_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_pipe_holders());
-      listCosts.add(sum_pipe_holders_cost());
-    }
-    if (sum_pins() > 0) {
-      print(
-          'Штырь держателя трубы:                    ${sum_pins()} шт = ${sum_pins_cost().toStringAsFixed(2)} руб');
-      listElements.add(sum_pins());
-      listCosts.add(sum_pins_cost());
-    } else {}
-    print(
-        '\nИТОГО:                                    ${sum_elements()} шт = ${sum_costs().toStringAsFixed(2)} руб\n');
   }
 }
