@@ -37,7 +37,7 @@ void main() {
   fence_three.get_result_hedge();
   fence_four.get_result_hedge();
 
-  final cornice_one = DrainageCornice(0.0, 3.0, 0);
+  final cornice_one = DrainageCornice(13.0, 3.0, 1);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_one (первый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -45,7 +45,7 @@ void main() {
   - double downpipe_height (высота от карниза №1 до земли в метрах)
   - int num_downpipe (количество водосточных стояков на карнизе №1)
   */
-  final cornice_two = DrainageCornice(0.0, 3.0, 0);
+  final cornice_two = DrainageCornice(13.0, 3.0, 1);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_two (второй
   водосточный карниз), он принимает на вход следующие параметры:
@@ -53,7 +53,7 @@ void main() {
   - double downpipe_height (высота от карниза №2 до земли в метрах)
   - int num_downpipe (количество водосточных стояков на карнизе №2)
   */
-  final cornice_three = DrainageCornice(0.0, 3.0, 0);
+  final cornice_three = DrainageCornice(6.0, 3.0, 1);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_three (третий
   водосточный карниз), он принимает на вход следующие параметры:
@@ -95,12 +95,12 @@ void main() {
   DrainageCornice.get_total_result_drainages_cornices();
 
   final hemming_cornice_one =
-      CorniceOverhang(10.0, 0.85, Color.RAL8017, 0.40, 0.27);
+      CorniceOverhang(0.0, 0.85, Color.RAL8017, 0.40, 0.27);
   final hemming_cornice_two =
-      CorniceOverhang(20.0, 0.60, Color.RAL8017, 0.40, 0.25);
+      CorniceOverhang(0.0, 0.60, Color.RAL8017, 0.40, 0.25);
 
-  final hemming_end_one = EndOverhang(30.0, 0.5, Color.RAL8017, 0.5, 0.070);
-  final hemming_end_two = EndOverhang(40.0, 0.5, Color.RAL8017, 0.5, 0.070);
+  final hemming_end_one = EndOverhang(0.0, 0.5, Color.RAL8017, 0.5, 0.070);
+  final hemming_end_two = EndOverhang(0.0, 0.5, Color.RAL8017, 0.5, 0.070);
 
   hemming_cornice_one.get_result_hemming();
   hemming_cornice_two.get_result_hemming();

@@ -70,7 +70,7 @@ class DrainageCornice {
   стоимость желоба за 1шт в руб)
   возвращает double gutters_cost (общая стоимость всех желобов на карнизе в руб)
   */
-    double gutters_cost = get_gutters() * PriceDrainage().gutter_price;
+    double gutters_cost = (get_gutters()).ceil() * PriceDrainage().gutter_price;
     return gutters_cost;
   }
 
