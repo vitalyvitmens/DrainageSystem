@@ -11,14 +11,18 @@ class Fence extends Hedge {
   а так же свои собственные свойства (параметры):
   - double gap (зазор между двумя соседними штакетинами в метрах)
   - double width (ширина штакетника в метрах)
-  - int screw_across (количество саморезов на 1 прожилину,
+  - int screw_across (количество саморезов на 1 прожилину
+  - int filling (заполнение штакета при монтаже с одной строны или с двух 
+  сторон, по умолчанию заполнение только с одной стороны),
   и имеет методы для попролётного расчета количества штакетника и его погонаж
   */
   final double gap;
   final double width = 0.110;
   final int screws_across = 2;
+  final int filling;
 
-  Fence(super.length, super.heigth, this.gap, super.color, super.thickness);
+  Fence(super.length, super.heigth, this.gap, super.color, super.thickness,
+      this.filling);
 
   @override
   String toString() {
@@ -26,6 +30,14 @@ class Fence extends Hedge {
 Длина забора:                             $length м  
 Высота забора:                            $heigth м
 Зазор между штакетником:                  ${gap * 100} cм
+Заполнение штакета:                       ${{
+      if (filling == 1)
+        'одностороннее'
+      else if (filling == 2)
+        'двухстороннее'
+      else
+        {}
+    }} 
 ''';
   }
 
@@ -37,8 +49,10 @@ class Fence extends Hedge {
   - double width (ширина штакетника в метрах)
   - double gap (зазор между двумя соседними штакетинами в метрах)
   возвращает int num_fence (количество штакетин в штуках)
+  - int filling (заполнение штакета при монтаже с одной строны или с двух 
+  сторон)
   */
-    int num_fence = (length / (width + gap)).ceil();
+    int num_fence = (length / (width + gap)).ceil() * filling;
     return num_fence;
   }
 

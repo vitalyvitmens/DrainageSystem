@@ -7,8 +7,8 @@ import 'Hemming/class_cornice_overhang.dart';
 import 'Hemming/class_end_overhang.dart';
 
 void main() {
-  final C8 = ProfileC8(0, 1.5, Color.RAL8017, 0.45);
-  final C8_two = ProfileC8(0, 1.5, Color.RAL8017, 0.35);
+  final C8 = ProfileC8(0, 1.5, Color.RAL8017, 0.40);
+  final C8_two = ProfileC8(0, 1.5, Color.RAL8017, 0.40);
   final C8_three = ProfileC8(0, 1.7, Color.RAL7024MAT, 0.45);
   final C8_four = ProfileC8(0, 2.0, Color.Zinc, 0.45);
 
@@ -17,27 +17,27 @@ void main() {
   C8_three.get_result_hedge();
   C8_four.get_result_hedge();
 
-  final MP20 = ProfileMP20(0, 1.5, Color.RAL8017, 0.45);
-  final MP20_two = ProfileMP20(0, 1.5, Color.RAL8017, 0.50);
-  final MP20_three = ProfileMP20(0, 1.7, Color.RAL8017MAT, 0.50);
-  final MP20_four = ProfileMP20(0, 2.0, Color.Zinc, 0.50);
+  final MP20 = ProfileMP20(0.0, 2.0, Color.RAL7024MAT, 0.50);
+  final MP20_two = ProfileMP20(0.0, 1.5, Color.RAL7024MAT, 0.50);
+  final MP20_three = ProfileMP20(0.0, 2.0, Color.RAL7024MAT, 0.50);
+  final MP20_four = ProfileMP20(0.0, 1.7, Color.RAL7024MAT, 0.50);
 
   MP20.get_result_hedge();
   MP20_two.get_result_hedge();
   MP20_three.get_result_hedge();
   MP20_four.get_result_hedge();
 
-  final fence = Fence(0, 1.5, 0.040, Color.RAL8017_RAL8017, 0.40);
-  final fence_two = Fence(0, 1.6, 0.040, Color.RAL3005_RAL3005, 0.40);
-  final fence_three = Fence(0, 1.7, 0.040, Color.RAL9003_RAL9003, 0.40);
-  final fence_four = Fence(0, 2.0, 0.040, Color.RAL7024MAT_RAL7024MAT, 0.40);
+  final fence = Fence(31.6, 1.5, 0.050, Color.RAL8017_RAL8017, 0.40, 2);
+  final fence_two = Fence(19.5, 1.5, 0.050, Color.RAL8017_RAL8017, 0.40, 2);
+  final fence_three = Fence(31.6, 1.5, 0.050, Color.RAL8017_RAL8017, 0.40, 1);
+  final fence_four = Fence(19.5, 1.5, 0.050, Color.RAL8017_RAL8017, 0.40, 1);
 
   fence.get_result_hedge();
   fence_two.get_result_hedge();
   fence_three.get_result_hedge();
   fence_four.get_result_hedge();
 
-  final cornice_one = DrainageCornice(13.0, 3.0, 1);
+  final cornice_one = DrainageCornice(0.0, 3.0, 0);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_one (первый
   водосточный карниз), он принимает на вход следующие параметры:
@@ -45,7 +45,7 @@ void main() {
   - double downpipe_height (высота от карниза №1 до земли в метрах)
   - int num_downpipe (количество водосточных стояков на карнизе №1)
   */
-  final cornice_two = DrainageCornice(13.0, 3.0, 1);
+  final cornice_two = DrainageCornice(0.0, 3.0, 0);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_two (второй
   водосточный карниз), он принимает на вход следующие параметры:
@@ -53,7 +53,7 @@ void main() {
   - double downpipe_height (высота от карниза №2 до земли в метрах)
   - int num_downpipe (количество водосточных стояков на карнизе №2)
   */
-  final cornice_three = DrainageCornice(6.0, 3.0, 1);
+  final cornice_three = DrainageCornice(0.0, 3.0, 0);
   /*
   Создаём экземпляр класса DrainageCornice с названием cornice_three (третий
   водосточный карниз), он принимает на вход следующие параметры:
