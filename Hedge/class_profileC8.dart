@@ -64,7 +64,7 @@ class ProfileC8 extends Hedge {
   возвращает double C8_cost_050mat (общая стоимость всех матовых листов 
   профнастила С8 в 0.50мм толщине в руб)
   */
-    double C8_cost_050mat = get_areaC8() * PriceHedge().C8_price_050mat;
+    double C8_cost_050mat = get_areaC8() * PriceHedge.C8_price_050mat;
     return C8_cost_050mat;
   }
 
@@ -78,7 +78,7 @@ class ProfileC8 extends Hedge {
   возвращает double C8_cost_045mat (общая стоимость всех матовых листов 
   профнастила С8 в 0.45мм толщине в руб)
   */
-    double C8_cost_045mat = get_areaC8() * PriceHedge().C8_price_045mat;
+    double C8_cost_045mat = get_areaC8() * PriceHedge.C8_price_045mat;
     return C8_cost_045mat;
   }
 
@@ -92,7 +92,7 @@ class ProfileC8 extends Hedge {
   возвращает double C8_cost_050 (общая стоимость всех глянцевых листов 
   профнастила С8 в 0.50мм толщине в руб)
   */
-    double C8_cost_050 = get_areaC8() * PriceHedge().C8_price_050;
+    double C8_cost_050 = get_areaC8() * PriceHedge.C8_price_050;
     return C8_cost_050;
   }
 
@@ -106,7 +106,7 @@ class ProfileC8 extends Hedge {
   возвращает double C8_cost_045 (общая стоимость всех глянцевых листов 
   профнастила С8 в 0.45мм толщине в руб)
   */
-    double C8_cost_045 = get_areaC8() * PriceHedge().C8_price_045;
+    double C8_cost_045 = get_areaC8() * PriceHedge.C8_price_045;
     return C8_cost_045;
   }
 
@@ -120,7 +120,7 @@ class ProfileC8 extends Hedge {
   возвращает double C8_cost_040 (общая стоимость всех глянцевых листов 
   профнастила С8 в 0.40мм толщине в руб)
   */
-    double C8_cost_040 = get_areaC8() * PriceHedge().C8_price_040;
+    double C8_cost_040 = get_areaC8() * PriceHedge.C8_price_040;
     return C8_cost_040;
   }
 
@@ -134,7 +134,7 @@ class ProfileC8 extends Hedge {
   возвращает double C8_cost_035 (общая стоимость всех глянцевых листов 
   профнастила С8 в 0.35мм толщине в руб)
   */
-    double C8_cost_035 = get_areaC8() * PriceHedge().C8_price_035;
+    double C8_cost_035 = get_areaC8() * PriceHedge.C8_price_035;
     return C8_cost_035;
   }
 
@@ -148,7 +148,7 @@ class ProfileC8 extends Hedge {
   возвращает double C8_cost_050zinc (общая стоимость всех оцинкованных листов 
   профнастила С8 в 0.50мм толщине в руб)
   */
-    double C8_cost_050zinc = get_areaC8() * PriceHedge().C8_price_050zinc;
+    double C8_cost_050zinc = get_areaC8() * PriceHedge.C8_price_050zinc;
     return C8_cost_050zinc;
   }
 
@@ -162,7 +162,7 @@ class ProfileC8 extends Hedge {
   возвращает double C8_cost_045zinc (общая стоимость всех оцинкованных листов 
   профнастила С8 в 0.45мм толщине в руб)
   */
-    double C8_cost_045zinc = get_areaC8() * PriceHedge().C8_price_045zinc;
+    double C8_cost_045zinc = get_areaC8() * PriceHedge.C8_price_045zinc;
     return C8_cost_045zinc;
   }
 
@@ -176,7 +176,7 @@ class ProfileC8 extends Hedge {
   возвращает double C8_cost_040zinc (общая стоимость всех оцинкованных листов 
   профнастила С8 в 0.40мм толщине в руб)
   */
-    double C8_cost_040zinc = get_areaC8() * PriceHedge().C8_price_040zinc;
+    double C8_cost_040zinc = get_areaC8() * PriceHedge.C8_price_040zinc;
     return C8_cost_040zinc;
   }
 
@@ -189,7 +189,7 @@ class ProfileC8 extends Hedge {
   - double length_pawn (длина пэшки в метрах)
   возвращает int num_pawnC8 (количество пэшек в штуках)
   */
-    int num_pawnsC8 = (length / length_pawn).ceil();
+    int num_pawnsC8 = (length / Hedge.length_pawn).ceil();
     return num_pawnsC8;
   }
 
@@ -203,7 +203,7 @@ class ProfileC8 extends Hedge {
   возвращает double length_pawnsC8 (погонаж пэшек (П-образных планок) для 
   С8 профнастила в мп)
   */
-    double length_pawnsC8 = get_num_pawnsC8() * length_pawn;
+    double length_pawnsC8 = get_num_pawnsC8() * Hedge.length_pawn;
     return length_pawnsC8;
   }
 
@@ -220,7 +220,7 @@ class ProfileC8 extends Hedge {
   (П-образных планок) для С8 профнастила на весь пролёт изгороди
   */
     double pawnsC8_cost_mat =
-        get_length_pawnsC8() * PriceHedge().pawnC8_price_mat;
+        get_length_pawnsC8() * PriceHedge.pawnC8_price_mat;
     return pawnsC8_cost_mat;
   }
 
@@ -236,7 +236,7 @@ class ProfileC8 extends Hedge {
   возвращает double pawnsC8_cost (общую стоимость глянцевых пэшек 
   (П-образных планок) для С8 профнастила на весь пролёт изгороди
   */
-    double pawnsC8_cost = get_length_pawnsC8() * PriceHedge().pawnC8_price;
+    double pawnsC8_cost = get_length_pawnsC8() * PriceHedge.pawnC8_price;
     return pawnsC8_cost;
   }
 
@@ -253,7 +253,7 @@ class ProfileC8 extends Hedge {
   (П-образных планок) для С8 профнастила на весь пролёт изгороди
   */
     double pawnsC8_cost_zinc =
-        get_length_pawnsC8() * PriceHedge().pawnC8_price_zinc;
+        get_length_pawnsC8() * PriceHedge.pawnC8_price_zinc;
     return pawnsC8_cost_zinc;
   }
 
@@ -286,7 +286,7 @@ class ProfileC8 extends Hedge {
   профнастила С8 для изгороди в шт кратно 1 упаковке саморезов = 250шт,
   на весь пролёт изгороди в руб)
   */
-    double screwsC8_cost = get_num_screwsC8() * Screws().screw_55x19;
+    double screwsC8_cost = get_num_screwsC8() * Screws.screw_55x19;
     return screwsC8_cost;
   }
 

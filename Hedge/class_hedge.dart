@@ -40,7 +40,7 @@ abstract class Hedge {
   final Color color;
   final double thickness;
   static int num_rows_across = 2;
-  final double length_pawn = 2.0;
+  static const double length_pawn = 2.0;
 
   Hedge(this.length, this.heigth, this.color, this.thickness);
 

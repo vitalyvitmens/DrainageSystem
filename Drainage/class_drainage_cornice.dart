@@ -21,12 +21,12 @@ class DrainageCornice {
   final double cornice_length;
   final double downpipe_height;
   final int num_downpipe;
-  final int length_gutter = 3;
-  final int length_big_pipe = 3;
-  final int length_small_pipe = 1;
-  double gutter_holder_pitch = 0.5;
-  double pipe_holder_pitch = 1.0;
-  int gutter_angle = 0;
+  static const int length_gutter = 3;
+  static const int length_big_pipe = 3;
+  static const int length_small_pipe = 1;
+  static const double gutter_holder_pitch = 0.5;
+  static const double pipe_holder_pitch = 1.0;
+  static const int gutter_angle = 0;
 
   DrainageCornice(
     this.cornice_length,
@@ -70,7 +70,7 @@ class DrainageCornice {
   стоимость желоба за 1шт в руб)
   возвращает double gutters_cost (общая стоимость всех желобов на карнизе в руб)
   */
-    double gutters_cost = (get_gutters()).ceil() * PriceDrainage().gutter_price;
+    double gutters_cost = (get_gutters()).ceil() * PriceDrainage.gutter_price;
     return gutters_cost;
   }
 
@@ -98,7 +98,7 @@ class DrainageCornice {
   желоба на карнизе в руб)
   */
     double gutter_connectors_cost =
-        get_gutter_connectors() * PriceDrainage().gutter_connector_price;
+        get_gutter_connectors() * PriceDrainage.gutter_connector_price;
     return gutter_connectors_cost;
   }
 
@@ -135,7 +135,7 @@ class DrainageCornice {
   стоимость заглушки за 1шт в руб)
   возвращает double plugs_cost (общая стоимость всех заглушек на карнизе в руб)
   */
-    double plugs_cost = get_plugs() * PriceDrainage().plug_price;
+    double plugs_cost = get_plugs() * PriceDrainage.plug_price;
     return plugs_cost;
   }
 
@@ -164,7 +164,7 @@ class DrainageCornice {
   желоба на карнизе в руб)
   */
     double gutter_holders_cost =
-        get_gutter_holders() * PriceDrainage().gutter_holder_price;
+        get_gutter_holders() * PriceDrainage.gutter_holder_price;
     return gutter_holders_cost;
   }
 
@@ -189,7 +189,7 @@ class DrainageCornice {
   возвращает double gutter_angles_cost (общая стоимость всех углов желоба в руб)
   */
     double gutter_angles_cost =
-        get_gutter_angles() * PriceDrainage().gutter_angle_price;
+        get_gutter_angles() * PriceDrainage.gutter_angle_price;
     return gutter_angles_cost;
   }
 
@@ -213,7 +213,7 @@ class DrainageCornice {
   стоимость воронок за 1шт в руб)
   возвращает double funnels_cost (общая стоимость всех воронок на карнизе в руб)
   */
-    double funnels_cost = get_funnels() * PriceDrainage().funnel_price;
+    double funnels_cost = get_funnels() * PriceDrainage.funnel_price;
     return funnels_cost;
   }
 
@@ -237,7 +237,7 @@ class DrainageCornice {
   стоимость колен за 1шт в руб)
   возвращает double elbows_cost (общая стоимость всех колен на карнизе в руб)
   */
-    double elbows_cost = get_elbows() * PriceDrainage().elbow_price;
+    double elbows_cost = get_elbows() * PriceDrainage.elbow_price;
     return elbows_cost;
   }
 
@@ -304,7 +304,7 @@ class DrainageCornice {
   возвращает double bigs_pipes_cost (общая стоимость всех больших труб 
   на карнизе в руб)
   */
-    double bigs_pipes_cost = get_bigs_pipes() * PriceDrainage().big_pipe_price;
+    double bigs_pipes_cost = get_bigs_pipes() * PriceDrainage.big_pipe_price;
     return bigs_pipes_cost;
   }
 
@@ -335,7 +335,7 @@ class DrainageCornice {
   соединителей труб на карнизе в руб)
   */
     double pipe_connectors_cost =
-        get_pipe_connectors() * PriceDrainage().pipe_connector_price;
+        get_pipe_connectors() * PriceDrainage.pipe_connector_price;
     return pipe_connectors_cost;
   }
 
@@ -361,7 +361,7 @@ class DrainageCornice {
   на карнизе в руб)
   */
     double small_pipes_cost =
-        get_small_pipes() * PriceDrainage().small_pipe_price;
+        get_small_pipes() * PriceDrainage.small_pipe_price;
     return small_pipes_cost;
   }
 
@@ -385,7 +385,7 @@ class DrainageCornice {
   стоимость отмётов за 1шт в руб)
   возвращает double tips_cost (общая стоимость всех отмётов на карнизе в руб)
   */
-    double tips_cost = get_tips() * PriceDrainage().tip_price;
+    double tips_cost = get_tips() * PriceDrainage.tip_price;
     return tips_cost;
   }
 
@@ -415,7 +415,7 @@ class DrainageCornice {
   на карнизе в руб)
   */
     double pipe_holders_cost =
-        get_pipe_holders() * PriceDrainage().pipe_holder_price;
+        get_pipe_holders() * PriceDrainage.pipe_holder_price;
     return pipe_holders_cost;
   }
 
@@ -445,7 +445,7 @@ class DrainageCornice {
   возвращает double pins_cost (общая стоимость всех штырей для держателей трубы 
   на карнизе в руб)
   */
-    double pins_cost = get_pins() * PriceDrainage().pin_price;
+    double pins_cost = get_pins() * PriceDrainage.pin_price;
     return pins_cost;
   }
 

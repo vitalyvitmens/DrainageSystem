@@ -16,19 +16,19 @@ class PriceDrainage {
   - double pipe_holder_price (стоимость держателя трубы за 1шт. в руб)
   - double pin_price (стоимость штыря за 1шт. в руб)
   */
-  double gutter_price = 21.12;
-  double gutter_connector_price = 8.28;
-  double plug_price = 3.96;
-  double gutter_holder_price = 2.94;
-  double gutter_angle_price = 13.62;
-  double funnel_price = 14.82;
-  double elbow_price = 9.36;
-  double big_pipe_price = 25.62;
-  double pipe_connector_price = 4.92;
-  double small_pipe_price = 10.02;
-  double tip_price = 8.88;
-  double pipe_holder_price = 3.84;
-  double pin_price = 5.76;
+  static const double gutter_price = 21.12;
+  static const double gutter_connector_price = 8.28;
+  static const double plug_price = 3.96;
+  static const double gutter_holder_price = 2.94;
+  static const double gutter_angle_price = 13.62;
+  static const double funnel_price = 14.82;
+  static const double elbow_price = 9.36;
+  static const double big_pipe_price = 25.62;
+  static const double pipe_connector_price = 4.92;
+  static const double small_pipe_price = 10.02;
+  static const double tip_price = 8.88;
+  static const double pipe_holder_price = 3.84;
+  static const double pin_price = 5.76;
 
   @override
   String toString() {

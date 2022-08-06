@@ -63,7 +63,7 @@ class ProfileMP20 extends Hedge {
   возвращает double MP20_cost_050mat (общая стоимость всех матовых листов 
   профнастила МП20 в 0.50мм толщине в руб)
   */
-    double MP20_cost_050mat = get_areaMP20() * PriceHedge().MP20_price_050mat;
+    double MP20_cost_050mat = get_areaMP20() * PriceHedge.MP20_price_050mat;
     return MP20_cost_050mat;
   }
 
@@ -77,7 +77,7 @@ class ProfileMP20 extends Hedge {
   возвращает double MP20_cost_045mat (общая стоимость всех матовых листов 
   профнастила МП20 в 0.45мм толщине в руб)
   */
-    double MP20_cost_045mat = get_areaMP20() * PriceHedge().MP20_price_045mat;
+    double MP20_cost_045mat = get_areaMP20() * PriceHedge.MP20_price_045mat;
     return MP20_cost_045mat;
   }
 
@@ -91,7 +91,7 @@ class ProfileMP20 extends Hedge {
   возвращает double MP20_cost_050 (общая стоимость всех глянцевых листов 
   профнастила МП20 в 0.50мм толщине в руб)
   */
-    double MP20_cost_050 = get_areaMP20() * PriceHedge().MP20_price_050;
+    double MP20_cost_050 = get_areaMP20() * PriceHedge.MP20_price_050;
     return MP20_cost_050;
   }
 
@@ -105,7 +105,7 @@ class ProfileMP20 extends Hedge {
   возвращает double MP20_cost_045 (общая стоимость всех глянцевых листов 
   профнастила МП20 в 0.45мм толщине в руб)
   */
-    double MP20_cost_045 = get_areaMP20() * PriceHedge().MP20_price_045;
+    double MP20_cost_045 = get_areaMP20() * PriceHedge.MP20_price_045;
     return MP20_cost_045;
   }
 
@@ -119,7 +119,7 @@ class ProfileMP20 extends Hedge {
   возвращает double MP20_cost_040 (общая стоимость всех глянцевых листов 
   профнастила МП20 в 0.40мм толщине в руб)
   */
-    double MP20_cost_040 = get_areaMP20() * PriceHedge().MP20_price_040;
+    double MP20_cost_040 = get_areaMP20() * PriceHedge.MP20_price_040;
     return MP20_cost_040;
   }
 
@@ -133,7 +133,7 @@ class ProfileMP20 extends Hedge {
   возвращает double MP20_cost_035 (общая стоимость всех глянцевых листов 
   профнастила МП20 в 0.35мм толщине в руб)
   */
-    double MP20_cost_035 = get_areaMP20() * PriceHedge().MP20_price_035;
+    double MP20_cost_035 = get_areaMP20() * PriceHedge.MP20_price_035;
     return MP20_cost_035;
   }
 
@@ -147,7 +147,7 @@ class ProfileMP20 extends Hedge {
   возвращает double MP20_cost_050zinc (общая стоимость всех оцинкованных листов 
   профнастила МП20 в 0.50мм толщине в руб)
   */
-    double MP20_cost_050zinc = get_areaMP20() * PriceHedge().MP20_price_050zinc;
+    double MP20_cost_050zinc = get_areaMP20() * PriceHedge.MP20_price_050zinc;
     return MP20_cost_050zinc;
   }
 
@@ -161,7 +161,7 @@ class ProfileMP20 extends Hedge {
   возвращает double MP20_cost_045zinc (общая стоимость всех оцинкованных листов 
   профнастила МП20 в 0.45мм толщине в руб)
   */
-    double MP20_cost_045zinc = get_areaMP20() * PriceHedge().MP20_price_045zinc;
+    double MP20_cost_045zinc = get_areaMP20() * PriceHedge.MP20_price_045zinc;
     return MP20_cost_045zinc;
   }
 
@@ -175,7 +175,7 @@ class ProfileMP20 extends Hedge {
   возвращает double MP20_cost_040zinc (общая стоимость всех оцинкованных листов 
   профнастила МП20 в 0.40мм толщине в руб)
   */
-    double MP20_cost_040zinc = get_areaMP20() * PriceHedge().MP20_price_040zinc;
+    double MP20_cost_040zinc = get_areaMP20() * PriceHedge.MP20_price_040zinc;
     return MP20_cost_040zinc;
   }
 
@@ -188,7 +188,7 @@ class ProfileMP20 extends Hedge {
   - double length_pawn (длина пэшки в метрах)
   возвращает int num_pawnMP20 (количество пэшек в штуках)
   */
-    int num_pawnsMP20 = (length / length_pawn).ceil();
+    int num_pawnsMP20 = (length / Hedge.length_pawn).ceil();
     return num_pawnsMP20;
   }
 
@@ -202,7 +202,7 @@ class ProfileMP20 extends Hedge {
   возвращает double length_pawnsMP20 (погонаж пэшек (П-образных планок) для 
   МП20 профнастила в мп)
   */
-    double length_pawnsMP20 = get_num_pawnsMP20() * length_pawn;
+    double length_pawnsMP20 = get_num_pawnsMP20() * Hedge.length_pawn;
     return length_pawnsMP20;
   }
 
@@ -219,7 +219,7 @@ class ProfileMP20 extends Hedge {
   (П-образных планок) для МП20 профнастила на весь пролёт изгороди
   */
     double pawnsMP20_cost_mat =
-        get_length_pawnsMP20() * PriceHedge().pawnMP20_price_mat;
+        get_length_pawnsMP20() * PriceHedge.pawnMP20_price_mat;
     return pawnsMP20_cost_mat;
   }
 
@@ -235,8 +235,7 @@ class ProfileMP20 extends Hedge {
   возвращает double pawnsMP20_cost (общую стоимость глянцевых пэшек 
   (П-образных планок) для МП20 профнастила на весь пролёт изгороди
   */
-    double pawnsMP20_cost =
-        get_length_pawnsMP20() * PriceHedge().pawnMP20_price;
+    double pawnsMP20_cost = get_length_pawnsMP20() * PriceHedge.pawnMP20_price;
     return pawnsMP20_cost;
   }
 
@@ -253,7 +252,7 @@ class ProfileMP20 extends Hedge {
   (П-образных планок) для МП20 профнастила на весь пролёт изгороди
   */
     double pawnsMP20_cost_zinc =
-        get_length_pawnsMP20() * PriceHedge().pawnMP20_price_zinc;
+        get_length_pawnsMP20() * PriceHedge.pawnMP20_price_zinc;
     return pawnsMP20_cost_zinc;
   }
 
@@ -286,7 +285,7 @@ class ProfileMP20 extends Hedge {
   профнастила МП20 для изгороди в шт кратно 1 упаковке саморезов = 250шт,
   на весь пролёт изгороди в руб)
   */
-    double screwsMP20_cost = get_num_screwsMP20() * Screws().screw_55x19;
+    double screwsMP20_cost = get_num_screwsMP20() * Screws.screw_55x19;
     return screwsMP20_cost;
   }
 

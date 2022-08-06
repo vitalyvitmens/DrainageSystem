@@ -23,36 +23,36 @@ class PriceHedge {
   - double fence_double_sided_price_040mat (стоимость двухстороннего матового 0.40мм штакета за 1м в руб)
   - double fence_double_sided_price_040 (стоимость двухстороннего глянцевого 0.40мм штакета за 1м в руб)
   */
-  double C8_price_050mat = 21.24;
-  double C8_price_045mat = 18.60;
-  double C8_price_050 = 18.00;
-  double C8_price_045 = 16.14;
-  double C8_price_040 = 15.48;
-  double C8_price_035 = 12.20;
-  double C8_price_050zinc = 15.18;
-  double C8_price_045zinc = 14.04;
-  double C8_price_040zinc = 11.18;
+  static const double C8_price_050mat = 21.24;
+  static const double C8_price_045mat = 18.60;
+  static const double C8_price_050 = 18.00;
+  static const double C8_price_045 = 16.14;
+  static const double C8_price_040 = 15.48;
+  static const double C8_price_035 = 12.20;
+  static const double C8_price_050zinc = 15.18;
+  static const double C8_price_045zinc = 14.04;
+  static const double C8_price_040zinc = 11.18;
 
-  double pawnC8_price_mat = 2.90;
-  double pawnC8_price = 2.60;
-  double pawnC8_price_zinc = 2.20;
+  static const double pawnC8_price_mat = 2.90;
+  static const double pawnC8_price = 2.60;
+  static const double pawnC8_price_zinc = 2.20;
 
-  double MP20_price_050mat = 22.80;
-  double MP20_price_045mat = 19.32;
-  double MP20_price_050 = 18.60;
-  double MP20_price_045 = 17.10;
-  double MP20_price_040 = 16.08;
-  double MP20_price_035 = 12.92;
-  double MP20_price_050zinc = 15.84;
-  double MP20_price_045zinc = 14.52;
-  double MP20_price_040zinc = 12.36;
+  static const double MP20_price_050mat = 22.80;
+  static const double MP20_price_045mat = 19.32;
+  static const double MP20_price_050 = 18.60;
+  static const double MP20_price_045 = 17.10;
+  static const double MP20_price_040 = 16.08;
+  static const double MP20_price_035 = 12.92;
+  static const double MP20_price_050zinc = 15.84;
+  static const double MP20_price_045zinc = 14.52;
+  static const double MP20_price_040zinc = 12.36;
 
-  double pawnMP20_price_mat = 3.30;
-  double pawnMP20_price = 2.90;
-  double pawnMP20_price_zinc = 2.50;
+  static const double pawnMP20_price_mat = 3.30;
+  static const double pawnMP20_price = 2.90;
+  static const double pawnMP20_price_zinc = 2.50;
 
-  double fence_double_sided_price_040mat = 2.70;
-  double fence_double_sided_price_040 = 2.30;
+  static const double fence_double_sided_price_040mat = 2.70;
+  static const double fence_double_sided_price_040 = 2.30;
 
   @override
   String toString() {

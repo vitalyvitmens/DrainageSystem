@@ -18,9 +18,9 @@ abstract class Hemming {
   final double depth;
   final Color color;
   final double thickness;
-  final double length_Lplank = 2.0;
-  final double limb_Lplank = 0.05;
-  static double clamp = 0.01;
+  static const double length_Lplank = 2.0;
+  static const double limb_Lplank = 0.05;
+  static const double clamp = 0.01;
 
   Hemming(this.length, this.depth, this.color, this.thickness);
 
@@ -72,7 +72,7 @@ abstract class Hemming {
   возвращает double C8_cost_050mat (общая стоимость всех матовых листов 
   профнастила С8 в 0.50мм толщине в руб)
   */
-    double C8_cost_050mat = get_areaC8() * PriceHedge().C8_price_050mat;
+    double C8_cost_050mat = get_areaC8() * PriceHedge.C8_price_050mat;
     return C8_cost_050mat;
   }
 
@@ -87,7 +87,7 @@ abstract class Hemming {
   возвращает double C8_cost_045mat (общая стоимость всех матовых листов 
   профнастила С8 в 0.45мм толщине в руб)
   */
-    double C8_cost_045mat = get_areaC8() * PriceHedge().C8_price_045mat;
+    double C8_cost_045mat = get_areaC8() * PriceHedge.C8_price_045mat;
     return C8_cost_045mat;
   }
 
@@ -102,7 +102,7 @@ abstract class Hemming {
   возвращает double C8_cost_050 (общая стоимость всех глянцевых листов 
   профнастила С8 в 0.50мм толщине в руб)
   */
-    double C8_cost_050 = get_areaC8() * PriceHedge().C8_price_050;
+    double C8_cost_050 = get_areaC8() * PriceHedge.C8_price_050;
     return C8_cost_050;
   }
 
@@ -117,7 +117,7 @@ abstract class Hemming {
   возвращает double C8_cost_045 (общая стоимость всех глянцевых листов 
   профнастила С8 в 0.45мм толщине в руб)
   */
-    double C8_cost_045 = get_areaC8() * PriceHedge().C8_price_045;
+    double C8_cost_045 = get_areaC8() * PriceHedge.C8_price_045;
     return C8_cost_045;
   }
 
@@ -132,7 +132,7 @@ abstract class Hemming {
   возвращает double C8_cost_040 (общая стоимость всех глянцевых листов 
   профнастила С8 в 0.40мм толщине в руб)
   */
-    double C8_cost_040 = get_areaC8() * PriceHedge().C8_price_040;
+    double C8_cost_040 = get_areaC8() * PriceHedge.C8_price_040;
     return C8_cost_040;
   }
 
@@ -147,7 +147,7 @@ abstract class Hemming {
   возвращает double C8_cost_035 (общая стоимость всех глянцевых листов 
   профнастила С8 в 0.35мм толщине в руб)
   */
-    double C8_cost_035 = get_areaC8() * PriceHedge().C8_price_035;
+    double C8_cost_035 = get_areaC8() * PriceHedge.C8_price_035;
     return C8_cost_035;
   }
 
@@ -162,7 +162,7 @@ abstract class Hemming {
   возвращает double C8_cost_050zinc (общая стоимость всех оцинкованных листов 
   профнастила С8 в 0.50мм толщине в руб)
   */
-    double C8_cost_050zinc = get_areaC8() * PriceHedge().C8_price_050zinc;
+    double C8_cost_050zinc = get_areaC8() * PriceHedge.C8_price_050zinc;
     return C8_cost_050zinc;
   }
 
@@ -177,7 +177,7 @@ abstract class Hemming {
   возвращает double C8_cost_045zinc (общая стоимость всех оцинкованных листов 
   профнастила С8 в 0.45мм толщине в руб)
   */
-    double C8_cost_045zinc = get_areaC8() * PriceHedge().C8_price_045zinc;
+    double C8_cost_045zinc = get_areaC8() * PriceHedge.C8_price_045zinc;
     return C8_cost_045zinc;
   }
 
@@ -192,7 +192,7 @@ abstract class Hemming {
   возвращает double C8_cost_040zinc (общая стоимость всех оцинкованных листов 
   профнастила С8 в 0.40мм толщине в руб)
   */
-    double C8_cost_040zinc = get_areaC8() * PriceHedge().C8_price_040zinc;
+    double C8_cost_040zinc = get_areaC8() * PriceHedge.C8_price_040zinc;
     return C8_cost_040zinc;
   }
 
@@ -233,7 +233,7 @@ abstract class Hemming {
   кровельного свеса)
   */
     double Lplank_cost_mat = get_length_Lplanks() *
-        PricePlank().plank_price_mat *
+        PricePlank.plank_price_mat *
         (thickness * limb_Lplank * clamp);
     return Lplank_cost_mat;
   }
@@ -249,7 +249,7 @@ abstract class Hemming {
   глянцевых 0.50мм L-планок для кровельного свеса)
   */
     double Lplank_cost_050 = get_length_Lplanks() *
-        PricePlank().plank_price_050 *
+        PricePlank.plank_price_050 *
         (thickness * limb_Lplank * clamp);
     return Lplank_cost_050;
   }
@@ -266,7 +266,7 @@ abstract class Hemming {
   */
     double Lplank_cost =
         (get_length_Lplanks() * (thickness + limb_Lplank + clamp)) *
-            PricePlank().plank_price;
+            PricePlank.plank_price;
     return Lplank_cost;
   }
 
@@ -281,7 +281,7 @@ abstract class Hemming {
   оцинкованных 0.40мм L-планок для кровельного свеса)
   */
     double Lplank_cost_zinc = get_length_Lplanks() *
-        PricePlank().plank_price_zinc *
+        PricePlank.plank_price_zinc *
         (thickness * limb_Lplank * clamp);
     return Lplank_cost_zinc;
   }
@@ -322,8 +322,7 @@ abstract class Hemming {
   профнастила С8 и L-планок для кровельного свеса в шт кратно 1 упаковке 
   саморезов = 250шт, на весь кровельный свес в руб)
   */
-    double screws_hemming_cost =
-        get_num_screws_hemming() * Screws().screw_48x29;
+    double screws_hemming_cost = get_num_screws_hemming() * Screws.screw_48x29;
     return screws_hemming_cost;
   }
 }

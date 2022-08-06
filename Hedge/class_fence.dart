@@ -17,8 +17,8 @@ class Fence extends Hedge {
   и имеет методы для попролётного расчета количества штакетника и его погонаж
   */
   final double gap;
-  final double width = 0.110;
-  final int screws_across = 2;
+  static const double width = 0.110;
+  static const int screws_across = 2;
   final int filling;
 
   Fence(super.length, super.heigth, this.gap, super.color, super.thickness,
@@ -79,7 +79,7 @@ class Fence extends Hedge {
   двухстороннего матового 0.40мм штакета в руб)
   */
     double fence_double_sided_cost_040mat =
-        get_length_fence() * PriceHedge().fence_double_sided_price_040mat;
+        get_length_fence() * PriceHedge.fence_double_sided_price_040mat;
     return fence_double_sided_cost_040mat;
   }
 
@@ -94,7 +94,7 @@ class Fence extends Hedge {
   глянцевого 0.40мм штакета в руб)
   */
     double fence_double_sided_cost_040 =
-        get_length_fence() * PriceHedge().fence_double_sided_price_040;
+        get_length_fence() * PriceHedge.fence_double_sided_price_040;
     return fence_double_sided_cost_040;
   }
 
@@ -127,7 +127,7 @@ class Fence extends Hedge {
   штакета изгороди в шт кратно 1 упаковке саморезов = 250шт,
   на весь пролёт изгороди в руб)
   */
-    double screws_fence_cost = get_num_screws_fence() * Screws().screw_55x19;
+    double screws_fence_cost = get_num_screws_fence() * Screws.screw_55x19;
     return screws_fence_cost;
   }
 
